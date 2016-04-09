@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="HAXE_MODULE" version="4">
+  <component name="HaxeModuleSettingsStorage">
+    <option name="buildConfig" value="3" />
+    <option name="openFLTarget" value="HTML5" />
+    <option name="outputFolder" value="$MODULE_DIR$/../out/production/client" />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../out/production/client" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/res/main" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/Export" />
+    </content>
+    <orderEntry type="jdk" jdkName="Haxe 3.2.0" jdkType="Haxe toolkit" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="common" />
+    <orderEntry type="library" name="openfl 3.6.1" level="application" />
+    <orderEntry type="module-library">
+      <library name="haxelib|C:/Apps/Haxe/haxe/libs/openfl/3,6,1">
+        <CLASSES>
+          <root url="file://C:/Apps/Haxe/haxe/libs/openfl/3,6,1" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://C:/Apps/Haxe/haxe/libs/openfl/3,6,1" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
