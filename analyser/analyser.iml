@@ -18,5 +18,16 @@
     <orderEntry type="jdk" jdkName="Haxe 3.2.0" jdkType="Haxe toolkit" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
+    <orderEntry type="module-library">
+      <library name="haxelib|src/main">
+        <CLASSES>
+          <root url="file://src/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://src/main" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

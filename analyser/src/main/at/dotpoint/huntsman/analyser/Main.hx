@@ -82,7 +82,7 @@ class Main {
 
         try
         {
-            this.config = new ConfigurationFactory().createFromJson( json );
+            this.config = this.getConfigurationFactory().createFromJson( json );
         }
         catch( exception:Dynamic )
         {
@@ -94,6 +94,12 @@ class Main {
 
         // ------------------------ //
 
-        trace("horray: " + this.config );
+
+    }
+
+    //
+    private function getConfigurationFactory():ConfigurationFactory
+    {
+        return new ConfigurationFactory();
     }
 }
