@@ -1,0 +1,8 @@
+-cp src/main
+-cp ../common/src/main
+-cp ../common/lib/dotCore/src/main
+-cp ../common/lib/dotCore/res/main
+
+-main at.dotpoint.huntsman.analyser.Main
+
+-neko bin/release/huntsman.n

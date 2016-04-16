@@ -1,0 +1,1 @@
+neko bin/release/huntsman.n bin/release/input.cfg

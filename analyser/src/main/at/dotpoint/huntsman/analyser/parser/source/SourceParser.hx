@@ -125,7 +125,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 				}
 				else
 				{
-					nspans.push( span );
+					nspans.push( span );										// ... only reason for sort
 				}
 			}
 
@@ -209,8 +209,6 @@ class Span
 			if( rs.getLength() > 0 )				// afterwards right side is enough
 				result.push( rs );
 		}
-
-
 
 		// ------------------- //
 
