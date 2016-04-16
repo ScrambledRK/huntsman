@@ -142,9 +142,22 @@ class ParserFactory
 		if( tokens == null || tokens.length == 0 )
 			throw "must contain non-empty tokens array";
 
+		var keywords:Array<Dynamic> = cast json.keywords;
+
 		// ------------- //
 
 		var result:Array<TokenType> = new Array<TokenType>();
+
+		if( keywords != null && keywords.length > 0 )
+		{
+			for( key in keywords )
+			{
+				var name:String = key;
+				var expr:EReg = new EReg( "\\b" + key + "\\b", "gm" );
+
+				result.push( new TokenType( name, expr ) );
+			}
+		}
 
 		for( tok in tokens )
 		{

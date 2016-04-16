@@ -18,9 +18,12 @@ class Token
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( type:TokenType)
+	public function new( type:TokenType, ?pos:Int = 0, ?length:Int = 0 )
 	{
 		this.type = type;
+
+		this.position = pos;
+		this.length = length;
 	}
 
 	// ************************************************************************ //
@@ -30,6 +33,9 @@ class Token
 	//
 	public function toString():String
 	{
-		return "[" + this.type.name + "]";
+		if( this.type == null )
+			return "[null-token]";
+
+		return "[" + this.type.name + "]" + this.position + "," + this.length;
 	}
 }
