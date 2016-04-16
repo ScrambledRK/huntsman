@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser.configuration;
 
+import at.dotpoint.huntsman.analyser.parser.INodeParser;
 import at.dotpoint.huntsman.analyser.project.Project;
 
 /**
@@ -11,6 +12,9 @@ class Configuration {
 
     //
     public var projects:Array<Project>;
+
+	//
+	public var parser:Array<INodeParser>;
 
     // ************************************************************************ //
     // Constructor

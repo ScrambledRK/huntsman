@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser;
 
+import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.processor.task.ProjectTask;
 import haxe.at.dotpoint.core.dispatcher.event.Event;
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
@@ -103,7 +104,7 @@ class Main {
 
         try
         {
-            this.config = this.getConfigurationFactory().createFromJson( json );
+            this.config = this.getConfigurationFactory().createFromJson( json, new Path( configFilePath ) );
         }
         catch( exception:Dynamic )
         {

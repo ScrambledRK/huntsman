@@ -1,8 +1,8 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
+import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.project.Variation;
 import at.dotpoint.huntsman.analyser.relation.Node;
-import at.dotpoint.huntsman.analyser.project.Project;
 
 /**
  * 16.04.2016
@@ -47,8 +47,19 @@ class VariationTask extends ProcessTask
 
 		// ------------ //
 
+		for( path in this.variation.sources )
+			this.queueFiles( path );
+
 		// ------------ //
 
 		this.clear();
+	}
+
+	/**
+	 *
+	 */
+	private function queueFiles( root:Path ):Void
+	{
+		//
 	}
 }
