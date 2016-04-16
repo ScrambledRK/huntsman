@@ -20,7 +20,7 @@ import StringTools;
 class Main {
 
     //
-    private static var instance:Main;
+    public static var instance:Main;
 
     // ----------------- //
 
@@ -43,18 +43,23 @@ class Main {
     public static function main()
     {
         trace("init huntsman code analysis");
-        Main.instance = new Main( Sys.args() );
+
+		// ------------------- //
+
+        Main.instance = new Main( );
+
+		if( Sys.args() == null || Sys.args().length < 1 )
+		   throw "must provide a huntsman config file as a commandline parameter";
+
+		Main.instance.parseConfiguration( Sys.args()[0] );
     }
 
     /**
      *
      */
-    public function new( arguments:Array<String> )
+    public function new()
     {
-        if( arguments == null || arguments.length < 1 )
-           throw "must provide a huntsman config file as a commandline parameter";
 
-        this.parseConfiguration( arguments[0] );
     }
 
     // ************************************************************************ //

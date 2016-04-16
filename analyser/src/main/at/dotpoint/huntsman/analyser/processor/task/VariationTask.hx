@@ -1,6 +1,8 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
 import haxe.io.Path;
+import sys.FileSystem;
+import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.project.Variation;
 import at.dotpoint.huntsman.analyser.relation.Node;
 
@@ -48,7 +50,7 @@ class VariationTask extends ProcessTask
 		// ------------ //
 
 		for( path in this.variation.sources )
-			this.queueFiles( path );
+			this.queueFiles( path.toString(), vnode );
 
 		// ------------ //
 
@@ -58,8 +60,18 @@ class VariationTask extends ProcessTask
 	/**
 	 *
 	 */
-	private function queueFiles( root:Path ):Void
+	private function queueFiles( file:String, vnode:Node ):Void
 	{
-		//
+		if( FileSystem.isDirectory( file ) )
+		{
+			var filelist:Array<String> = FileSystem.readDirectory( file );
+
+			for( rfile in filelist )
+				this.queueFiles( Path.join([file,rfile]), vnode );
+		}
+		else
+		{
+			this.queueTask( new FileTask( new Path(file), vnode) );
+		}
 	}
 }

@@ -4,23 +4,31 @@ package at.dotpoint.huntsman.analyser.parser.source;
  * 16.04.2016
  * @author RK
  */
-class SourceParserSettings extends ANodeParserSettings
+class TokenType
 {
 
 	//
-	public var tokens:Array<TokenType>;
+	public var name(default,null):String;
+
+	//
+	public var expression(default,null):EReg;
 
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
 
-	public function new()
+	public function new( name:String, expression:EReg )
 	{
-		super();
+		this.name = name;
+		this.expression = expression;
 	}
 
 	// ************************************************************************ //
 	// Methods
 	// ************************************************************************ //
 
+	public function toString():String
+	{
+		return "[" + this.name + "]";
+	}
 }

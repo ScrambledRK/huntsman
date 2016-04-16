@@ -18,7 +18,7 @@ class ProcessTask extends EventDispatcher implements ITask
 	public var type(default, null):String;
 
 	/**
-	 * get existing relations and set new relations
+	 * get existing relations and set TokenType relations
 	 */
 	public var node:Node;
 

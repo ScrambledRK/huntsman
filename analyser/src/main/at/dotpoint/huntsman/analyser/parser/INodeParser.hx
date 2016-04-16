@@ -22,7 +22,7 @@ interface INodeParser
 	public function getResult():Array<Node>;
 
 	//
-	public function parse( file:Path ):Void;
+	public function parse( file:Path ):Array<Node>;
 
 	//
 	public function reset():Void;

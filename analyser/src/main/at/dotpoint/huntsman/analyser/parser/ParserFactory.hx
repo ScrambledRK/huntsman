@@ -1,5 +1,8 @@
 package at.dotpoint.huntsman.analyser.parser;
 
+import at.dotpoint.huntsman.analyser.parser.source.TokenType;
+import haxe.Json;
+import sys.io.File;
 import at.dotpoint.huntsman.analyser.parser.source.SourceParserSettings;
 import haxe.io.Path;
 import sys.FileSystem;
@@ -76,8 +79,81 @@ class ParserFactory
 	 */
 	private function createSourceParser( name:String, settingsPath:Path ):INodeParser
 	{
+		var json:Dynamic = this.parseSettings( settingsPath );
+
 		var settings:SourceParserSettings = new SourceParserSettings();
+			settings.extensions = this.parseExtensions( json );
+			settings.tokens = this.parseTokens( json );
+
+		// ------------------------ //
 
 		return new SourceParser( name, settings );
+	}
+
+	/**
+	 *
+	 */
+	private function parseSettings( settingsPath:Path ):Dynamic
+	{
+		var json:Dynamic = null;
+
+		try
+		{
+		  json = Json.parse( File.getContent( settingsPath.toString() ) );
+		}
+		catch( exception:Dynamic )
+		{
+		  throw "json parse settings failed:\n" + exception.toString();
+		}
+
+		if( json == null )
+		  throw "json parse settings failed: unknown error, json is null";
+
+		return json;
+	}
+
+	/**
+	 *
+	 */
+	private function parseExtensions( json:Dynamic ):Array<String>
+	{
+		var extensions:Array<Dynamic> = cast json.extensions;
+
+		if( extensions == null || extensions.length == 0 )
+			throw "must contain non-empty extensions array";
+
+		// ------------- //
+
+		var result:Array<String> = new Array<String>();
+
+		for( ext in extensions )
+		  result.push( ext );
+
+		return result;
+	}
+
+	/**
+	 *
+	 */
+	private function parseTokens( json:Dynamic ):Array<TokenType>
+	{
+		var tokens:Array<Dynamic> = cast json.tokens;
+
+		if( tokens == null || tokens.length == 0 )
+			throw "must contain non-empty tokens array";
+
+		// ------------- //
+
+		var result:Array<TokenType> = new Array<TokenType>();
+
+		for( tok in tokens )
+		{
+			var name:String = tok.name;
+			var expr:EReg = new EReg( tok.expression, "gm" );
+
+			result.push( new TokenType( name, expr ) );
+		}
+
+		return result;
 	}
 }
