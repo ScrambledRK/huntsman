@@ -1,5 +1,10 @@
 package at.dotpoint.huntsman.analyser;
 
+import at.dotpoint.huntsman.analyser.processor.task.ProjectTask;
+import haxe.at.dotpoint.core.dispatcher.event.Event;
+import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
+import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.analyser.processor.Processor;
 import at.dotpoint.huntsman.analyser.configuration.ConfigurationFactory;
 import at.dotpoint.huntsman.analyser.configuration.Configuration;
 import sys.io.File;
@@ -20,6 +25,12 @@ class Main {
 
     //
     public var config(default,null):Configuration;
+
+    //
+    public var processor(default,null):Processor;
+
+    //
+    public var rootNode:Node;
 
     // ************************************************************************ //
     // Constructor
@@ -47,6 +58,16 @@ class Main {
 
     // ************************************************************************ //
     // Methods
+    // ************************************************************************ //
+
+    //
+    private function getConfigurationFactory():ConfigurationFactory
+    {
+        return new ConfigurationFactory();
+    }
+
+    // ************************************************************************ //
+    // initialize/start analysis
     // ************************************************************************ //
 
     /**
@@ -94,12 +115,42 @@ class Main {
 
         // ------------------------ //
 
-
+        this.startAnalysis();
     }
 
-    //
-    private function getConfigurationFactory():ConfigurationFactory
+    /**
+     *
+     */
+    private function startAnalysis():Void
     {
-        return new ConfigurationFactory();
+        this.rootNode = new Node( "root", "root" );
+
+        this.processor = new Processor();
+        this.processor.process( this.getInitialTasks(), this.onComplete );
+    }
+
+    /**
+     *
+     */
+    private function getInitialTasks():Array<ProcessTask>
+    {
+        var initialTasks:Array<ProcessTask> = new Array<ProcessTask>();
+
+        // ---------------- //
+
+        for( project in this.config.projects )
+            initialTasks.push( new ProjectTask( project, this.rootNode ) );
+
+        // ---------------- //
+
+        return initialTasks;
+    }
+
+    /**
+     *
+     */
+    private function onComplete( event:Event ):Void
+    {
+        Sys.exit(0);
     }
 }
