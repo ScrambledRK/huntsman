@@ -1,8 +1,8 @@
 package at.dotpoint.huntsman.analyser.parser.source;
 
-import sys.FileSystem;
+import at.dotpoint.huntsman.analyser.parser.source.token.Token;
+import at.dotpoint.huntsman.analyser.parser.source.token.TokenType;
 import at.dotpoint.huntsman.analyser.relation.Node;
-import at.dotpoint.huntsman.analyser.parser.source.Token;
 import sys.io.File;
 import haxe.io.Path;
 

@@ -1,547 +1,547 @@
-[package][whitespace][name][semicolon]
+[package][name][semicolon]
 
 
 
-[import][whitespace][name][dot][name][dot][name][dot][name][semicolon]
+[import][name][dot][name][dot][name][dot][name][semicolon]
 
-[import][whitespace][name][dot][name][dot][name][dot][name][dot][name][semicolon]
+[import][name][dot][name][dot][name][dot][name][dot][name][semicolon]
 
 
 
 [block_comment_open][operator]
 
-[whitespace][operator][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][operator][name]
+[operator][name][name][name][name][name][name][name][name][name][name][name][name][name][name][name][name][operator][name]
 
-[whitespace][operator][whitespace][name][whitespace][number][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][comma][whitespace][name][bracket_round_close][whitespace][for][whitespace][bracket_round_open][name][bracket_round_close][whitespace][name][whitespace][name][whitespace][name]
+[operator][name][number][name][name][name][bracket_round_open][name][comma][name][bracket_round_close][for][bracket_round_open][name][bracket_round_close][name][name][name]
 
-[whitespace][operator][whitespace]
+[operator]
 
-[whitespace][operator][whitespace][name][whitespace][name]
+[operator][name][name]
 
-[whitespace][block_comment_close]
+[block_comment_close]
 
-[class][whitespace][name]
+[class][name]
 
 [bracket_curly_open]
 
 
 
-[whitespace][block_comment_open][operator]
+[block_comment_open][operator]
 
-[whitespace][whitespace][operator][whitespace][name][operator][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][whitespace][name][bracket_round_close][whitespace][name][whitespace][name][whitespace][name][operator][name]
+[operator][name][operator][name][name][name][name][name][bracket_round_open][name][name][name][bracket_round_close][name][name][name][operator][name]
 
-[whitespace][whitespace][block_comment_close]
+[block_comment_close]
 
-[whitespace][public][whitespace][var][whitespace][name][colon][name][bracket_diamond_open][name][bracket_diamond_close][semicolon]
+[public][var][name][colon][name][bracket_diamond_open][name][bracket_diamond_close][semicolon]
 
-[whitespace]
 
-[whitespace][block_comment_open][operator]
 
-[whitespace][whitespace][operator][whitespace][name][operator][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][whitespace][name][bracket_round_close][whitespace][name][whitespace][name][whitespace][name][operator][name]
+[block_comment_open][operator]
 
-[whitespace][whitespace][block_comment_close]
+[operator][name][operator][name][name][name][name][name][bracket_round_open][name][name][name][bracket_round_close][name][name][name][operator][name]
 
-[whitespace][public][whitespace][var][whitespace][name][colon][name][bracket_diamond_open][name][bracket_diamond_close][semicolon]
+[block_comment_close]
 
-[whitespace]
+[public][var][name][colon][name][bracket_diamond_open][name][bracket_diamond_close][semicolon]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
 
-[whitespace][comment_inline][whitespace][name]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline][whitespace]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace]
+[comment_inline][name]
 
-[whitespace][public][whitespace][function][whitespace][new][bracket_round_open][bracket_round_close][whitespace]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][bracket_curly_open]
 
-[whitespace][whitespace][this][dot][name][whitespace][whitespace][operator][whitespace][new][whitespace][name][bracket_diamond_open][name][bracket_diamond_close][bracket_round_open][bracket_round_close][semicolon]
 
-[whitespace][whitespace][this][dot][name][whitespace][operator][whitespace][new][whitespace][name][bracket_diamond_open][name][bracket_diamond_close][bracket_round_open][bracket_round_close][semicolon]
+[public][function][new][bracket_round_open][bracket_round_close]
 
-[whitespace][bracket_curly_close]
+[bracket_curly_open]
 
-[whitespace]
+[this][dot][name][operator][new][name][bracket_diamond_open][name][bracket_diamond_close][bracket_round_open][bracket_round_close][semicolon]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[this][dot][name][operator][new][name][bracket_diamond_open][name][bracket_diamond_close][bracket_round_open][bracket_round_close][semicolon]
 
-[whitespace][comment_inline][whitespace][name]
+[bracket_curly_close]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline][whitespace]
 
-[whitespace]
 
-[whitespace][block_comment_open][operator]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][new][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][dot][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[comment_inline][name]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][operator][whitespace]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
+[block_comment_open][operator]
 
-[whitespace][whitespace][block_comment_close]
+[operator][name][name][new][name][name][name][name][name][dot][name][name][name][name]
 
-[whitespace][public][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
+[operator][name][name][name][name][name][name][name][name][name][name][name]
 
-[whitespace][bracket_curly_open]
+[operator]
 
-[whitespace][whitespace][if][bracket_round_open][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][whitespace][bracket_round_close]
+[operator][name][name]
 
-[whitespace][whitespace][bracket_curly_open]
+[operator][name][name]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][true][whitespace][bracket_round_close][semicolon][whitespace][whitespace]
+[block_comment_close]
 
-[whitespace][whitespace][whitespace]
+[public][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][operator][whitespace][number][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][operator][whitespace][number][comma][whitespace][name][whitespace][bracket_round_close][semicolon][whitespace]
+[if][bracket_round_open][this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][bracket_round_close]
 
-[whitespace][whitespace][bracket_curly_close]
+[bracket_curly_open]
 
-[whitespace][whitespace][else]
+[var][name][colon][name][operator][this][dot][name][bracket_round_open][name][dot][name][comma][true][bracket_round_close][semicolon]
 
-[whitespace][whitespace][bracket_curly_open]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][false][whitespace][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace]
+[this][dot][name][dot][name][bracket_round_open][name][operator][number][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][operator][whitespace][number][comma][whitespace][whitespace][name][whitespace][bracket_round_close][semicolon]
+[this][dot][name][dot][name][bracket_round_open][name][operator][number][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][operator][whitespace][number][comma][whitespace][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_close]
 
-[whitespace][whitespace][bracket_curly_close][whitespace][whitespace][whitespace]
+[else]
 
-[whitespace][bracket_curly_close]
+[bracket_curly_open]
 
-[whitespace]
+[var][name][colon][name][operator][this][dot][name][bracket_round_open][name][dot][name][comma][false][bracket_round_close][semicolon]
 
-[whitespace][block_comment_open][operator]
 
-[whitespace][whitespace][operator][whitespace][name][colon][whitespace][name][whitespace][name][whitespace][name][whitespace][name][comma][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][dot][dot][dot][whitespace][name][whitespace][name][whitespace][name][whitespace][dot][dot][dot]
 
-[whitespace][whitespace][operator][whitespace]
+[this][dot][name][dot][name][bracket_round_open][name][operator][number][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
+[this][dot][name][dot][name][bracket_round_open][name][operator][number][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
+[bracket_curly_close]
 
-[whitespace][whitespace][block_comment_close]
+[bracket_curly_close]
 
-[whitespace][public][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
 
-[whitespace][bracket_curly_open][whitespace][whitespace]
 
-[whitespace][whitespace][if][bracket_round_open][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][whitespace][bracket_round_close]
+[block_comment_open][operator]
 
-[whitespace][whitespace][bracket_curly_open][whitespace][whitespace][whitespace]
+[operator][name][colon][name][name][name][name][comma][name][name][name][name][name][name][dot][dot][dot][name][name][name][dot][dot][dot]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[operator]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[operator][name][name]
 
-[whitespace][whitespace][bracket_curly_close]
+[operator][name][name]
 
-[whitespace][whitespace][else]
+[block_comment_close]
 
-[whitespace][whitespace][bracket_curly_open]
+[public][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][this][dot][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[if][bracket_round_open][this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][bracket_round_close]
 
-[whitespace][whitespace][bracket_curly_close][whitespace][whitespace][whitespace]
+[bracket_curly_open]
 
-[whitespace][bracket_curly_close]
+[this][dot][name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace]
+[this][dot][name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[bracket_curly_close]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[else]
 
-[whitespace]
+[bracket_curly_open]
 
-[whitespace][block_comment_open][operator]
+[this][dot][name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][if][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][bracket_round_close][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][bracket_round_close]
+[this][dot][name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][comma][whitespace][if][whitespace][name][colon][whitespace][name][whitespace][name][whitespace][new][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][comma]
+[bracket_curly_close]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][new][whitespace][name][bracket_round_close][comma][whitespace][name][whitespace][name][whitespace][new][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][whitespace][name][whitespace][name][bracket_round_close][whitespace][name]
+[bracket_curly_close]
 
-[whitespace][whitespace][operator][whitespace][return][whitespace][this][whitespace][new][whitespace][name][operator][name]
 
-[whitespace][whitespace][operator][whitespace]
 
-[whitespace][whitespace][operator][whitespace][name][colon][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][return][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][operator][whitespace][name][whitespace][name][bracket_round_close]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][operator][whitespace][name][colon][whitespace][name][operator][name][whitespace][name][whitespace][name][whitespace][name][whitespace][for][whitespace][name][whitespace][name][whitespace][name][whitespace][string_double_quote][bracket_diamond_open][operator][string_double_quote][whitespace][name][whitespace][name]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][operator][whitespace][name][colon][whitespace][macro][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][comma][name][whitespace][name][bracket_round_close]
 
-[whitespace][whitespace][operator][whitespace]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[block_comment_open][operator]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][whitespace][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[operator][name][if][name][name][name][bracket_round_open][name][name][bracket_round_close][name][name][name][name][name][bracket_round_open][name][bracket_round_close]
 
-[whitespace][whitespace][operator][whitespace][return][whitespace][new][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[operator][name][name][name][name][name][comma][if][name][colon][name][name][new][name][name][name][name][name][comma]
 
-[whitespace][whitespace][block_comment_close]
+[operator][name][name][name][bracket_round_open][new][name][bracket_round_close][comma][name][name][new][name][bracket_round_open][name][name][name][name][bracket_round_close][name]
 
-[whitespace][public][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
+[operator][return][this][new][name][operator][name]
 
-[whitespace][bracket_curly_open]
+[operator]
 
-[whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][name][dot][name][bracket_round_open][name][dot][name][bracket_round_close][whitespace][bracket_diamond_open][whitespace][name][dot][name][bracket_round_open][name][dot][name][bracket_round_close][semicolon][whitespace]
+[operator][name][colon][name][name][name][name][name][return][name][name][name][bracket_round_open][name][operator][name][name][bracket_round_close]
 
-[whitespace][whitespace]
+[operator][name][colon][name][operator][name][name][name][name][for][name][name][name][string_double_quote][bracket_diamond_open][operator][string_double_quote][name][name]
 
-[whitespace][whitespace][if][bracket_round_open][whitespace][name][whitespace][bracket_round_close][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][comma][whitespace][name][whitespace][name][whitespace][name]
+[operator][name][colon][macro][name][name][name][name][bracket_round_open][name][name][comma][name][name][bracket_round_close]
 
-[whitespace][whitespace][bracket_curly_open]
+[operator]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][whitespace][operator][whitespace][name][dot][name][whitespace][bracket_diamond_open][whitespace][number][whitespace][operator][whitespace][operator][number][whitespace][colon][whitespace][number][semicolon][whitespace][whitespace][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][operator][name][whitespace][name]
+[operator][name][name][name][name][name][name]
 
-[whitespace][whitespace][whitespace]
+[operator][name][name][name][name][name][name][name][name][name][name][name][name]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][whitespace][operator][whitespace][this][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][false][whitespace][bracket_round_close][whitespace][operator][whitespace][number][semicolon][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][whitespace]
+[operator][return][new][name][name][name][name][name][name][name][name][name]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][dot][name][whitespace][bracket_diamond_close][bracket_diamond_close][whitespace][number][semicolon][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][colon][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][whitespace][name][whitespace][number][whitespace][name][colon][whitespace][name][whitespace][operator][whitespace][number][dot][number][bracket_round_close]
+[block_comment_close]
 
-[whitespace][whitespace][whitespace]
+[public][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
 
-[whitespace][whitespace][whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline][whitespace][whitespace][whitespace]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][comment_inline][whitespace][name][bracket_round_open][whitespace][string_double_quote][name][whitespace][name][colon][string_double_quote][comma][whitespace][name][comma][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[var][name][colon][name][operator][name][dot][name][bracket_round_open][name][dot][name][bracket_round_close][bracket_diamond_open][name][dot][name][bracket_round_open][name][dot][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][while][bracket_round_open][whitespace][bracket_round_open][name][whitespace][operator][operator][whitespace][name][bracket_round_close][whitespace][bracket_diamond_close][operator][whitespace][number][whitespace][whitespace][name][whitespace][bracket_diamond_open][operator][whitespace][name][whitespace][bracket_round_close][whitespace][whitespace][comment_inline][whitespace][while][whitespace][name][whitespace][in][whitespace][name][whitespace][name][whitespace][name][whitespace][name][operator][name]
 
-[whitespace][whitespace][whitespace][bracket_curly_open][whitespace][whitespace][whitespace]
+[if][bracket_round_open][name][bracket_round_close][comment_inline][name][name][comma][name][name][name]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][name][whitespace][operator][whitespace][number][semicolon][whitespace][whitespace][whitespace][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][whitespace]
+[var][name][colon][name][operator][name][dot][name][bracket_diamond_open][number][operator][operator][number][colon][number][semicolon][comment_inline][name][name][name][name][name][name][operator][name][name]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][semicolon][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][dot][dot][dot]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace]
+[var][name][colon][name][operator][this][dot][name][bracket_round_open][name][dot][name][comma][false][bracket_round_close][operator][number][semicolon][comment_inline][name][name][name][name][name][name][name]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][name][whitespace][operator][operator][whitespace][name][whitespace][whitespace][name][whitespace][operator][operator][whitespace][name][whitespace][bracket_round_close][whitespace][whitespace][whitespace][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][bracket_round_open][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][bracket_round_close]
+[var][name][colon][name][operator][this][dot][name][dot][name][bracket_diamond_close][bracket_diamond_close][number][semicolon][comment_inline][name][name][name][name][colon][name][name][bracket_round_open][name][name][name][number][name][colon][name][operator][number][dot][number][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][continue][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][bracket_round_open][whitespace][name][dot][name][whitespace][bracket_diamond_close][operator][whitespace][name][dot][name][whitespace][whitespace][name][dot][name][whitespace][bracket_diamond_open][operator][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][operator]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][bracket_round_open][whitespace][name][dot][name][whitespace][bracket_diamond_close][operator][whitespace][name][dot][name][whitespace][whitespace][name][dot][name][whitespace][bracket_diamond_open][operator][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][bracket_round_close]
+[comment_inline][name][bracket_round_open][string_double_quote][name][name][colon][string_double_quote][comma][name][comma][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][bracket_curly_open]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][return][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon][whitespace][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][new][whitespace][name][comma][whitespace][name][whitespace][name][whitespace][name][whitespace][return][whitespace][new][whitespace][name]
 
-[whitespace][whitespace][whitespace][whitespace][bracket_curly_close]
+[while][bracket_round_open][bracket_round_open][name][operator][operator][name][bracket_round_close][bracket_diamond_close][operator][number][name][bracket_diamond_open][operator][name][bracket_round_close][comment_inline][while][name][in][name][name][name][name][operator][name]
 
-[whitespace][whitespace][whitespace][bracket_curly_close]
+[bracket_curly_open]
 
-[whitespace][whitespace][bracket_curly_close]
+[var][name][colon][name][operator][name][operator][number][semicolon][comment_inline][name][name][name][name][name][name]
 
-[whitespace][whitespace][else][whitespace][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][comma][whitespace][name][whitespace][name][whitespace][name][colon][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][dot]
 
-[whitespace][whitespace][bracket_curly_open]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][whitespace][operator][whitespace][name][dot][name][whitespace][bracket_diamond_open][whitespace][number][whitespace][operator][whitespace][operator][number][whitespace][colon][whitespace][number][semicolon]
+[var][name][colon][name][operator][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][semicolon][comment_inline][name][dot][dot][dot]
 
-[whitespace][whitespace][whitespace]
+[var][name][colon][name][operator][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][semicolon]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][whitespace][operator][whitespace][this][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][true][whitespace][bracket_round_close][whitespace][operator][whitespace][number][semicolon][whitespace][whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][dot][name][whitespace][bracket_diamond_close][bracket_diamond_close][whitespace][number][semicolon]
 
-[whitespace][whitespace][whitespace]
+[if][bracket_round_open][name][operator][operator][name][name][operator][operator][name][bracket_round_close][comment_inline][name][name][name][name][name][name][name][bracket_round_open][name][name][name][name][name][bracket_round_close]
 
-[whitespace][whitespace][whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline][whitespace][whitespace][whitespace][whitespace]
+[continue][semicolon]
 
-[whitespace][whitespace][whitespace][comment_inline][whitespace][name][bracket_round_open][whitespace][string_double_quote][name][whitespace][name][colon][string_double_quote][comma][whitespace][name][comma][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][while][bracket_round_open][whitespace][bracket_round_open][name][whitespace][operator][operator][whitespace][name][bracket_round_close][whitespace][bracket_diamond_close][operator][whitespace][number][whitespace][whitespace][name][whitespace][bracket_diamond_open][operator][whitespace][name][whitespace][bracket_round_close]
+[if][bracket_round_open][bracket_round_open][name][dot][name][bracket_diamond_close][operator][name][dot][name][name][dot][name][bracket_diamond_open][operator][name][dot][name][bracket_round_close][comment_inline][name][name][name][name][name][name][name][name][operator]
 
-[whitespace][whitespace][whitespace][bracket_curly_open][whitespace][whitespace][whitespace]
+[bracket_round_open][name][dot][name][bracket_diamond_close][operator][name][dot][name][name][dot][name][bracket_diamond_open][operator][name][dot][name][bracket_round_close][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][name][whitespace][operator][whitespace][number][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][whitespace]
+[return][this][dot][name][bracket_round_open][name][comma][name][comma][name][bracket_round_close][semicolon][comment_inline][name][new][name][comma][name][name][name][return][new][name]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][semicolon]
+[bracket_curly_close]
 
-[whitespace][whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][semicolon][whitespace][whitespace][whitespace][whitespace]
+[bracket_curly_close]
 
-[whitespace][whitespace][whitespace][whitespace]
+[bracket_curly_close]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][name][whitespace][operator][operator][whitespace][name][whitespace][whitespace][name][whitespace][operator][operator][whitespace][name][whitespace][bracket_round_close]
+[else][comment_inline][name][name][comma][name][name][name][colon][name][name][name][name][name][name][dot]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][continue][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][whitespace]
+[var][name][colon][name][operator][name][dot][name][bracket_diamond_open][number][operator][operator][number][colon][number][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][bracket_round_open][whitespace][name][dot][name][whitespace][bracket_diamond_close][operator][whitespace][name][dot][name][whitespace][whitespace][name][dot][name][whitespace][bracket_diamond_open][operator][whitespace][name][dot][name][whitespace][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][bracket_round_open][whitespace][name][dot][name][whitespace][bracket_diamond_close][operator][whitespace][name][dot][name][whitespace][whitespace][name][dot][name][whitespace][bracket_diamond_open][operator][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][bracket_curly_open]
+[var][name][colon][name][operator][this][dot][name][bracket_round_open][name][dot][name][comma][true][bracket_round_close][operator][number][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][return][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[var][name][colon][name][operator][this][dot][name][dot][name][bracket_diamond_close][bracket_diamond_close][number][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][bracket_curly_close][whitespace][whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][bracket_curly_close]
 
-[whitespace][whitespace][bracket_curly_close]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace]
+[comment_inline][name][bracket_round_open][string_double_quote][name][name][colon][string_double_quote][comma][name][comma][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][return][whitespace][null][semicolon]
 
-[whitespace][bracket_curly_close]
 
-[whitespace]
+[while][bracket_round_open][bracket_round_open][name][operator][operator][name][bracket_round_close][bracket_diamond_close][operator][number][name][bracket_diamond_open][operator][name][bracket_round_close]
 
-[whitespace][block_comment_open][operator]
+[bracket_curly_open]
 
-[whitespace][whitespace][operator][whitespace][operator][whitespace][name][whitespace][name][whitespace][new][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[var][name][colon][name][operator][name][operator][number][semicolon]
 
-[whitespace][whitespace][operator][whitespace][operator][whitespace][name][whitespace][name][whitespace][new][whitespace][name][whitespace][name][whitespace][this][whitespace][new][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
 
-[whitespace][whitespace][operator][whitespace][operator][whitespace][name][whitespace][name][whitespace][name][whitespace][new][whitespace][name]
 
-[whitespace][whitespace][operator][whitespace][operator][whitespace][return][whitespace][new][whitespace][name][whitespace][name]
+[var][name][colon][name][operator][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace]
+[var][name][colon][name][operator][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][return]
 
-[whitespace][whitespace][block_comment_close]
 
-[whitespace][private][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
+[if][bracket_round_open][name][operator][operator][name][name][operator][operator][name][bracket_round_close]
 
-[whitespace][bracket_curly_open][whitespace][whitespace]
+[continue][semicolon]
 
-[whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][new][whitespace][name][bracket_round_open][whitespace][null][whitespace][bracket_round_close][semicolon][whitespace]
 
-[whitespace][whitespace][whitespace][name][dot][name][whitespace][operator][whitespace][name][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][operator][whitespace][name][dot][name][bracket_round_open][whitespace][number][comma][whitespace][name][dot][name][bracket_round_open][name][dot][name][whitespace][operator][whitespace][name][dot][name][bracket_round_close][whitespace][bracket_round_close][whitespace][operator][whitespace][number][dot][number][semicolon]
 
-[whitespace][whitespace][whitespace]
+[if][bracket_round_open][bracket_round_open][name][dot][name][bracket_diamond_close][operator][name][dot][name][name][dot][name][bracket_diamond_open][operator][name][dot][name][bracket_round_close]
 
-[whitespace][whitespace][if][bracket_round_open][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][whitespace][bracket_round_close][whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][comma][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
+[bracket_round_open][name][dot][name][bracket_diamond_close][operator][name][dot][name][name][dot][name][bracket_diamond_open][operator][name][dot][name][bracket_round_close][bracket_round_close]
 
-[whitespace][whitespace][bracket_curly_open][whitespace][whitespace][whitespace]
+[bracket_curly_open]
 
-[whitespace][whitespace][whitespace][name][dot][name][whitespace][operator][whitespace][name][dot][name][semicolon]
+[return][this][dot][name][bracket_round_open][name][comma][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][name][dot][name][whitespace][operator][whitespace][name][dot][name][semicolon]
+[bracket_curly_close]
 
-[whitespace][whitespace][bracket_curly_close]
+[bracket_curly_close]
 
-[whitespace][whitespace][else]
+[bracket_curly_close]
 
-[whitespace][whitespace][bracket_curly_open]
 
-[whitespace][whitespace][whitespace][name][dot][name][whitespace][operator][whitespace][name][dot][name][semicolon]
 
-[whitespace][whitespace][whitespace][name][dot][name][whitespace][operator][whitespace][name][dot][name][semicolon]
+[return][null][semicolon]
 
-[whitespace][whitespace][bracket_curly_close][whitespace]
+[bracket_curly_close]
 
-[whitespace][whitespace]
 
-[whitespace][whitespace][if][whitespace][name]
 
-[whitespace][whitespace][whitespace][name][bracket_round_open][whitespace][string_double_quote][name][string_double_quote][comma][whitespace][name][comma][whitespace][string_double_quote][operator][operator][name][operator][operator][string_double_quote][comma][whitespace][name][comma][whitespace][name][whitespace][operator][whitespace][string_double_quote][colon][whitespace][bracket_square_open][string_double_quote][whitespace][operator][whitespace][name][dot][name][whitespace][operator][whitespace][string_double_quote][bracket_square_close][string_double_quote][whitespace][bracket_round_close][semicolon]
+[block_comment_open][operator]
 
-[whitespace][whitespace][name]
+[operator][operator][name][name][new][name][name][name][name][name][name][name]
 
-[whitespace][whitespace]
+[operator][operator][name][name][new][name][name][this][new][name][name][name][name][name][name]
 
-[whitespace][whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[operator][operator][name][name][name][new][name]
 
-[whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][colon]
+[operator][operator][return][new][name][name]
 
-[whitespace][whitespace]
+[operator]
 
-[whitespace][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[operator][return]
 
-[whitespace][whitespace]
+[block_comment_close]
 
-[whitespace][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[private][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
 
-[whitespace][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][this][dot][name][bracket_round_open][whitespace][name][comma][whitespace][name][whitespace][bracket_round_close][semicolon]
+[var][name][colon][name][operator][new][name][bracket_round_open][null][bracket_round_close][semicolon]
 
-[whitespace][whitespace]
+[name][dot][name][operator][name][dot][name][bracket_round_open][name][dot][name][comma][name][dot][name][bracket_round_close][operator][name][dot][name][bracket_round_open][number][comma][name][dot][name][bracket_round_open][name][dot][name][operator][name][dot][name][bracket_round_close][bracket_round_close][operator][number][dot][number][semicolon]
 
-[whitespace][whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
 
-[whitespace][whitespace][comment_inline][whitespace][name][whitespace][name][colon]
 
-[whitespace][whitespace]
+[if][bracket_round_open][this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][bracket_round_close][comment_inline][name][name][comma][name][name][name][name][name][name]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_open]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[name][dot][name][operator][name][dot][name][semicolon]
 
-[whitespace][whitespace]
+[name][dot][name][operator][name][dot][name][semicolon]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_close]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[else]
 
-[whitespace][whitespace]
+[bracket_curly_open]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[name][dot][name][operator][name][dot][name][semicolon]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[name][dot][name][operator][name][dot][name][semicolon]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_close]
 
-[whitespace][whitespace]
 
-[whitespace][whitespace][name][dot][name][bracket_round_open][whitespace][name][whitespace][bracket_round_close][semicolon]
 
-[whitespace][whitespace]
+[if][name]
 
-[whitespace][whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[name][bracket_round_open][string_double_quote][name][string_double_quote][comma][name][comma][string_double_quote][operator][operator][name][operator][operator][string_double_quote][comma][name][comma][name][operator][string_double_quote][colon][bracket_square_open][string_double_quote][operator][name][dot][name][operator][string_double_quote][bracket_square_close][string_double_quote][bracket_round_close][semicolon]
 
-[whitespace][whitespace]
+[name]
 
-[whitespace][whitespace][return][whitespace][name][semicolon]
 
-[whitespace][bracket_curly_close]
 
-[whitespace]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
+[comment_inline][name][name][colon]
 
-[whitespace][comment_inline][whitespace][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][whitespace][comment_inline]
 
-[whitespace]
 
-[whitespace][block_comment_open][operator]
+[this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][for][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name]
 
-[whitespace][whitespace][operator][whitespace]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name][whitespace][name][operator][name][whitespace][for][whitespace][name][comma][whitespace][name][operator][name][whitespace][for][whitespace][name]
+[this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][operator][whitespace][return][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][whitespace][operator][number]
+[this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][block_comment_close]
+[this][dot][name][bracket_round_open][name][comma][name][bracket_round_close][semicolon]
 
-[whitespace][private][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
 
-[whitespace][bracket_curly_open]
 
-[whitespace][whitespace][if][bracket_round_open][whitespace][name][whitespace][bracket_round_close]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][bracket_curly_open]
+[comment_inline][name][name][colon]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][dot][name][whitespace][bracket_diamond_close][bracket_diamond_close][whitespace][number][semicolon]
 
-[whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][for][bracket_round_open][whitespace][name][whitespace][in][whitespace][number][dot][dot][dot][name][whitespace][bracket_round_close]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][bracket_curly_open]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][dot][name][whitespace][bracket_diamond_close][whitespace][name][whitespace][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][return][whitespace][name][semicolon]
 
-[whitespace][whitespace][whitespace][bracket_curly_close]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][return][whitespace][name][semicolon]
 
-[whitespace][whitespace][bracket_curly_close][whitespace][whitespace]
 
-[whitespace][whitespace][else]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][bracket_curly_open]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][var][whitespace][name][colon][name][whitespace][operator][whitespace][this][dot][name][dot][name][whitespace][bracket_diamond_close][bracket_diamond_close][whitespace][number][semicolon]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][for][bracket_round_open][whitespace][name][whitespace][in][whitespace][number][dot][dot][dot][name][whitespace][bracket_round_close]
 
-[whitespace][whitespace][whitespace][bracket_curly_open]
+[name][dot][name][bracket_round_open][name][bracket_round_close][semicolon]
 
-[whitespace][whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][this][dot][name][bracket_square_open][name][whitespace][operator][whitespace][number][bracket_square_close][dot][name][whitespace][bracket_diamond_close][whitespace][name][whitespace][bracket_round_close]
 
-[whitespace][whitespace][whitespace][whitespace][whitespace][return][whitespace][name][semicolon]
 
-[whitespace][whitespace][whitespace][bracket_curly_close]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][whitespace]
 
-[whitespace][whitespace][whitespace][return][whitespace][name][semicolon]
 
-[whitespace][whitespace][bracket_curly_close][whitespace][whitespace]
+[return][name][semicolon]
 
-[whitespace][whitespace]
+[bracket_curly_close]
 
-[whitespace][whitespace][return][whitespace][operator][number][semicolon]
 
-[whitespace][bracket_curly_close]
 
-[whitespace]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][block_comment_open][operator]
+[comment_inline][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][operator][comment_inline]
 
-[whitespace][whitespace][operator][whitespace]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
 
-[whitespace][whitespace][operator][whitespace][name][whitespace][name]
+[block_comment_open][operator]
 
-[whitespace][whitespace][block_comment_close]
+[operator][name][for][name][name][name][name][name][name][name]
 
-[whitespace][public][whitespace][function][whitespace][name][bracket_round_open][whitespace][name][colon][name][comma][whitespace][name][colon][name][whitespace][bracket_round_close][colon][name]
+[operator]
 
-[whitespace][bracket_curly_open]
+[operator][name][name][name][operator][name][for][name][comma][name][operator][name][for][name]
 
-[whitespace][whitespace][if][whitespace][name]
+[operator][return][name][name][name][name][name][name][name][operator][number]
 
-[whitespace][whitespace][whitespace][if][bracket_round_open][whitespace][operator][name][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][whitespace][operator][name][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][name][dot][name][whitespace][bracket_round_close][whitespace][bracket_round_close]
+[block_comment_close]
 
-[whitespace][whitespace][whitespace][whitespace][throw][whitespace][string_double_quote][name][whitespace][name][whitespace][name][whitespace][name][whitespace][name][string_double_quote][semicolon]
+[private][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
 
-[whitespace][whitespace][name]
+[bracket_curly_open]
 
-[whitespace][whitespace]
+[if][bracket_round_open][name][bracket_round_close]
 
-[whitespace][whitespace][return][whitespace][name][dot][name][bracket_round_open][whitespace][name][dot][name][comma][whitespace][name][dot][name][whitespace][bracket_round_close][semicolon]
+[bracket_curly_open]
 
-[whitespace][bracket_curly_close]
+[var][name][colon][name][operator][this][dot][name][dot][name][bracket_diamond_close][bracket_diamond_close][number][semicolon]
 
-[whitespace]
+
+
+[for][bracket_round_open][name][in][number][dot][dot][dot][name][bracket_round_close]
+
+[bracket_curly_open]
+
+[if][bracket_round_open][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][dot][name][bracket_diamond_close][name][bracket_round_close]
+
+[return][name][semicolon]
+
+[bracket_curly_close]
+
+
+
+[return][name][semicolon]
+
+[bracket_curly_close]
+
+[else]
+
+[bracket_curly_open]
+
+[var][name][colon][name][operator][this][dot][name][dot][name][bracket_diamond_close][bracket_diamond_close][number][semicolon]
+
+
+
+[for][bracket_round_open][name][in][number][dot][dot][dot][name][bracket_round_close]
+
+[bracket_curly_open]
+
+[if][bracket_round_open][this][dot][name][bracket_square_open][name][operator][number][bracket_square_close][dot][name][bracket_diamond_close][name][bracket_round_close]
+
+[return][name][semicolon]
+
+[bracket_curly_close]
+
+
+
+[return][name][semicolon]
+
+[bracket_curly_close]
+
+
+
+[return][operator][number][semicolon]
+
+[bracket_curly_close]
+
+
+
+[block_comment_open][operator]
+
+[operator]
+
+[operator][name][name]
+
+[operator][name][name]
+
+[block_comment_close]
+
+[public][function][name][bracket_round_open][name][colon][name][comma][name][colon][name][bracket_round_close][colon][name]
+
+[bracket_curly_open]
+
+[if][name]
+
+[if][bracket_round_open][operator][name][dot][name][bracket_round_open][name][dot][name][comma][name][dot][name][bracket_round_close][operator][name][dot][name][bracket_round_open][name][dot][name][comma][name][dot][name][bracket_round_close][bracket_round_close]
+
+[throw][string_double_quote][name][name][name][name][name][string_double_quote][semicolon]
+
+[name]
+
+
+
+[return][name][dot][name][bracket_round_open][name][dot][name][comma][name][dot][name][bracket_round_close][semicolon]
+
+[bracket_curly_close]
+
+
 
 [bracket_curly_close]

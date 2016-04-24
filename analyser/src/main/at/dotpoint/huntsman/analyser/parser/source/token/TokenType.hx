@@ -1,4 +1,4 @@
-package at.dotpoint.huntsman.analyser.parser.source;
+package at.dotpoint.huntsman.analyser.parser.source.token;
 
 /**
  * 16.04.2016

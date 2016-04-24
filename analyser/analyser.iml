@@ -18,5 +18,49 @@
     <orderEntry type="jdk" jdkName="Haxe 3.2.0" jdkType="Haxe toolkit" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
+    <orderEntry type="module-library">
+      <library name="haxelib|src/main">
+        <CLASSES>
+          <root url="file://src/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://src/main" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="haxelib|../common/src/main">
+        <CLASSES>
+          <root url="file://../common/src/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://../common/src/main" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="haxelib|../common/lib/dotCore/src/main">
+        <CLASSES>
+          <root url="file://../common/lib/dotCore/src/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://../common/lib/dotCore/src/main" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="haxelib|../common/lib/dotCore/res/main">
+        <CLASSES>
+          <root url="file://../common/lib/dotCore/res/main" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://../common/lib/dotCore/res/main" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
