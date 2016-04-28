@@ -145,11 +145,23 @@ class ParserFactory
 		if( tokens == null || tokens.length == 0 )
 			throw "must contain non-empty tokens array";
 
+		var culling:Array<Dynamic> = cast json.culling;
 		var keywords:Array<Dynamic> = cast json.keywords;
 
 		// ------------- //
 
 		var result:Array<TokenType> = new Array<TokenType>();
+
+		if( culling != null && culling.length > 0 )
+		{
+			for( cul in culling )
+			{
+				var name:String = cul.name;
+				var expr:EReg = new EReg( cul.expression, "gm" );
+
+				result.push( new TokenType( name, expr ) );
+			}
+		}
 
 		if( keywords != null && keywords.length > 0 )
 		{
