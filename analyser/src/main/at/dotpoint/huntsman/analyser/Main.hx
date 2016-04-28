@@ -1,5 +1,7 @@
 package at.dotpoint.huntsman.analyser;
 
+import haxe.at.dotpoint.logger.logger.TraceLogger;
+import haxe.at.dotpoint.logger.Log;
 import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.processor.task.ProjectTask;
 import haxe.at.dotpoint.core.dispatcher.event.Event;
@@ -51,6 +53,7 @@ class Main {
 		if( Sys.args() == null || Sys.args().length < 1 )
 		   throw "must provide a huntsman config file as a commandline parameter";
 
+		Main.instance.setup();
 		Main.instance.parseConfiguration( Sys.args()[0] );
     }
 
@@ -75,6 +78,14 @@ class Main {
     // ************************************************************************ //
     // initialize/start analysis
     // ************************************************************************ //
+
+	/**
+	 *
+	 */
+    private function setup():Void
+	{
+		Log.initialize([new TraceLogger()]);
+	}
 
     /**
      *

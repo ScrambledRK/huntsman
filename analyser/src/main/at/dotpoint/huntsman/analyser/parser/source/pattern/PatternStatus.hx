@@ -28,4 +28,9 @@ class PatternStatus
 
 		return clone;
 	}
+
+	public function toString():String
+	{
+		return "[open:" + this.isOpen + ",success:" + this.isSuccess + ",consumed:"+this.isConsumed+"]";
+	}
 }

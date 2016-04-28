@@ -25,7 +25,7 @@ class PatternProcessor
 
 	public function new( token:Array<Token>, settings:SourceParserSettings )
 	{
-		this.tokens = tokens;
+		this.tokens = token;
 		this.settings = settings;
 
 		this.source = new SourceDOM();
@@ -40,7 +40,27 @@ class PatternProcessor
 	 */
 	public function process():Void
 	{
-		this.settings.patterns.model = this.source;
-		this.settings.patterns.test( new TokenProvider( this.tokens ) );
+		var isOpen:Bool = true;
+
+		var root:PatternReference = this.settings.patterns[0];
+		var provider:TokenProvider = new TokenProvider( this.tokens );
+
+		while( isOpen && provider.hasNext() )
+		{
+			var status:PatternStatus = root.test( provider, this.source );
+
+			isOpen = status.isOpen || !status.isSuccess;
+
+			if( provider.hasNext() )
+				provider.nextToken();
+		}
+	}
+
+	/**
+	 *
+	 */
+	public function printTokens():Void
+	{
+		this.source.printTokens();
 	}
 }

@@ -14,6 +14,8 @@ class Token
 	public var position:Int;
 	public var length:Int;
 
+	public var content:String;
+
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
@@ -36,6 +38,6 @@ class Token
 		if( this.type == null )
 			return "[null-token]";
 
-		return "[" + this.type.name + "]" + this.position + "," + this.length;
+		return "[" + this.type.name + "]" + this.content;
 	}
 }

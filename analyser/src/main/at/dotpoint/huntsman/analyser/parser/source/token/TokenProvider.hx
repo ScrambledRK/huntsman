@@ -11,7 +11,7 @@ class TokenProvider
 	private var tokens:Array<Token>;
 
 	//
-	public var index(default,null):Int;
+	public var index:Int;
 
 	// ************************************************************************ //
 	// Constructor
@@ -20,11 +20,12 @@ class TokenProvider
 	public function new( tokens:Array<Token> )
 	{
 		this.tokens = tokens;
+		this.index = 0;
 	}
 
 	public function clone():TokenProvider
 	{
-		var clone:TokenProvider( this.tokens );
+		var clone:TokenProvider = new TokenProvider( this.tokens );
 			clone.index = this.index;
 
 		return clone;
@@ -43,12 +44,18 @@ class TokenProvider
 	//
 	public function currentToken():Token
 	{
+		if( !this.hasNext() )
+			return null;
+
 		return this.tokens[this.index];
 	}
 
 	//
 	public function currentType():TokenType
 	{
+		if( !this.hasNext() )
+			return null;
+
 		return this.currentToken().type;
 	}
 

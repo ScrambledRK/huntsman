@@ -15,10 +15,7 @@ class PatternReference
 	public var name(default,null):String;
 
 	// ?, *, +, 1
-	public var cardinality(default,null):PatternCardinality;
-
-	//
-	public var model(default,null):SourceDOM;
+	public var cardinality:PatternCardinality;
 
 	// ------------------ //
 
@@ -29,12 +26,21 @@ class PatternReference
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( name:String )
+	public function new( name:String, ?isTokenReference:Bool = false )
 	{
 		this.name = name;
 
 		this.cardinality = PatternCardinality.ONE;
-		this.expressions = expressions;
+		this.expressions = isTokenReference ? null : new PatternListParallel();
+	}
+
+	public function clone():PatternReference
+	{
+		var clone:PatternReference = new PatternReference( this.name );
+			clone.cardinality = this.cardinality;
+			clone.expressions = this.expressions;
+
+		return clone;
 	}
 
 	// ************************************************************************ //
@@ -66,9 +72,9 @@ class PatternReference
 	 * optional failed match -> failed, but test same token again with next pattern
 	 * recurring success match -> success and token consumed, but test the same pattern again
 	 */
-	public function test( provider:TokenProvider ):PatternStatus
+	public function test( provider:TokenProvider, model:SourceDOM ):PatternStatus
 	{
-		this.model.openPattern( this );
+		model.openPattern( this, provider.currentToken(), provider.index );
 
 		// ---------------------------- //
 
@@ -83,17 +89,17 @@ class PatternReference
 				isSuccess = this.name == provider.currentType().name;
 
 				if( isSuccess )
-					this.model.saveToken( provider.currentToken() );
+					model.saveToken( provider.currentToken() );
 			}
 			else
 			{
-				isSuccess = this.expressions.test( provider );				// some pattern matched the tokens?
+				isSuccess = this.expressions.test( provider, model );				// some pattern matched the tokens?
 			}
 
 			// ------------------------- //
 
 			if( this.isOptional() && !isSuccess )	status.isConsumed = false;		// optional fail? go on ...
-			else									status.isConsumed = true;
+			else									status.isConsumed = isSuccess;
 
 			if( this.isRecurring() && isSuccess )	status.isOpen = true;			// multiple times? check again
 			else									status.isOpen = false;
@@ -109,7 +115,7 @@ class PatternReference
 
 		// ------------------------- //
 
-		this.model.closePattern( this );
+		model.closePattern( this, status );
 
 		return status;
 	}
@@ -121,9 +127,24 @@ class PatternReference
 	//
 	public function toString():String
 	{
-		return "[" + this.name + "]";
+		return "[" + this.name + this.getCardinalityString() + "]";
 	}
 
+	/**
+	 *
+	 */
+	private function getCardinalityString():String
+	{
+		switch( this.cardinality )
+		{
+			case PatternCardinality.ZERO_ONE: 	return "?";
+			case PatternCardinality.ZERO_N: 	return "*";
+			case PatternCardinality.ONE_N: 		return "+";
+
+			default:
+				return "";
+		}
+	}
 }
 
 /**
@@ -140,9 +161,9 @@ class PatternListParallel
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( ?expressions:Array<PatternListSequential> )
+	public function new()
 	{
-		this.expressions = expressions;
+		this.expressions = new Array<PatternListSequential>();
 	}
 
 	// ************************************************************************ //
@@ -153,21 +174,19 @@ class PatternListParallel
 	 * all sequential patterns fail = fail for parallel
 	 * some sequential pattern success = success for parallel
 	 */
-	public function test( provider:TokenProvider ):Bool
+	public function test( provider:TokenProvider, model:SourceDOM ):Bool
 	{
-		var isSuccess:Bool = false;
-
 		for( sequential in this.expressions )
 		{
-			var isSuccess:Bool = sequential.test( provider.clone() );
+			var isSuccess:Bool = sequential.test( provider, model );
 
 			if( isSuccess )
-				break;
+				return true;
 		}
 
 		// ---------- //
 
-		return isSuccess;
+		return false;
 	}
 
 }
@@ -185,9 +204,9 @@ class PatternListSequential
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( ?expressions:Array<PatternListSequential> )
+	public function new()
 	{
-		this.expressions = expressions;
+		this.expressions = new Array<PatternReference>();
 	}
 
 	// ************************************************************************ //
@@ -198,7 +217,7 @@ class PatternListSequential
 	 * any mandatory reference fail = fail for sequential
 	 * all reference success = success for sequential
 	 */
-	public function test( provider:TokenProvider ):Bool
+	public function test( provider:TokenProvider, model:SourceDOM ):Bool
 	{
 		for( reference in this.expressions )
 		{
@@ -207,13 +226,10 @@ class PatternListSequential
 
 			do
 			{
-				status = reference.test( provider );
+				status = reference.test( provider, model );
 
-				if( status.isConsumed )
-				{
-					if( provider.hasNext() )	provider.nextType();		// consume token ...
-					else						return false;				// ... or fail if reached end
-				}
+				if( reference.isTokenReference() && status.isConsumed )		// only token test can consume tokens
+					provider.nextType();
 
 				if( status.isSuccess )
 					currentSuccess = true;									// once true, always true

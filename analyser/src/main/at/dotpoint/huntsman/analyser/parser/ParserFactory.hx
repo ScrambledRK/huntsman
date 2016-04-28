@@ -1,6 +1,8 @@
 package at.dotpoint.huntsman.analyser.parser;
 
-import at.dotpoint.huntsman.analyser.parser.source.TokenType;
+import at.dotpoint.huntsman.analyser.parser.source.pattern.PatternCardinality;
+import at.dotpoint.huntsman.analyser.parser.source.pattern.PatternReference;
+import at.dotpoint.huntsman.analyser.parser.source.token.TokenType;
 import haxe.Json;
 import sys.io.File;
 import at.dotpoint.huntsman.analyser.parser.source.SourceParserSettings;
@@ -84,6 +86,7 @@ class ParserFactory
 		var settings:SourceParserSettings = new SourceParserSettings();
 			settings.extensions = this.parseExtensions( json );
 			settings.tokens = this.parseTokens( json );
+			settings.patterns = this.parsePatterns( json, settings.tokens );
 
 		// ------------------------ //
 
@@ -168,5 +171,120 @@ class ParserFactory
 		}
 
 		return result;
+	}
+
+	/**
+	 *
+	 */
+	private function parsePatterns( json:Dynamic, tokens:Array<TokenType> ):Array<PatternReference>
+	{
+		var patterns:Array<Dynamic> = cast json.patterns;
+
+		if( patterns == null || patterns.length == 0 )
+			throw "must contain non-empty patterns array";
+
+		// -------------- //
+
+		var result:Array<PatternReference> = new Array<PatternReference>();
+
+		for( pattern in patterns )
+			result.push( this.createPatternReference( pattern.name ) );
+
+		for( j in 0...patterns.length )									// patterns
+		{
+			var target:PatternReference = result[j];
+			var expressions:Array<Array<String>> = cast patterns[j].expressions;
+
+			for( k in 0...expressions.length )							// parallel
+			{
+				var parallel:PatternListParallel = target.expressions;
+				var sequential:PatternListSequential = parallel.expressions[k] = new PatternListSequential();
+
+				for( expr in expressions[k] )							// sequential
+				{
+					var cardinality:PatternCardinality = this.getPatternCardinality( expr );
+					var name:String = this.getPatternName( expr, cardinality );
+
+					var reference:PatternReference = this.getPatternReference( name, result, tokens );
+
+					if( reference == null )
+						throw "cannot resolve pattern reference: " + name;
+
+					// --- //
+
+					var clone:PatternReference = reference.clone();		// manipulates the same parallel/sequential
+						clone.cardinality = cardinality;				// but has its own cardinality
+
+					sequential.expressions.push( clone );
+				}
+			}
+		}
+
+		// -------------- //
+
+		return result;
+	}
+
+	/**
+	 *
+	 */
+	private function getPatternReference( name:String, list:Array<PatternReference>, tokens:Array<TokenType> ):PatternReference
+	{
+		for( reference in list )
+		{
+			if( reference.name == name )
+				return reference;
+		}
+
+		for( token in tokens )
+		{
+			if( token.name == name )
+				return new PatternReference( name, true );
+		}
+
+		return null;
+	}
+
+	/**
+	 *
+	 */
+	private function createPatternReference( name:String ):PatternReference
+	{
+		var cardinality:PatternCardinality = this.getPatternCardinality( name );
+		var name:String = this.getPatternName( name, cardinality );
+
+		var reference:PatternReference = new PatternReference( name );
+			reference.cardinality = cardinality;
+
+		return reference;
+	}
+
+	/**
+	 *
+	 */
+	private function getPatternCardinality( name:String ):PatternCardinality
+	{
+		var cardinality:String = name.charAt( name.length - 1 );
+
+		switch( cardinality )
+		{
+			case "?": return PatternCardinality.ZERO_ONE;
+			case "*": return PatternCardinality.ZERO_N;
+			case "+": return PatternCardinality.ONE_N;
+
+			default:
+				return PatternCardinality.ONE;
+		}
+	}
+
+	/**
+	 *
+	 */
+	private function getPatternName( name:String, cardinality:PatternCardinality ):String
+	{
+		if( cardinality != PatternCardinality.ONE )
+			return name.substring( 0, name.length - 1 );
+
+		return name;
 	}
 }

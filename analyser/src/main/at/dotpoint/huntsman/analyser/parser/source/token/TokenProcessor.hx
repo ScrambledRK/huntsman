@@ -124,14 +124,15 @@ class TokenProcessor
 	/**
 	 *
 	 */
-	private function printTokens():Void
+	public function printTokens():Void
 	{
 		var output_content:String = "";
 		var output_tokens:String = "";
 
 		for( t in this.tokens )
 		{
-			output_content += this.content.substr( t.position, t.length );
+			t.content = this.content.substr( t.position, t.length );
+			output_content += t.content;
 
 			if( t.type.name == "newline" )	output_tokens += "\n";
 			else							output_tokens += t.type;

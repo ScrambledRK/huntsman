@@ -45,7 +45,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 		var content:String 		= File.getContent( file.toString() );
 
 		var tokens:Array<Token> = this.tokenize( content );
-		var source:SourceDOM 	= this.patterizer( tokens );
+		var source:SourceDOM 	= this.patterize( tokens );
 
 		return this.getResult();
 	}
@@ -74,6 +74,10 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	{
 		this.patterizer = new PatternProcessor( tokens, this.settings );
 		this.patterizer.process();
+
+		// ------------------- //
+
+		this.patterizer.printTokens();
 
 		// ------------------- //
 
