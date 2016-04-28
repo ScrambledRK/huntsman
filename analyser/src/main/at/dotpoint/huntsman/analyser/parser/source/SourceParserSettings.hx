@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser.parser.source;
 
+import at.dotpoint.huntsman.analyser.parser.source.pattern.PatternReference;
 import at.dotpoint.huntsman.analyser.parser.source.token.TokenType;
 
 /**
@@ -13,7 +14,7 @@ class SourceParserSettings extends ANodeParserSettings
 	public var tokens:Array<TokenType>;
 
 	//
-	public var patterns:Array<TokenType>;
+	public var patterns:PatternReference;
 
 	// ************************************************************************ //
 	// Constructor

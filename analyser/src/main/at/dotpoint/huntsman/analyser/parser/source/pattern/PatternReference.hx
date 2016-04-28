@@ -17,6 +17,9 @@ class PatternReference
 	// ?, *, +, 1
 	public var cardinality(default,null):PatternCardinality;
 
+	//
+	public var model(default,null):SourceDOM;
+
 	// ------------------ //
 
 	// parallel -> sequential -> reference
@@ -26,11 +29,11 @@ class PatternReference
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( name:String, ?cardinality:PatternCardinality, ?expressions:PatternListParallel )
+	public function new( name:String )
 	{
 		this.name = name;
 
-		this.cardinality = cardinality != null ? cardinality : PatternCardinality.ONE;
+		this.cardinality = PatternCardinality.ONE;
 		this.expressions = expressions;
 	}
 
@@ -65,15 +68,22 @@ class PatternReference
 	 */
 	public function test( provider:TokenProvider ):PatternStatus
 	{
+		this.model.openPattern( this );
+
+		// ---------------------------- //
+
 		var status:PatternStatus = new PatternStatus();
 
-		if( provider.hasNext() )
+		if( provider.currentToken() != null )								// is there a token to test?
 		{
 			var isSuccess:Bool 	= false;
 
 			if( this.isTokenReference() )									// leaf node, decide!
 			{
 				isSuccess = this.name == provider.currentType().name;
+
+				if( isSuccess )
+					this.model.saveToken( provider.currentToken() );
 			}
 			else
 			{
@@ -98,6 +108,8 @@ class PatternReference
 		}
 
 		// ------------------------- //
+
+		this.model.closePattern( this );
 
 		return status;
 	}
