@@ -54,6 +54,14 @@ class SourceDOM
 		this.current.token.push( token );
 	}
 
+	public function removeTokens():Void
+	{
+		trace( "backtrack", this.current );
+
+		this.current.removeTokens(true);
+		this.current.destoryChildren(true);
+	}
+
 	/**
 	 *
 	 */
@@ -63,6 +71,12 @@ class SourceDOM
 
 		if( this.current == this.root )
 			throw "invalid close pattern, already at root";
+
+		// -------------- //
+
+		//if( !status.isSuccess && this.current.hasToken(false) )
+
+		// -------------- //
 
 		if( !this.current.hasToken(true) )
 		{

@@ -176,12 +176,17 @@ class PatternListParallel
 	 */
 	public function test( provider:TokenProvider, model:SourceDOM ):Bool
 	{
+		var start:Int = provider.index;
+
 		for( sequential in this.expressions )
 		{
 			var isSuccess:Bool = sequential.test( provider, model );
 
 			if( isSuccess )
 				return true;
+
+			provider.index = start;		// backtrack
+			model.removeTokens();
 		}
 
 		// ---------- //

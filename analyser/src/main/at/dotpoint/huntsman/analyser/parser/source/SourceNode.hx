@@ -126,6 +126,19 @@ class SourceNode
 		}
 	}
 
+	//
+	public function removeTokens( ?recursive:Bool = true ):Void
+	{
+		if( this.token.length != 0 )
+			this.token = new Array<Token>();
+
+		if( recursive )
+		{
+			for( child in this.children )
+				child.removeTokens( recursive );
+		}
+	}
+
 	// ------------------------------------------------------------------------ //
 	// ------------------------------------------------------------------------ //
 
