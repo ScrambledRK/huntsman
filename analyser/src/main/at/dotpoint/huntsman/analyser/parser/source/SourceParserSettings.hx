@@ -16,6 +16,9 @@ class SourceParserSettings extends ANodeParserSettings
 	//
 	public var patterns:Array<PatternReference>;
 
+	//
+	public var remove:Array<String>;
+
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //

@@ -45,11 +45,9 @@ class PatternProcessor
 		var root:PatternReference = this.settings.patterns[0];
 		var provider:TokenProvider = new TokenProvider( this.tokens );
 
-		while( isOpen && provider.hasNext() )
+		while( provider.hasNext() )
 		{
 			var status:PatternStatus = root.test( provider, this.source );
-
-			isOpen = status.isOpen || !status.isSuccess;
 
 			if( provider.hasNext() )
 				provider.nextToken();
@@ -61,6 +59,10 @@ class PatternProcessor
 	 */
 	public function printTokens():Void
 	{
-		this.source.printTokens();
+		trace("");
+		trace("--------------------------------------");
+		trace("--------------------------------------");
+		trace("");
+		this.source.printNode( this.source.root, true );
 	}
 }

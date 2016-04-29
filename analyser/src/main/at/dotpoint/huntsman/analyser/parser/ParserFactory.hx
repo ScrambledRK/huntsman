@@ -85,8 +85,9 @@ class ParserFactory
 
 		var settings:SourceParserSettings = new SourceParserSettings();
 			settings.extensions = this.parseExtensions( json );
-			settings.tokens = this.parseTokens( json );
-			settings.patterns = this.parsePatterns( json, settings.tokens );
+			settings.tokens 	= this.parseTokens( json );
+			settings.patterns 	= this.parsePatterns( json, settings.tokens );
+			settings.remove 	= cast json.remove;
 
 		// ------------------------ //
 

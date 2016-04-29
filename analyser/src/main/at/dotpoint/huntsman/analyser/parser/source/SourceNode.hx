@@ -83,4 +83,55 @@ class SourceNode
 
 		return success;
 	}
+
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
+	/**
+	 *
+	 * @param	includeChildren
+	 */
+	public function hasToken( ?includeChildren:Bool = true ):Bool
+	{
+		var hasToken:Bool = this.token.length != 0;
+
+		if( hasToken || !includeChildren || this.children.length == 0 )
+			return hasToken;
+
+		// ---------------- //
+
+		var hasChildToken:Bool = false;
+
+		for( child in this.children )
+		{
+			if( child.hasToken(true) )
+			{
+				hasChildToken = true;
+				break;
+			}
+		}
+
+		return hasToken || hasChildToken;
+	}
+
+	//
+	public function destoryChildren( ?recursive:Bool = true ):Void
+	{
+		for( child in this.children )
+		{
+			if( recursive )
+				child.destoryChildren( recursive );
+
+			this.removeChildNode( child );
+		}
+	}
+
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
+	//
+	public function toString():String
+	{
+		return "[" + this.name + "]";
+	}
 }

@@ -14,6 +14,7 @@ class TokenProcessor
 
 	//
 	public var tokens(default,null):Array<Token>;
+	public var ignored(default,null):Array<Token>;
 
 	//
 	public var settings(default,null):SourceParserSettings;
@@ -28,16 +29,50 @@ class TokenProcessor
 		this.settings = settings;
 
 		this.tokens = new Array<Token>();
+		this.ignored = new Array<Token>();
 	}
 
 	// ************************************************************************ //
 	// Methods
 	// ************************************************************************ //
 
+	public function process():Void
+	{
+		this.tokenize();
+		this.remove();
+	}
+
 	/**
 	 *
 	 */
-	public function process():Void
+	private function remove():Void
+	{
+		if( this.settings.remove == null || this.settings.remove.length == 0 )
+			return;
+
+		// ---------------- //
+
+		var index:Int = 0;
+
+		while( index < this.tokens.length )
+		{
+			var token:TokenType = this.tokens[index++].type;
+
+			for( rm in this.settings.remove )
+			{
+				if( token.name == rm )
+				{
+					this.tokens.splice( --index, 1 );
+					break;
+				}
+			}
+		}
+	}
+
+	/**
+	 *
+	 */
+	private function tokenize():Void
 	{
 		var spans:Array<Span> = new Array<Span>();
 

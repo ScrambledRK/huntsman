@@ -17,8 +17,6 @@ class SourceDOM
 	//
 	private var current:SourceNode;
 
-	public var result:Array<Token>;
-
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
@@ -38,12 +36,12 @@ class SourceDOM
 	 */
 	public function openPattern( pattern:PatternReference, token:Token, index:Int ):Void
 	{
-/*		trace( ">>", index, pattern, token );
+		trace( ">>", index, pattern, token );
 
 		var node:SourceNode = new SourceNode( pattern.name );
 
 		this.current.addChildNode( node );
-		this.current = node;*/
+		this.current = node;
 	}
 
 	/**
@@ -51,13 +49,9 @@ class SourceDOM
 	 */
 	public function saveToken( token:Token ):Void
 	{
-		trace( token );
+		trace( "consumed:", token );
 
-		if( this.result == null )
-			this.result = new Array<Token>();
-
-		this.result.push( token );
-		//this.current.token.push( token );
+		this.current.token.push( token );
 	}
 
 	/**
@@ -65,22 +59,49 @@ class SourceDOM
 	 */
 	public function closePattern( pattern:PatternReference, status:PatternStatus ):Void
 	{
-/*		trace( "<<", status );
+		trace( "<<", status );
 
 		if( this.current == this.root )
 			throw "invalid close pattern, already at root";
 
-		this.current = this.current.parent;*/
+		if( !this.current.hasToken(true) )
+		{
+			this.current.destoryChildren();
+
+			if( this.current.parent != null )
+			{
+				var parent:SourceNode = this.current.parent;
+					parent.removeChildNode( this.current );
+
+				this.current = parent;
+			}
+		}
+		else
+		{
+			this.current = this.current.parent;
+		}
 	}
 
 	/**
 	 *
 	 */
-	public function printTokens():Void
+	public function printNode( node:SourceNode, ?includeChildren:Bool = true ):Void
 	{
-		trace("-----------------");
+		trace( ">>", node );
 
-		for( token in this.result )
-			trace( token );
+		if( node != null )
+		{
+			for( token in node.token )
+				trace( token );
+
+			if( includeChildren && node.children.length > 0 )
+			{
+				for( child in node.children )
+					this.printNode( child, includeChildren );
+			}
+		}
+
+		trace( "<<" );
 	}
+
 }
