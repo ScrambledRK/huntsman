@@ -61,10 +61,7 @@ class Main {
     /**
      *
      */
-    public function new()
-    {
-
-    }
+    public function new() { }
 
     // ************************************************************************ //
     // Methods
@@ -77,7 +74,7 @@ class Main {
     }
 
     // ************************************************************************ //
-    // initialize/start analysis
+    // initialize
     // ************************************************************************ //
 
 	/**
@@ -144,6 +141,10 @@ class Main {
         this.startAnalysis();
     }
 
+	// ************************************************************************ //
+	// start
+	// ************************************************************************ //
+
     /**
      *
      */
@@ -177,6 +178,36 @@ class Main {
      */
     private function onComplete( event:Event ):Void
     {
+		this.printNodes( this.rootNode );
         Sys.exit(0);
     }
+
+	/**
+	 *
+	 */
+	private function printNodes( node:Node ):Void
+	{
+		var children:Map<String,Array<Node>> = node.children.container;
+
+		if( children == null )
+		{
+			trace( node );
+			return;
+		}
+
+
+		// --------- //
+
+		trace(">>", node );
+
+		for( key in children.keys() )
+		{
+			var list:Array<Node> = node.children.getAssociationList( key );
+
+			for( cnode in list )
+				this.printNodes( cnode );
+		}
+
+		trace("<<",node);
+	}
 }

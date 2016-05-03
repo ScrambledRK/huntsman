@@ -20,12 +20,7 @@ class ProcessTask extends EventDispatcher implements ITask
 	/**
 	 * node this task has been spawned from (and acts upon)
 	 */
-	public var parentNode:Node;
-
-	/**
-	 * node this task spawns
-	 */
-	public var currentNode:Node;
+	public var node:Node;
 
 	/**
 	 * pending tasks that need execution; resulting from this task execution
@@ -48,12 +43,12 @@ class ProcessTask extends EventDispatcher implements ITask
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( type:String, node:Node )
+	public function new( type:String, ?node:Node = null )
 	{
 		super();
 
 		this.type = type;
-		this.parentNode = node;
+		this.node = node;
 	}
 
 	// ************************************************************************ //
@@ -88,11 +83,13 @@ class ProcessTask extends EventDispatcher implements ITask
 	/**
 	 * add pending tasks to the execution queue
 	 */
-	private function queueTask( task:ProcessTask ):Void
+	public function queueTask( task:ProcessTask ):ProcessTask
 	{
 		if( this.output == null )
 			this.output = new Array<ProcessTask>();
 
 		this.output.push( task );
+
+		return task;
 	}
 }

@@ -61,6 +61,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 			this.executeScript( task, source );
 
 		trace( "<<", this, file.toString() );
+		trace("\n");
 	}
 
 	/**
@@ -102,17 +103,28 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	 */
 	private function executeScript( task:ProcessTask, source:SourceDOM ):Void
 	{
-		var node:Node = task.currentNode;
+		var node:Node = task.node;
 
-		if( node == null || node.ID != "file" )
+		if( node == null || node.type != "file" )
 			throw "unsupported source script node found: " + node;
 
 		// --------------------- //
+		// execute:
 
-		var hscript:HScriptTask = new HScriptTask( node, this.script );
-			hscript.interpretor.variables.set( "task", task );
-			hscript.interpretor.variables.set( "source", source.root );
-			hscript.execute();
+		var hscript:HScriptTask = new HScriptTask( this.script );
+			hscript.setScriptVariable( "source", source.root );
+			hscript.node = task.node;
+
+		hscript.execute();
+
+		// --------------------- //
+		// queue:
+
+		if( hscript.output != null )
+		{
+			for( qtask in hscript.output )
+				task.queueTask( qtask );
+		}
 	}
 
 	// ************************************************************************ //

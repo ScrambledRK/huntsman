@@ -19,19 +19,22 @@ class Node
 	// ------------------------------ //
 
 	//
-	private var map:Map<String,Array<Node>>;
+	public var children:RelationContainer;
 
 	//
-	public var parent(default,null):Node;
+	public var parents:RelationContainer;
 
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( ID:String, type:String )
+	public function new( type:String, ID:String )
 	{
 		this.ID = ID;
 		this.type = type;
+
+		this.children = new RelationContainer();
+		this.parents = new RelationContainer();
 	}
 
 	// ************************************************************************ //
@@ -41,87 +44,31 @@ class Node
 	/**
 	 *
 	 */
-	public function hasChild( type:String, ID:String ):Bool
+	public function addAssociation( node:Node ):Bool
 	{
-		return this.getChild( type, ID ) != null;
+		var success:Bool = this.children.addAssociation( node );
+
+		if( success )
+			node.parents.addAssociation( this );
+
+		// --------------- //
+
+		return success;
 	}
 
 	/**
 	 *
 	 */
-	public function getChild( type:String, ID:String ):Node
+	public function removeAssociation( node:Node ):Bool
 	{
-		if( this.map == null )
-			return null;
+		var success:Bool = this.children.removeAssociation( node );
 
-		if( !this.map.exists( type ) )
-			return null;
-
-		// --------------- //
-
-		var list:Array<Node> = this.map.get( type );
-
-		if( list == null )
-			throw "null node list found in relation container";
-
-		for( n in list )
-		{
-			if( n.ID == ID )
-				return n;
-		}
+		if( success )
+			node.parents.removeAssociation( this );
 
 		// --------------- //
 
-		return null;
-	}
-
-	/**
-	 *
-	 */
-	public function addChild( node:Node ):Bool
-	{
-		if( this.hasChild( node.type, node.ID ) )
-			return false;
-
-		// --------------- //
-
-		if( this.map == null )
-			this.map = new Map<String,Array<Node>>();
-
-		if( !this.map.exists( node.type ) )
-			this.map.set( node.type, new Array<Node>() );
-
-		this.map.get( node.type ).push( node );
-		node.parent = this;
-
-		// --------------- //
-
-		return true;
-	}
-
-	/**
-	 *
-	 */
-	public function removeChild( node:Node ):Bool
-	{
-		var child:Node = this.getChild( node.type, node.ID );
-
-		if( child == null || child != node )
-			return false;
-
-		// --------------- //
-
-		var list:Array<Node> = this.map.get( node.type );
-			list.remove( node );
-
-		if( list.length == 0 )
-			this.map.remove( node.type );
-
-		node.parent = null;
-
-		// --------------- //
-
-		return true;
+		return success;
 	}
 
 	// ************************************************************************ //
@@ -131,6 +78,6 @@ class Node
 	//
 	public function toString():String
 	{
-		return "[Node:" + this.type + ":" + this.ID + "]";
+		return "[N: " + this.type + " - " + this.ID + "]";
 	}
 }

@@ -32,5 +32,15 @@ class Configuration {
     // Methods
     // ************************************************************************ //
 
+	//
+	public function getScriptReference( scriptID:String ):ScriptReference
+	{
+		for( s in Main.instance.config.scripts )
+		{
+			if( s.name == scriptID )
+				return s;
+		}
 
+		return null;
+	}
 }

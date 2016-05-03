@@ -27,16 +27,18 @@ class HScriptTask extends ProcessTask
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( parentNode:Node, script:ScriptReference )
+	public function new( script:ScriptReference )
 	{
-		super( "hscript", parentNode );
+		super( "hscript" );
 
 		// ------------ //
 
 		this.script = script;
 
 		this.parser = new Parser();
+
 		this.interpretor = new Interp();
+		this.interpretor.variables.set( "self", this );
 	}
 
 	// ************************************************************************ //
@@ -58,9 +60,6 @@ class HScriptTask extends ProcessTask
 
 		try
 		{
-			if( !this.interpretor.variables.exists("task") )
-				this.interpretor.variables.set( "task", this );
-
 			this.interpretor.execute( program );
 		}
 		catch( exception:Dynamic )
@@ -100,5 +99,48 @@ class HScriptTask extends ProcessTask
 		}
 
 		return program;
+	}
+
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
+	/**
+	 *
+	 */
+	public function setScriptVariable( name:String, value:Dynamic ):Bool
+	{
+		if( this.interpretor.variables.exists(name) )
+			return false;
+
+		this.interpretor.variables.set( name, value );
+
+		return true;
+	}
+
+	/**
+	 *
+	 */
+	public function getNode( type:String, name:String, ?create:Bool = true ):Node
+	{
+		var root:Node = Main.instance.rootNode;
+		var node:Node = root.children.getAssociation( type, name );
+
+		if( node == null && create )
+			root.addAssociation( node = new Node( type, name ) );
+
+		return node;
+	}
+
+	/**
+	 *
+	 */
+	public function queueScriptTask( scriptID:String ):HScriptTask
+	{
+		var script:ScriptReference = Main.instance.config.getScriptReference( scriptID );
+
+		if( script == null )
+			throw "cannot queue script task: " + scriptID;
+
+		return cast this.queueTask( new HScriptTask( script ) );
 	}
 }

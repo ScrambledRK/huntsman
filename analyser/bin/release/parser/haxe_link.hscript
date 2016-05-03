@@ -1,0 +1,4 @@
+
+trace("linking: " + reference );
+trace("to class: " + class_name );
+trace("using imports: " + imports );

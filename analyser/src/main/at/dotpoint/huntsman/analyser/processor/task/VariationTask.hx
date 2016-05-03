@@ -42,15 +42,15 @@ class VariationTask extends ProcessTask
 
 		// ------------ //
 
-		this.currentNode  = new Node( "variation", this.variation.name );
-		this.currentNode.data = this.variation;
+		var current:Node  = new Node( "variation", this.variation.name );
+			current.data = this.variation;
 
-		this.parentNode.addChild( this.currentNode );
+		this.node.addAssociation( current );
 
 		// ------------ //
 
 		for( path in this.variation.sources )
-			this.queueFiles( path.toString(), this.currentNode );
+			this.queueFiles( path.toString(), current );
 
 		// ------------ //
 

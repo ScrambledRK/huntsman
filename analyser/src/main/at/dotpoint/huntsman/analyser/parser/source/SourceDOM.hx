@@ -74,10 +74,6 @@ class SourceDOM
 
 		// -------------- //
 
-		//if( !status.isSuccess && this.current.hasToken(false) )
-
-		// -------------- //
-
 		if( !this.current.hasToken(true) )
 		{
 			this.current.destoryChildren();
@@ -101,6 +97,8 @@ class SourceDOM
 	 */
 	public function printNode( node:SourceNode, ?includeChildren:Bool = true ):Void
 	{
+		return;
+
 		trace( ">>", node );
 
 		if( node != null )

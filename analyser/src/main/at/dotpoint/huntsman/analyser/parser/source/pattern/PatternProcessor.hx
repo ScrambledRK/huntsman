@@ -59,10 +59,6 @@ class PatternProcessor
 	 */
 	public function printTokens():Void
 	{
-		trace("");
-		trace("--------------------------------------");
-		trace("--------------------------------------");
-		trace("");
 		this.source.printNode( this.source.root, true );
 	}
 }

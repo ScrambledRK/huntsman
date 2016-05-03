@@ -39,15 +39,15 @@ class ProjectTask extends ProcessTask
 
 		// ------------ //
 
-		this.currentNode = new Node( "project", this.project.name );
-		this.currentNode.data = this.project;
+		var current:Node = new Node( "project", this.project.name );
+			current.data = this.project;
 
-		this.parentNode.addChild( this.currentNode  );
+		this.node.addAssociation( current );
 
 		// ------------ //
 
 		for( variation in this.project.variations )
-			this.queueTask( new VariationTask( variation, this.currentNode ) );
+			this.queueTask( new VariationTask( variation, current ) );
 
 		// ------------ //
 

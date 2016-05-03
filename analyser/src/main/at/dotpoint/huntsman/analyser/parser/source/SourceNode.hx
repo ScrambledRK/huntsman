@@ -174,9 +174,6 @@ class SourceNode
 				result += child.getContent( true );
 		}
 
-		if( result.length == 0 )
-			return null;
-
 		return result;
 	}
 

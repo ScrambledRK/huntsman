@@ -1,0 +1,62 @@
+// ------------------------- //
+// package n' import:
+
+var nodes_package = source.findNodes( "package_declaration" )[0].findNodes( "chain_name" );
+var value_package = nodes_package.length == 0 ? "" : nodes_package[0].getContent(true);
+
+var nodes_import = source.findNodes( "import_declaration" );
+var value_imports = [];
+
+for( nimport in nodes_import )
+{
+	value_imports.push( nimport.findNodes("chain_name")[0].getContent(true) );
+}
+
+// ------------------------- //
+// class:
+
+var nodes_class = source.findNodes( "class_declaration" );
+var value_class_declarations = [];
+
+for( nclass in nodes_class )
+{
+	var class_model = {};
+		class_model.references = [];
+
+	var nodes_tdd = nclass.findNodes( "type_declaration_definition" );
+	var nodes_tdu = nclass.findNodes( "type_declaration_usage" );
+
+	if( nodes_tdd.length != 0)
+	{
+		class_model.name = nodes_tdd[0].findNodes("name")[0].getContent(false);
+
+		if( value_package.length != 0 )
+			class_model.name = value_package + "." + class_model.name;
+	}
+
+	for( ntdu in nodes_tdu )
+		class_model.references.push( ntdu.getContent(true) );
+
+	value_class_declarations.push( class_model );
+}
+
+// ------------------------- //
+
+trace( "package: " + value_package );
+trace( "imports: " + value_imports );
+trace( "classes: " + value_class_declarations );
+
+// ------------------------- //
+
+for( class_model in value_class_declarations )
+{
+	self.getNode( "class", class_model.name, true );
+
+	for( usage in class_model.references )
+	{
+		var task_link = self.queueScriptTask( "haxe_link" );
+			task_link.setScriptVariable( "reference", usage );
+			task_link.setScriptVariable( "class_name", class_model.name );
+			task_link.setScriptVariable( "imports", value_imports );
+	}
+}
