@@ -38,6 +38,6 @@ class Token
 		if( this.type == null )
 			return "[null-token]";
 
-		return "[" + this.type.name + "]" + this.content;
+		return "[" + this.type.name + "]: " + this.content;
 	}
 }

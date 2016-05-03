@@ -8,24 +8,19 @@ import at.dotpoint.huntsman.analyser.parser.source.token.Token;
  */
 class SourceNode
 {
-
-	/**
-	 *
-	 */
-	public var children(default,null):Array<SourceNode>;
-
-	/**
-	 *
-	 */
-	public var parent(default,null):SourceNode;
-
-	// ------------- //
-
 	//
 	public var name(default,null):String;
 
 	//
 	public var token(default,null):Array<Token>;
+
+	// ------------- //
+
+	//
+	public var children(default,null):Array<SourceNode>;
+
+	//
+	public var parent(default,null):SourceNode;
 
 	// ************************************************************************ //
 	// Constructor
@@ -120,7 +115,7 @@ class SourceNode
 		for( child in this.children )
 		{
 			if( recursive )
-				child.destoryChildren( recursive );
+				child.destoryChildren( true );
 
 			this.removeChildNode( child );
 		}
@@ -135,8 +130,54 @@ class SourceNode
 		if( recursive )
 		{
 			for( child in this.children )
-				child.removeTokens( recursive );
+				child.removeTokens( true );
 		}
+	}
+
+	// ************************************************************************ //
+	// search/filter/etc
+	// ************************************************************************ //
+
+	/**
+	 *
+	 */
+	public function findNodes( name:String, ?recursive:Bool = true, ?output:Array<SourceNode> ):Array<SourceNode>
+	{
+		var result:Array<SourceNode> = output != null ? output : new Array<SourceNode>();
+
+		for( child in this.children )
+		{
+			if( child.name == name )
+				result.push( child );
+
+			if( recursive )
+				child.findNodes( name, true, result );
+		}
+
+		return result;
+	}
+
+	/**
+	 *
+	 * @param	includeChildren
+	 */
+	public function getContent( ?includeChildren:Bool = false ):String
+	{
+		var result:String = "";
+
+		for( t in this.token )
+			result += t.content;
+
+		if( includeChildren && this.children.length > 0 )
+		{
+			for( child in this.children )
+				result += child.getContent( true );
+		}
+
+		if( result.length == 0 )
+			return null;
+
+		return result;
 	}
 
 	// ------------------------------------------------------------------------ //

@@ -58,7 +58,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 		// ------------------- //
 
 		if( this.script != null )
-			this.executeScript( task );
+			this.executeScript( task, source );
 
 		trace( "<<", this, file.toString() );
 	}
@@ -100,7 +100,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	/**
 	 *
 	 */
-	private function executeScript( task:ProcessTask ):Void
+	private function executeScript( task:ProcessTask, source:SourceDOM ):Void
 	{
 		var node:Node = task.currentNode;
 
@@ -110,11 +110,9 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 		// --------------------- //
 
 		var hscript:HScriptTask = new HScriptTask( node, this.script );
-
-		// set task
-		// set dom
-
-		hscript.execute();
+			hscript.interpretor.variables.set( "task", task );
+			hscript.interpretor.variables.set( "source", source.root );
+			hscript.execute();
 	}
 
 	// ************************************************************************ //
