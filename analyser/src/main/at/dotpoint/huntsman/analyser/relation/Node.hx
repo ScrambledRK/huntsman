@@ -46,6 +46,9 @@ class Node
 	 */
 	public function addAssociation( node:Node ):Bool
 	{
+		if( node == null )
+			return false;
+
 		var success:Bool = this.children.addAssociation( node );
 
 		if( success )

@@ -185,8 +185,11 @@ class Main {
 	/**
 	 *
 	 */
-	private function printNodes( node:Node ):Void
+	private function printNodes( node:Node, ?depth:Int = 0 ):Void
 	{
+		if( depth++ > 3 )
+			return;
+
 		var children:Map<String,Array<Node>> = node.children.container;
 
 		if( children == null )
@@ -194,7 +197,6 @@ class Main {
 			trace( node );
 			return;
 		}
-
 
 		// --------- //
 
@@ -205,7 +207,7 @@ class Main {
 			var list:Array<Node> = node.children.getAssociationList( key );
 
 			for( cnode in list )
-				this.printNodes( cnode );
+				this.printNodes( cnode, depth );
 		}
 
 		trace("<<",node);

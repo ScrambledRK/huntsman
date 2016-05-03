@@ -1,4 +1,46 @@
 
 trace("linking: " + reference );
-trace("to class: " + class_name );
+trace("to class: " + class_name + " with package: " + package_name );
 trace("using imports: " + imports );
+
+// --------------- //
+// --------------- //
+
+var node_class = self.getNode( "class", class_name );
+var success = false;
+
+function addUsage( name )
+{
+	success = node_class.addAssociation( self.getNode( "class", name, false ) );
+}
+
+// --------------- //
+// --------------- //
+
+for( nimport in imports )
+{
+	if( reference == nimport )												// already qualified?
+	{
+		addUsage( reference );
+	}
+	else
+	{
+		var nlast = nimport.substring( nimport.lastIndexOf("."), -1 );
+
+		if( reference == nlast )											// imported?
+		{
+			addUsage( nimport );
+		}
+	}
+}
+
+if( !success )
+{
+	addUsage( package_name + "." + reference );
+
+	if( !success )
+		addUsage( reference );
+}
+
+if( !success )
+	trace( "FAILED TO LINK: " + reference + " to class " + class_name );

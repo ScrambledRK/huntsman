@@ -33,6 +33,10 @@ for( nclass in nodes_class )
 		if( value_package.length != 0 )
 			class_model.name = value_package + "." + class_model.name;
 	}
+	else
+	{
+		trace("CLASS HAS NO VALID TYPE DECLARATION");
+	}
 
 	for( ntdu in nodes_tdu )
 		class_model.references.push( ntdu.getContent(true) );
@@ -58,5 +62,6 @@ for( class_model in value_class_declarations )
 			task_link.setScriptVariable( "reference", usage );
 			task_link.setScriptVariable( "class_name", class_model.name );
 			task_link.setScriptVariable( "imports", value_imports );
+			task_link.setScriptVariable( "package_name", value_package );
 	}
 }
