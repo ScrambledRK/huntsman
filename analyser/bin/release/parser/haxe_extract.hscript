@@ -35,20 +35,34 @@ for( nclass in nodes_class )
 	}
 	else
 	{
-		trace("CLASS HAS NO VALID TYPE DECLARATION");
+		if( value_class_declarations.length > 0 )
+		{
+			class_model = value_class_declarations.pop();	// HACK, since class-body is not parsed, but
+		}													// type_declaration_usage poses as classes ...
+		else
+		{
+			trace("CLASS HAS NO VALID TYPE DECLARATION");
+			continue;
+		}
 	}
 
 	for( ntdu in nodes_tdu )
-		class_model.references.push( ntdu.getContent(true) );
+	{
+		var ntdu_value = ntdu.getContent(true);
+
+		if( class_model.references.indexOf(ntdu_value) == -1 )
+			class_model.references.push( ntdu_value );
+	}
+
 
 	value_class_declarations.push( class_model );
 }
 
 // ------------------------- //
 
-trace( "package: " + value_package );
-trace( "imports: " + value_imports );
-trace( "classes: " + value_class_declarations );
+//trace( "package: " + value_package );
+//trace( "imports: " + value_imports );
+//trace( "classes: " + value_class_declarations );
 
 // ------------------------- //
 

@@ -179,6 +179,8 @@ class Main {
     private function onComplete( event:Event ):Void
     {
 		this.printNodes( this.rootNode );
+		this.printGraph();
+
         Sys.exit(0);
     }
 
@@ -187,12 +189,9 @@ class Main {
 	 */
 	private function printNodes( node:Node, ?depth:Int = 0 ):Void
 	{
-		if( depth++ > 3 )
-			return;
-
 		var children:Map<String,Array<Node>> = node.children.container;
 
-		if( children == null )
+		if( children == null || depth++ == 2 )
 		{
 			trace( node );
 			return;
@@ -210,6 +209,44 @@ class Main {
 				this.printNodes( cnode, depth );
 		}
 
-		trace("<<",node);
+		trace("<<");
+	}
+
+	/**
+	 *
+	 */
+	private function printGraph():Void
+	{
+		var output:String = "digraph g {\n";
+
+		// ---------- //
+
+		var classes:Array<Node> = this.rootNode.children.container.get("class");
+
+		for( node in classes )
+		{
+			var cname:String = node.ID.substring( node.ID.lastIndexOf(".") + 1, node.ID.length );
+			var fname:String = node.ID.split(".").join("_");
+
+			output += fname + ' [label="' + cname + '"];\n';
+
+			// ------ //
+
+			var references:Array<Node> = node.children.getAssociationList("class");
+
+			if( references == null )
+				continue;
+
+			for( rnode in references )
+			{
+				output += fname + " -> " + rnode.ID.split(".").join("_") + "\n";
+			}
+		}
+
+		// ---------- //
+
+		output += "\n}";
+
+		File.saveContent( "output_graph.txt", output );
 	}
 }

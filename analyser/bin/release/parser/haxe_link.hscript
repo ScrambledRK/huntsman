@@ -11,7 +11,8 @@ var success = false;
 
 function addUsage( name )
 {
-	success = node_class.addAssociation( self.getNode( "class", name, false ) );
+	if( name != class_name )
+		success = node_class.addAssociation( self.getNode( "class", name, false ) );
 }
 
 // --------------- //
@@ -25,13 +26,16 @@ for( nimport in imports )
 	}
 	else
 	{
-		var nlast = nimport.substring( nimport.lastIndexOf("."), -1 );
+		var nlast = nimport.substring( nimport.lastIndexOf(".") + 1, nimport.length );
 
 		if( reference == nlast )											// imported?
 		{
 			addUsage( nimport );
 		}
 	}
+
+	if(success)
+		break;
 }
 
 if( !success )

@@ -61,7 +61,7 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 			this.executeScript( task, source );
 
 		trace( "<<", this, file.toString() );
-		trace("\n");
+		//trace("\n");
 	}
 
 	/**
