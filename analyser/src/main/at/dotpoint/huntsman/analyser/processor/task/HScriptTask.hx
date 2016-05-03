@@ -1,29 +1,29 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
 import at.dotpoint.huntsman.analyser.relation.Node;
-import at.dotpoint.huntsman.analyser.project.Project;
+import at.dotpoint.huntsman.analyser.script.ScriptReference;
 
 /**
- * 16.04.2016
+ * 03.05.2016
  * @author RK
  */
-class ProjectTask extends ProcessTask
+class HScriptTask extends ProcessTask
 {
 
 	//
-	private var project:Project;
+	private var script:ScriptReference;
 
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( project:Project, node:Node )
+	public function new( parentNode:Node, script:ScriptReference )
 	{
-		super( "project", node );
+		super( "hscript", parentNode );
 
 		// ------------ //
 
-		this.project = project;
+		this.script = script;
 	}
 
 	// ************************************************************************ //
@@ -39,15 +39,9 @@ class ProjectTask extends ProcessTask
 
 		// ------------ //
 
-		this.currentNode = new Node( "project", this.project.name );
-		this.currentNode.data = this.project;
+		trace( ">>", "hscript: " + this.script.name );
 
-		this.parentNode.addChild( this.currentNode  );
-
-		// ------------ //
-
-		for( variation in this.project.variations )
-			this.queueTask( new VariationTask( variation, this.currentNode ) );
+		trace( "<<" );
 
 		// ------------ //
 

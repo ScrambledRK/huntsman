@@ -1,5 +1,8 @@
 package at.dotpoint.huntsman.analyser.configuration;
 
+import sys.FileSystem;
+import at.dotpoint.huntsman.analyser.script.ScriptReference;
+import haxe.io.Path;
 import haxe.io.Path;
 import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.parser.ParserFactory;
@@ -41,7 +44,8 @@ class ConfigurationFactory
     {
         var configuration:Configuration = new Configuration();
             configuration.projects = this.createProjects( configurationJson );
-            configuration.parser = this.createParser( configurationJson, configPath );
+			configuration.scripts = this.createScripts( configurationJson, configPath );
+            configuration.parser = this.createParser( configurationJson, configPath, configuration.scripts );
 
         return configuration;
     }
@@ -66,10 +70,37 @@ class ConfigurationFactory
         return result;
     }
 
+	/**
+     *
+     */
+    private function createScripts( configurationJson:Dynamic, configPath:Path ):Array<ScriptReference>
+    {
+        var scripts:Array<Dynamic> = cast configurationJson.scripts;
+
+        if( scripts == null || scripts.length == 0 )
+           return null;
+
+        // ---------------- //
+
+        var result:Array<ScriptReference> = new Array<ScriptReference>();
+
+        for( p in scripts )
+        {
+            var path:String = Path.join( [ configPath.dir.toString(), StringTools.trim( p.path ) ] );
+
+            if( !FileSystem.exists( path ) )
+                throw "script path '" + path + "' does not exist";
+
+            result.push( new ScriptReference( p.name, new Path( path ) ) );
+        }
+
+        return result;
+    }
+
     /**
      *
      */
-    private function createParser( configurationJson:Dynamic, configPath:Path ):Array<INodeParser>
+    private function createParser( configurationJson:Dynamic, configPath:Path, scripts:Array<ScriptReference> ):Array<INodeParser>
     {
         var parser:Array<Dynamic> = cast configurationJson.parsers;
 
@@ -81,8 +112,10 @@ class ConfigurationFactory
         var result:Array<INodeParser> = new Array<INodeParser>();
 
         for( p in parser )
-            result.push( this.parserFactory.createFromJson( p, new Path(configPath.dir) ) );
+            result.push( this.parserFactory.createFromJson( p, new Path(configPath.dir), scripts ) );
 
         return result;
     }
+
+
 }

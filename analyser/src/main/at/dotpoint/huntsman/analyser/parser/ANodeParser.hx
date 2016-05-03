@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser.parser;
 
+import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
 import at.dotpoint.huntsman.analyser.relation.Node;
 import haxe.at.dotpoint.loader.processor.ADataProcessor;
 
@@ -18,9 +19,6 @@ class ANodeParser<TSettings:INodeParserSettings>
 
 	//
 	private var settings:TSettings;
-
-	//
-	private var result(default, null):Array<Node>;
 
 	// ************************************************************************ //
 	// Constructor
@@ -44,11 +42,8 @@ class ANodeParser<TSettings:INodeParserSettings>
 		return this.settings;
 	}
 
-	//
-	public function getResult():Array<Node>
-	{
-		return this.result;
-	}
+	// ----------------------------------------------------------------- //
+	// ----------------------------------------------------------------- //
 
 	/**
 	 *

@@ -42,15 +42,15 @@ class VariationTask extends ProcessTask
 
 		// ------------ //
 
-		var vnode:Node = new Node( "variation", this.variation.name );
-			vnode.data = this.variation;
+		this.currentNode  = new Node( "variation", this.variation.name );
+		this.currentNode.data = this.variation;
 
-		this.node.addChild( vnode );
+		this.parentNode.addChild( this.currentNode );
 
 		// ------------ //
 
 		for( path in this.variation.sources )
-			this.queueFiles( path.toString(), vnode );
+			this.queueFiles( path.toString(), this.currentNode );
 
 		// ------------ //
 
@@ -71,7 +71,7 @@ class VariationTask extends ProcessTask
 		}
 		else
 		{
-			this.queueTask( new FileTask( new Path(file), vnode) );
+			this.queueTask( new FileTask( new Path(file), vnode ) );
 		}
 	}
 }

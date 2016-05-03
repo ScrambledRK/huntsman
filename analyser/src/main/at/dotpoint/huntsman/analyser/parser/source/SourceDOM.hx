@@ -36,7 +36,7 @@ class SourceDOM
 	 */
 	public function openPattern( pattern:PatternReference, token:Token, index:Int ):Void
 	{
-		trace( ">>", index, pattern, token );
+	//	trace( ">>", index, pattern, token );
 
 		var node:SourceNode = new SourceNode( pattern.name );
 
@@ -49,14 +49,14 @@ class SourceDOM
 	 */
 	public function saveToken( token:Token ):Void
 	{
-		trace( "consumed:", token );
+	//	trace( "consumed:", token );
 
 		this.current.token.push( token );
 	}
 
 	public function removeTokens():Void
 	{
-		trace( "backtrack", this.current );
+	//	trace( "backtrack", this.current );
 
 		this.current.removeTokens(true);
 		this.current.destoryChildren(true);
@@ -67,7 +67,7 @@ class SourceDOM
 	 */
 	public function closePattern( pattern:PatternReference, status:PatternStatus ):Void
 	{
-		trace( "<<", status );
+	//	trace( "<<", status );
 
 		if( this.current == this.root )
 			throw "invalid close pattern, already at root";

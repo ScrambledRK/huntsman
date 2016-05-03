@@ -18,9 +18,14 @@ class ProcessTask extends EventDispatcher implements ITask
 	public var type(default, null):String;
 
 	/**
-	 * get existing relations and set TokenType relations
+	 * node this task has been spawned from (and acts upon)
 	 */
-	public var node:Node;
+	public var parentNode:Node;
+
+	/**
+	 * node this task spawns
+	 */
+	public var currentNode:Node;
 
 	/**
 	 * pending tasks that need execution; resulting from this task execution
@@ -48,7 +53,7 @@ class ProcessTask extends EventDispatcher implements ITask
 		super();
 
 		this.type = type;
-		this.node = node;
+		this.parentNode = node;
 	}
 
 	// ************************************************************************ //

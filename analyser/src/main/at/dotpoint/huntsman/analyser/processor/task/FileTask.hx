@@ -1,10 +1,10 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
+import at.dotpoint.huntsman.analyser.script.ScriptReference;
 import at.dotpoint.huntsman.analyser.parser.INodeParser;
 import at.dotpoint.huntsman.analyser.project.Variation;
 import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.relation.Node;
-import at.dotpoint.huntsman.analyser.project.Project;
 
 /**
  * 16.04.2016
@@ -42,10 +42,12 @@ class FileTask extends ProcessTask
 
 		// ------------ //
 
-		var pnode:Node = new Node( "file", this.file.toString() );
-			pnode.data = this.parseFile();
+		this.currentNode = new Node( "file", this.file.toString() );
 
-		this.node.addChild( pnode );
+		var parser:INodeParser = this.getParser();
+			parser.parse( this.file, this );
+
+		this.parentNode.addChild( this.currentNode );
 
 		// ------------ //
 
@@ -55,9 +57,9 @@ class FileTask extends ProcessTask
 	/**
 	 *
 	 */
-	private function parseFile():Dynamic
+	private function getParser():INodeParser
 	{
-		var requested:String = cast( this.node.data, Variation ).parser;
+		var requested:String = cast( this.parentNode.data, Variation ).parser;
 		var parsers:Array<INodeParser> = Main.instance.config.parser;
 
 		for( parser in parsers )
@@ -65,9 +67,11 @@ class FileTask extends ProcessTask
 			var isExt:Bool = parser.getSettings().extensions.indexOf( this.file.ext ) != -1;
 
 			if( parser.name == requested && isExt )
-				return parser.parse( this.file );
+				return parser;
 		}
 
+		throw "could not find parser " + requested + " for file: " + this.file.toString() + " with variation: " + this.parentNode;
 		return null;
 	}
+
 }

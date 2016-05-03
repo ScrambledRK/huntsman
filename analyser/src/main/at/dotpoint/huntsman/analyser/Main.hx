@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser;
 
+import haxe.CallStack;
 import haxe.at.dotpoint.logger.logger.TraceLogger;
 import haxe.at.dotpoint.logger.Log;
 import haxe.io.Path;
@@ -124,7 +125,15 @@ class Main {
         }
         catch( exception:Dynamic )
         {
-            throw "create configuration failed:\n" + exception.toString();
+			var stack:Array<StackItem> = CallStack.exceptionStack();
+
+            var msg:String = exception.toString();
+                msg += "\nstack:";
+
+			for( item in stack )
+				msg += "\n  " + item;
+
+            throw "create configuration failed:\n" + msg;
         }
 
         if( this.config == null )

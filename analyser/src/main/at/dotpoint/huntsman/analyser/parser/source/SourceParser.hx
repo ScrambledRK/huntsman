@@ -1,5 +1,8 @@
 package at.dotpoint.huntsman.analyser.parser.source;
 
+import at.dotpoint.huntsman.analyser.processor.task.HScriptTask;
+import at.dotpoint.huntsman.analyser.script.ScriptReference;
+import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
 import at.dotpoint.huntsman.analyser.parser.source.pattern.PatternProcessor;
 import at.dotpoint.huntsman.analyser.parser.source.token.Token;
 import at.dotpoint.huntsman.analyser.parser.source.token.TokenProcessor;
@@ -20,6 +23,11 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	//
 	private var patterizer:PatternProcessor;
 
+	// ------------------ //
+
+	//
+	public var script:ScriptReference;
+
 	// ************************************************************************ //
 	// Constructor
 	// ************************************************************************ //
@@ -36,9 +44,9 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	/**
 	 *
 	 */
-	public function parse( file:Path ):Array<Node>
+	public function parse( file:Path, ?task:ProcessTask ):Void
 	{
-		trace( this, "parsing: " + file.toString() );
+		trace( ">>", this, "parsing: " + file.toString() );
 
 		// ------------------- //
 
@@ -47,7 +55,12 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 		var tokens:Array<Token> = this.tokenize( content );
 		var source:SourceDOM 	= this.patterize( tokens );
 
-		return this.getResult();
+		// ------------------- //
+
+		if( this.script != null )
+			this.executeScript( task );
+
+		trace( "<<", this, file.toString() );
 	}
 
 	/**
@@ -84,6 +97,25 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 		return this.patterizer.source;
 	}
 
+	/**
+	 *
+	 */
+	private function executeScript( task:ProcessTask ):Void
+	{
+		var node:Node = task.currentNode;
+
+		if( node == null || node.ID != "file" )
+			throw "unsupported source script node found: " + node;
+
+		// --------------------- //
+
+		var hscript:HScriptTask = new HScriptTask( node, this.script );
+
+		// set task
+		// set dom
+
+		hscript.execute();
+	}
 
 	// ************************************************************************ //
 	// Methods
@@ -92,7 +124,6 @@ class SourceParser extends ANodeParser<SourceParserSettings> implements INodePar
 	//
 	public function reset():Void
 	{
-		this.result 	= null;
 		this.tokenizer 	= null;
 		this.patterizer = null;
 	}
