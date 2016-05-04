@@ -4,7 +4,7 @@ import hscript.Expr;
 import sys.io.File;
 import hscript.Parser;
 import hscript.Interp;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import at.dotpoint.huntsman.analyser.script.ScriptReference;
 
 /**
@@ -115,20 +115,6 @@ class HScriptTask extends ProcessTask
 		this.interpretor.variables.set( name, value );
 
 		return true;
-	}
-
-	/**
-	 *
-	 */
-	public function getNode( type:String, name:String, ?create:Bool = true ):Node
-	{
-		var root:Node = Main.instance.rootNode;
-		var node:Node = root.children.getAssociation( type, name );
-
-		if( node == null && create )
-			root.addAssociation( node = new Node( type, name ) );
-
-		return node;
 	}
 
 	/**

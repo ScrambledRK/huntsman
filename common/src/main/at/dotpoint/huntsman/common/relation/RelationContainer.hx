@@ -1,4 +1,4 @@
-package at.dotpoint.huntsman.analyser.relation;
+package at.dotpoint.huntsman.common.relation;
 
 /**
  * 03.05.2016
@@ -120,4 +120,21 @@ class RelationContainer
 		return this.container.get( type );
 	}
 
+	/**
+	 *
+	 */
+	public function toArray():Array<Node>
+	{
+		if( this.container == null )
+			return null;
+
+		// --------- //
+
+		var result:Array<Node> = new Array<Node>();
+
+		for( key in this.container.keys() )
+			result = result.concat( this.container.get( key ) );
+
+		return result;
+	}
 }

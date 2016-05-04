@@ -68,7 +68,8 @@ for( nclass in nodes_class )
 
 for( class_model in value_class_declarations )
 {
-	self.getNode( "class", class_model.name, true );
+	var node_class_model = self.getNode( "class", class_model.name, true );		// create class model node
+	self.node.addAssociation( node_class_model );								// associate with file
 
 	for( usage in class_model.references )
 	{

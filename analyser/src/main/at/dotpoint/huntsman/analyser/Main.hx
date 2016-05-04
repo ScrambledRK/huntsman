@@ -7,7 +7,7 @@ import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.processor.task.ProjectTask;
 import haxe.at.dotpoint.core.dispatcher.event.Event;
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import at.dotpoint.huntsman.analyser.processor.Processor;
 import at.dotpoint.huntsman.analyser.configuration.ConfigurationFactory;
 import at.dotpoint.huntsman.analyser.configuration.Configuration;
@@ -179,7 +179,9 @@ class Main {
     private function onComplete( event:Event ):Void
     {
 		this.printNodes( this.rootNode );
+
 		this.printGraph();
+		this.saveNodes();
 
         Sys.exit(0);
     }
@@ -249,4 +251,118 @@ class Main {
 
 		File.saveContent( "output_graph.txt", output );
 	}
+
+	/**
+	 *
+	 */
+	private function saveNodes():Void
+	{
+		var output:String = "{\n";
+
+		// ---------- //
+
+		var container:Map<String,Array<Node>> = this.rootNode.children.container;
+		var keylist:Array<String> = new Array<String>();
+
+		for( key in container.keys() )
+		{
+			keylist.push( key );
+
+			output += '  "' + key + '":\n';
+			output += this.createNodeListJson( container.get( key ), 2, true );
+			output += ",\n";
+		}
+
+		// ---------- //
+
+		output += '  "_keys":[';
+
+		for( i in 0...keylist.length )
+		{
+			output += '"' + keylist[i] + '"';
+
+			if( i < keylist.length - 1 )
+				output += ",";
+		}
+
+		output += "]\n}";
+
+		// ---------- //
+
+		File.saveContent( "output_nodes.json", output );
+	}
+
+	/**
+	 *
+	 */
+	private function createNodeListJson( list:Array<Node>, ?level:Int = 0, ?includeAssociations:Bool = false ):String
+	{
+		var output:String = "";
+		var padding:String = "";
+
+		for( j in 0...level )
+			padding += "  ";
+
+		// ------------------------- //
+
+		output += padding + "[\n";
+
+		if( list != null )
+		{
+			for( i in 0...list.length )
+			{
+				output += this.createNodeJson( list[i], level + 1, includeAssociations );
+
+				if( i < list.length - 1 ) 	output += ",\n";
+				else						output += "\n";
+			}
+		}
+
+		output += padding + "]";
+
+		// ------------------------- //
+
+		return output;
+	}
+
+	/**
+	 *
+	 */
+	private function createNodeJson( node:Node, ?level:Int = 0, ?includeAssociations:Bool = false ):String
+	{
+		var output:String = "";
+		var padding:String = "";
+
+		for( j in 0...level )
+			padding += "  ";
+
+		output += padding + "{\n";
+		output += padding + '  "name":"' + node.ID + '",\n';
+		output += padding + '  "type":"' + node.type + '"';
+
+		// ------------------------- //
+
+		if( includeAssociations )
+		{
+			output += ",\n";
+
+			output += padding + '  "children":\n';
+			output += this.createNodeListJson( node.children.toArray(), level + 1, false ) + ",\n";
+
+			output += padding + '  "parents":\n';
+			output += this.createNodeListJson( node.parents.toArray(), level + 1, false ) + "\n";
+		}
+		else
+		{
+			output += "\n";
+		}
+
+		// ------------------------- //
+
+		output += padding + "}";
+
+		return output;
+	}
+
+
 }

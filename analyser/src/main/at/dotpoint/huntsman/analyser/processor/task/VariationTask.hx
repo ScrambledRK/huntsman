@@ -4,7 +4,7 @@ import haxe.io.Path;
 import sys.FileSystem;
 import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.project.Variation;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 
 /**
  * 16.04.2016
@@ -42,7 +42,7 @@ class VariationTask extends ProcessTask
 
 		// ------------ //
 
-		var current:Node  = new Node( "variation", this.variation.name );
+		var current:Node = this.getNode( "variation", this.variation.name, true );
 			current.data = this.variation;
 
 		this.node.addAssociation( current );

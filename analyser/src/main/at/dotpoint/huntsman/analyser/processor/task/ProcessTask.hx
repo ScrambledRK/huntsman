@@ -1,6 +1,6 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import haxe.at.dotpoint.core.dispatcher.event.EventDispatcher;
 import haxe.at.dotpoint.core.processor.event.ProcessEvent;
 import haxe.at.dotpoint.core.processor.ITask;
@@ -79,6 +79,20 @@ class ProcessTask extends EventDispatcher implements ITask
 
 	// -------------------------------- //
 	// -------------------------------- //
+
+	/**
+	 *
+	 */
+	public function getNode( type:String, name:String, ?create:Bool = true ):Node
+	{
+		var root:Node = Main.instance.rootNode;
+		var node:Node = root.children.getAssociation( type, name );
+
+		if( node == null && create )
+			root.addAssociation( node = new Node( type, name ) );
+
+		return node;
+	}
 
 	/**
 	 * add pending tasks to the execution queue

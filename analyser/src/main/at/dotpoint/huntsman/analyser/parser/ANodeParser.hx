@@ -1,7 +1,7 @@
 package at.dotpoint.huntsman.analyser.parser;
 
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import haxe.at.dotpoint.loader.processor.ADataProcessor;
 
 /**

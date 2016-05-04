@@ -5,7 +5,7 @@ import at.dotpoint.huntsman.analyser.script.ScriptReference;
 import at.dotpoint.huntsman.analyser.parser.INodeParser;
 import at.dotpoint.huntsman.analyser.project.Variation;
 import haxe.io.Path;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 
 /**
  * 16.04.2016
@@ -44,7 +44,7 @@ class FileTask extends ProcessTask
 		// ------------ //
 
 		var parent:Node = this.node;
-		var current:Node = new Node( "file", this.file.toString() );
+		var current:Node = this.getNode( "file", this.file.toString(), true );
 
 		this.node.addAssociation( current );
 		this.node = current;

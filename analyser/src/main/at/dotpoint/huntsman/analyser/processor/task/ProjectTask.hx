@@ -1,6 +1,6 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import at.dotpoint.huntsman.analyser.project.Project;
 
 /**
@@ -39,7 +39,7 @@ class ProjectTask extends ProcessTask
 
 		// ------------ //
 
-		var current:Node = new Node( "project", this.project.name );
+		var current:Node = this.getNode( "project", this.project.name, true );
 			current.data = this.project;
 
 		this.node.addAssociation( current );

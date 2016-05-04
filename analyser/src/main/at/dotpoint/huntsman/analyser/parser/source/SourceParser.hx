@@ -6,7 +6,7 @@ import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
 import at.dotpoint.huntsman.analyser.parser.source.pattern.PatternProcessor;
 import at.dotpoint.huntsman.analyser.parser.source.token.Token;
 import at.dotpoint.huntsman.analyser.parser.source.token.TokenProcessor;
-import at.dotpoint.huntsman.analyser.relation.Node;
+import at.dotpoint.huntsman.common.relation.Node;
 import sys.io.File;
 import haxe.io.Path;
 

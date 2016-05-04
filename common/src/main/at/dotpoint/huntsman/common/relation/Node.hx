@@ -1,4 +1,4 @@
-package at.dotpoint.huntsman.analyser.relation;
+package at.dotpoint.huntsman.common.relation;
 
 /**
  * 16.04.2016
