@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.analyser.project;
 
+import sys.FileSystem;
 import haxe.io.Path;
 import sys.FileSystem;
 
@@ -26,7 +27,7 @@ class ProjectFactory
     // Methods
     // ************************************************************************ //
 
-    public function createFromJson( projectJson:Dynamic ):Project
+    public function createFromJson( projectJson:Dynamic, configPath:Path ):Project
     {
         var name:String = StringTools.trim( projectJson.name );
 
@@ -40,11 +41,16 @@ class ProjectFactory
         if( root == null || root.length == 0 )
             throw "must contain non-empty root path";
 
+		if( root.charAt(0) == "." )
+			root = Path.join( [ FileSystem.absolutePath(configPath.dir), root ] );
+
         if( !FileSystem.exists( root ) )
             throw "project root path '" + root + "' does not exist";
 
         if( !FileSystem.isDirectory( root ) )
             throw "project root path '" + root + "' is not a directory";
+
+		trace(root);
 
         // --------- //
 

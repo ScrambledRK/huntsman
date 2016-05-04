@@ -43,7 +43,7 @@ class ConfigurationFactory
     public function createFromJson( configurationJson:Dynamic, configPath:Path ):Configuration
     {
         var configuration:Configuration = new Configuration();
-            configuration.projects = this.createProjects( configurationJson );
+            configuration.projects = this.createProjects( configurationJson, configPath );
 			configuration.scripts = this.createScripts( configurationJson, configPath );
             configuration.parser = this.createParser( configurationJson, configPath, configuration.scripts );
 
@@ -53,7 +53,7 @@ class ConfigurationFactory
     /**
      *
      */
-    private function createProjects( configurationJson:Dynamic ):Array<Project>
+    private function createProjects( configurationJson:Dynamic, configPath:Path ):Array<Project>
     {
         var projects:Array<Dynamic> = cast configurationJson.projects;
 
@@ -65,7 +65,7 @@ class ConfigurationFactory
         var result:Array<Project> = new Array<Project>();
 
         for( proj in projects )
-            result.push( this.projectFactory.createFromJson( proj ) );
+            result.push( this.projectFactory.createFromJson( proj, configPath ) );
 
         return result;
     }
