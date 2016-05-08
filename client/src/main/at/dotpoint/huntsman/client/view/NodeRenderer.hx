@@ -106,6 +106,17 @@ class NodeRenderer
 					this.setAttraction( cv, cast children[j].data );
 			}
 
+			var parents:Array<Node> = cn.parents.toArray();
+
+			if( parents != null )
+			{
+				for( j in 0...parents.length )
+				{
+					if( parents[j].data != null )
+						this.setAttraction( cv, cast parents[j].data );
+				}
+			}
+
 			// ------------------- //
 			// velocity:
 
@@ -178,8 +189,8 @@ class NodeRenderer
 
 		var ds:Float = ( dx * dx + dy * dy );
 
-		cv.force.x += 1 * dx / ds;
-		cv.force.y += 1 * dy / ds;
+		cv.force.x += 15 * dx / ds;
+		cv.force.y += 15 * dy / ds;
 	}
 
 	//

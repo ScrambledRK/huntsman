@@ -376,7 +376,10 @@ haxe_at_dotpoint_spatial_transform_TransformationMatrix [label="TransformationMa
 haxe_at_dotpoint_spatial_transform_TransformationMatrix -> haxe_at_dotpoint_math_vector_Matrix44
 haxe_org_ds_VectorSort [label="VectorSort"];
 js_at_dotpoint_loader_processor_loader_AHTTPLoader [label="AHTTPLoader"];
+js_at_dotpoint_loader_processor_loader_AHTTPLoader -> haxe_at_dotpoint_loader_event_HTTPStatusEvent
+js_at_dotpoint_loader_processor_loader_AHTTPLoader -> haxe_at_dotpoint_loader_event_ProgressEvent
 js_at_dotpoint_loader_processor_loader_AudioLoader [label="AudioLoader"];
+js_at_dotpoint_loader_processor_loader_AudioLoader -> haxe_at_dotpoint_loader_event_ProgressEvent
 js_at_dotpoint_loader_processor_loader_ImageLoader [label="ImageLoader"];
 js_at_dotpoint_loader_processor_loader_StringLoader [label="StringLoader"];
 lwjgl_at_dotpoint_controls_keyboard_KeyboardInput [label="KeyboardInput"];

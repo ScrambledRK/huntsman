@@ -9873,6 +9873,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AHTTPLoader",
+            "type":"class"
           }
         ]
       },
@@ -9898,6 +9902,14 @@
           },
           {
             "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AHTTPLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AudioLoader",
             "type":"class"
           },
           {
@@ -11129,6 +11141,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.event.HTTPStatusEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.event.ProgressEvent",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11147,6 +11167,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.event.ProgressEvent",
+            "type":"class"
+          }
         ],
         "parents":
         [
