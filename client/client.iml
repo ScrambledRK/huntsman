@@ -13,7 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/res/main" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/Export" />
     </content>
-    <orderEntry type="jdk" jdkName="Haxe 3.2.0" jdkType="Haxe toolkit" />
+    <orderEntry type="jdk" jdkName="Haxe 3.3.0" jdkType="Haxe toolkit" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
     <orderEntry type="library" name="openfl 3.6.1" level="application" />

@@ -78,6 +78,42 @@ class Node
 	// toString
 	// ************************************************************************ //
 
+	/**
+	 *
+	 */
+	public function print( ?maxDepth:Int = 2 ):Void
+	{
+		this.printNodes( this, 0, maxDepth );
+	}
+
+	/**
+	 *
+	 */
+	private function printNodes( node:Node, ?depth:Int = 0, ?maxDepth:Int = 2 ):Void
+	{
+		var children:Map<String,Array<Node>> = node.children.container;
+
+		if( children == null || depth++ == maxDepth )
+		{
+			trace( node );
+			return;
+		}
+
+		// --------- //
+
+		trace(">>", node );
+
+		for( key in children.keys() )
+		{
+			var list:Array<Node> = node.children.getAssociationList( key );
+
+			for( cnode in list )
+				this.printNodes( cnode, depth, maxDepth );
+		}
+
+		trace("<<");
+	}
+
 	//
 	public function toString():String
 	{

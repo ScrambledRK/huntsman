@@ -178,41 +178,13 @@ class Main {
      */
     private function onComplete( event:Event ):Void
     {
-		this.printNodes( this.rootNode );
+		this.rootNode.print();
 
 		this.printGraph();
 		this.saveNodes();
 
         Sys.exit(0);
     }
-
-	/**
-	 *
-	 */
-	private function printNodes( node:Node, ?depth:Int = 0 ):Void
-	{
-		var children:Map<String,Array<Node>> = node.children.container;
-
-		if( children == null || depth++ == 2 )
-		{
-			trace( node );
-			return;
-		}
-
-		// --------- //
-
-		trace(">>", node );
-
-		for( key in children.keys() )
-		{
-			var list:Array<Node> = node.children.getAssociationList( key );
-
-			for( cnode in list )
-				this.printNodes( cnode, depth );
-		}
-
-		trace("<<");
-	}
 
 	/**
 	 *

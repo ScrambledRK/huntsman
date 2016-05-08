@@ -50,8 +50,6 @@ class ProjectFactory
         if( !FileSystem.isDirectory( root ) )
             throw "project root path '" + root + "' is not a directory";
 
-		trace(root);
-
         // --------- //
 
         var project:Project = new Project( name, new Path(root) );
