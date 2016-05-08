@@ -1,6 +1,8 @@
 package at.dotpoint.huntsman.client;
 
-import at.dotpoint.huntsman.client.relation.NodeVertex;
+import openfl.events.Event;
+import at.dotpoint.huntsman.client.view.NodeRenderer;
+import at.dotpoint.huntsman.client.view.NodeVertex;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
 import at.dotpoint.huntsman.common.relation.Node;
 import haxe.at.dotpoint.loader.URLRequest;
@@ -25,6 +27,9 @@ class Main extends Sprite
 	//
 	private var rootNode:Node;
 
+	//
+	private var renderer:NodeRenderer;
+
     // ************************************************************************ //
     // Constructor
     // ************************************************************************ //
@@ -48,12 +53,18 @@ class Main extends Sprite
 	{
 		this.loader = new NodeRequest( new URLRequest( configURL ) );
 		this.loader.load( this.onRequestComplete );
+
+		this.addEventListener( Event.ENTER_FRAME, this.onEnterFrame );
 	}
 
 	//
 	private function onRequestComplete( event:StatusEvent ):Void
 	{
+		//
 		this.rootNode = cast this.loader.result;
+
+		//
+		this.renderer = new NodeRenderer( this );
 
 		// --------------- //
 
@@ -61,26 +72,14 @@ class Main extends Sprite
 
 		for( node in container )
 		{
-			if( node.type != "class" )
-				continue;
-
-			// ----------- //
-
-			var vertex:NodeVertex = cast node.data;
-				vertex.x = Math.random() * 1200;
-				vertex.y = Math.random() * 900;
-
-			this.addChild( vertex );
-
-			// ----------- //
-
-			vertex.setLabel( this.getLabel( node ) );
+			this.renderer.addNode( node );
 		}
 	}
 
 	//
-	private function getLabel( node:Node ):String
+	private function onEnterFrame( event:Event ):Void
 	{
-		return node.ID.substring( node.ID.lastIndexOf(".") + 1, node.ID.length );
+		if( this.renderer != null )
+			this.renderer.update();
 	}
 }

@@ -1,5 +1,6 @@
-package at.dotpoint.huntsman.client.relation;
+package at.dotpoint.huntsman.client.view;
 
+import openfl.text.TextFieldAutoSize;
 import openfl.text.TextField;
 import openfl.display.Sprite;
 import haxe.at.dotpoint.math.vector.Vector2;
@@ -49,12 +50,20 @@ class NodeVertex extends Sprite
 		if( this.label == null )
 		{
 			this.label = new TextField();
+			this.label.autoSize = TextFieldAutoSize.LEFT;
+
 			this.addChild( this.label );
 		}
 
 		this.label.text = label;
 
-		this.label.x = this.label.width * 0.5;
-		this.label.y = this.label.height * 0.5;
+		this.label.x -= this.label.width * 0.5;
+		this.label.y -= this.label.height * 0.5;
+
+		// ------------ //
+
+		this.graphics.clear();
+		this.graphics.lineStyle( 1, 0xFF00001 );
+		this.graphics.drawCircle( 0, 0, 5 );
 	}
 }

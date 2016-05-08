@@ -1,6 +1,6 @@
 package at.dotpoint.huntsman.client.loader;
 
-import at.dotpoint.huntsman.client.relation.NodeVertex;
+import at.dotpoint.huntsman.client.view.NodeVertex;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
 import haxe.Json;
 import at.dotpoint.huntsman.common.relation.Node;
@@ -56,10 +56,18 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 
 		for( key in keys )
 		{
+			if( key != "class" )
+				continue;
+
+			// ----------- //
+
 			var table:Array<Dynamic> = cast Reflect.getProperty( json, key );
 
 			for( entry in table )
 			{
+				if( entry.type != "class" )
+					continue;
+
 				var node:Node = this.getNode( entry.type, entry.name );
 				var children:Array<Dynamic> = cast entry.children;
 
