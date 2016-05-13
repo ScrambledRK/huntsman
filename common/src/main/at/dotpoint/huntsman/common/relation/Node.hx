@@ -4,11 +4,15 @@ package at.dotpoint.huntsman.common.relation;
  * 16.04.2016
  * @author RK
  */
+import Array;
 class Node
 {
 
 	//
-	public var ID(default,null):String;
+	public var index:Int;
+
+	//
+	public var name(default,null):String;
 
 	//
 	public var type(default,null):String;
@@ -28,13 +32,15 @@ class Node
 	// Constructor
 	// ************************************************************************ //
 
-	public function new( type:String, ID:String )
+	public function new( type:String, name:String, ?index:Int )
 	{
-		this.ID = ID;
+		this.name = name;
 		this.type = type;
 
 		this.children = new RelationContainer();
 		this.parents = new RelationContainer();
+
+		this.index = index;
 	}
 
 	// ************************************************************************ //
@@ -72,6 +78,40 @@ class Node
 		// --------------- //
 
 		return success;
+	}
+
+	// ************************************************************************ //
+	// calculations
+	// ************************************************************************ //
+
+	//
+	public function getConnectivity( type:String, ?visited:Array<Node> ):Int
+	{
+		var children:Array<Node> = this.children.getAssociationList( type );
+
+		if( children == null )
+			return 0;
+
+		// ---------- //
+
+		if( visited == null )
+			visited = new Array<Node>();
+
+		visited.push( this );
+
+		// ---------- //
+
+		var weight:Int = children.length;
+
+		for( node in children )
+		{
+			if( visited.indexOf( node ) != -1 )
+				continue;
+
+			weight += node.getConnectivity( type, visited );
+		}
+
+		return weight;
 	}
 
 	// ************************************************************************ //
@@ -117,6 +157,6 @@ class Node
 	//
 	public function toString():String
 	{
-		return "[N: " + this.type + " - " + this.ID + "]";
+		return "[N: " + this.type + " - " + this.name + "]";
 	}
 }

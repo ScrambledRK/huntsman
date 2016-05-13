@@ -2,23 +2,14 @@ package at.dotpoint.huntsman.client.view;
 
 import openfl.text.TextFieldAutoSize;
 import openfl.text.TextField;
-import openfl.display.Sprite;
-import haxe.at.dotpoint.math.vector.Vector2;
+import flash.display.Sprite;
 
 /**
- * 08.05.2016
+ * 13.05.2016
  * @author RK
  */
-class NodeVertex extends Sprite
+class NodeView extends Sprite
 {
-
-	//
-	public var velocity:Vector2;
-
-	//
-	public var force:Vector2;
-
-	// -------- //
 
 	//
 	public var label:TextField;
@@ -30,11 +21,6 @@ class NodeVertex extends Sprite
 	public function new( ?label:String )
 	{
 		super();
-
-		this.velocity = new Vector2();
-		this.force = new Vector2();
-
-		// --------- //
 
 		if( label != null )
 			this.setLabel( label );
@@ -57,13 +43,26 @@ class NodeVertex extends Sprite
 
 		this.label.text = label;
 
-		this.label.x -= this.label.width * 0.5;
-		this.label.y -= this.label.height * 0.5;
+		var w2:Float = this.label.width * 0.5;
+		var h2:Float = this.label.height * 0.5;
+
+		this.label.x -= w2;
+		this.label.y -= h2;
 
 		// ------------ //
 
+		var padding:Int = 2;
+
 		this.graphics.clear();
-		this.graphics.lineStyle( 1, 0xFF00001 );
-		this.graphics.drawCircle( 0, 0, 5 );
+
+		this.graphics.beginFill( 0xFFFFFF );
+		this.graphics.drawRect( -w2 - padding, -h2 - padding,
+								w2 * 2 + 2 * padding, h2 * 2 + 2 * padding );
+
+		this.graphics.endFill();
+
+		this.graphics.lineStyle( 1, 0xCCCCCC );
+		this.graphics.drawRect( -w2, -h2, w2 * 2, h2 * 2 );
 	}
+
 }

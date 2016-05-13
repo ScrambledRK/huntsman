@@ -2,7 +2,6 @@ package at.dotpoint.huntsman.client;
 
 import openfl.events.Event;
 import at.dotpoint.huntsman.client.view.NodeRenderer;
-import at.dotpoint.huntsman.client.view.NodeVertex;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
 import at.dotpoint.huntsman.common.relation.Node;
 import haxe.at.dotpoint.loader.URLRequest;

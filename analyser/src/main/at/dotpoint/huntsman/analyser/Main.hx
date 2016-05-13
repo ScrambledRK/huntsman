@@ -199,8 +199,8 @@ class Main {
 
 		for( node in classes )
 		{
-			var cname:String = node.ID.substring( node.ID.lastIndexOf(".") + 1, node.ID.length );
-			var fname:String = node.ID.split(".").join("_");
+			var cname:String = node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length );
+			var fname:String = node.name.split(".").join("_");
 
 			output += fname + ' [label="' + cname + '"];\n';
 
@@ -213,7 +213,7 @@ class Main {
 
 			for( rnode in references )
 			{
-				output += fname + " -> " + rnode.ID.split(".").join("_") + "\n";
+				output += fname + " -> " + rnode.name.split(".").join("_") + "\n";
 			}
 		}
 
@@ -309,7 +309,7 @@ class Main {
 			padding += "  ";
 
 		output += padding + "{\n";
-		output += padding + '  "name":"' + node.ID + '",\n';
+		output += padding + '  "name":"' + node.name + '",\n';
 		output += padding + '  "type":"' + node.type + '"';
 
 		// ------------------------- //

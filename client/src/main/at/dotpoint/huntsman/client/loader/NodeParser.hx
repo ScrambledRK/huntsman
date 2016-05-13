@@ -1,6 +1,5 @@
 package at.dotpoint.huntsman.client.loader;
 
-import at.dotpoint.huntsman.client.view.NodeVertex;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
 import haxe.Json;
 import at.dotpoint.huntsman.common.relation.Node;
@@ -83,12 +82,7 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 		var node:Node = this.result.children.getAssociation( type, name );
 
 		if( node == null && create )
-		{
-			node = new Node( type, name );
-			node.data = new NodeVertex();
-
-			this.result.addAssociation( node );
-		}
+			this.result.addAssociation( node = new Node( type, name ) );
 
 		return node;
 	}

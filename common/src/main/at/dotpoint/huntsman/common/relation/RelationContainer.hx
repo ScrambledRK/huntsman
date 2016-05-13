@@ -51,7 +51,7 @@ class RelationContainer
 
 		for( n in list )
 		{
-			if( n.ID == ID )
+			if( n.name == ID )
 				return n;
 		}
 
@@ -65,7 +65,7 @@ class RelationContainer
 	 */
 	public function addAssociation( node:Node ):Bool
 	{
-		if( this.hasAssociation( node.type, node.ID ) )
+		if( this.hasAssociation( node.type, node.name ) )
 			return false;
 
 		// --------------- //
@@ -88,7 +88,7 @@ class RelationContainer
 	 */
 	public function removeAssociation( node:Node ):Bool
 	{
-		var child:Node = this.getAssociation( node.type, node.ID );
+		var child:Node = this.getAssociation( node.type, node.name );
 
 		if( child == null || child != node )
 			return false;
