@@ -151,6 +151,7 @@ class NodeRenderer
 		var view:NodeView = this.getView( index );
 			view.setLabel( node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length ) );
 			view.setColor( node.data.color );
+			view.setToolTip( node.name );
 
 		this.nodeView.addChild( view );
 	}

@@ -1,5 +1,6 @@
 package at.dotpoint.huntsman.client.view;
 
+import haxe.Timer;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 import openfl.text.TextFieldAutoSize;
@@ -17,10 +18,22 @@ class NodeView extends Sprite
 	private var label:TextField;
 
 	//
+	private var tooltip:TextField;
+
+	// -------- //
+
+	//
 	public var isDragged(default,null):Bool;
+	public var isHovered(default,null):Bool;
 
 	//
 	private var isOnStage:Bool;
+
+	// -------- //
+
+	//
+	private var timer:Timer;
+	private var tiptext:String;
 
 	// ************************************************************************ //
 	// Constructor
@@ -34,11 +47,15 @@ class NodeView extends Sprite
 			this.setLabel( label );
 
 		this.isDragged = false;
+		this.isHovered = false;
 		this.isOnStage = true;
 
 		// ----------- //
 
 		this.addEventListener( MouseEvent.MOUSE_DOWN, 	this.onMouseEvent );
+		this.addEventListener( MouseEvent.MOUSE_OVER, 	this.onMouseEvent );
+		this.addEventListener( MouseEvent.MOUSE_OUT, 	this.onMouseEvent );
+		this.addEventListener( MouseEvent.ROLL_OUT, 	this.onMouseEvent );
 	}
 
 	// ************************************************************************ //
@@ -82,6 +99,12 @@ class NodeView extends Sprite
 			this.label.textColor = color;
 	}
 
+	//
+	public function setToolTip( tip:String ):Void
+	{
+		this.tiptext = tip;
+	}
+
 	// ------------------------------------------------------ //
 	// ------------------------------------------------------ //
 
@@ -92,6 +115,12 @@ class NodeView extends Sprite
 		{
 			case MouseEvent.MOUSE_DOWN:
 				this.openDrag();
+
+			case MouseEvent.MOUSE_OVER, MouseEvent.ROLL_OVER:
+				this.openHover();
+
+			case MouseEvent.MOUSE_OUT, MouseEvent.ROLL_OUT:
+				this.closeHover();
 
 			default:
 				throw "unhandled mouse event";
@@ -123,9 +152,75 @@ class NodeView extends Sprite
 		}
 	}
 
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
+	//
+	public function openHover():Void
+	{
+		if( this.isHovered || this.isDragged )
+			return;
+
+		this.isHovered = true;
+
+		this.timer = new Timer( 1000 );
+		this.timer.run = this.onHoverTimer;
+	}
+
+	//
+	public function closeHover():Void
+	{
+		if( !this.isHovered )
+			return;
+
+		this.isHovered = false;
+
+		if( this.timer != null )
+		{
+			this.timer.stop();
+			this.timer = null;
+		}
+
+		if( this.tooltip != null )
+		{
+			this.removeChild( this.tooltip );
+			this.tooltip = null;
+		}
+	}
+
+	//
+	private function onHoverTimer():Void
+	{
+		this.timer.stop();
+		this.timer = null;
+
+		// -------------- //
+
+		this.tooltip = new TextField();
+		this.tooltip.selectable 	= false;
+		this.tooltip.mouseEnabled 	= false;
+		this.tooltip.background 	= true;
+		this.tooltip.autoSize = TextFieldAutoSize.LEFT;
+		this.tooltip.text = this.tiptext;
+
+		this.tooltip.x =  this.width  * 0.5 + 4;
+		this.tooltip.y = -this.height;
+
+		this.addChild( this.tooltip );
+
+		// -------------- //
+
+		this.parent.setChildIndex( this, this.parent.numChildren - 1 );
+	}
+
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
 	//
 	public function openDrag():Void
 	{
+		this.closeHover();
+
 		if( this.isDragged )
 			return;
 
@@ -141,6 +236,8 @@ class NodeView extends Sprite
 	//
 	public function closeDrag():Void
 	{
+		this.closeHover();
+
 		if( !this.isDragged )
 			return;
 

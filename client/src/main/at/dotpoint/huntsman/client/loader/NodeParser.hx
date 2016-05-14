@@ -114,6 +114,9 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 		return node;
 	}
 
+	// ------------------------------------------------------------------------ //
+	// ------------------------------------------------------------------------ //
+
 	//
 	private function addPackage( name:String ):Void
 	{
@@ -139,9 +142,6 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 			throw "no packages found, could not calculate node colors";
 
 		this.packages.sort( this.sortPackages );
-
-		for( p in this.packages )
-			trace( p );
 
 		// ------------ //
 
