@@ -75,6 +75,13 @@ class NodeView extends Sprite
 		this.graphics.endFill();
 	}
 
+	//
+	public function setColor( color:Int ):Void
+	{
+		if( this.label != null )
+			this.label.textColor = color;
+	}
+
 	// ------------------------------------------------------ //
 	// ------------------------------------------------------ //
 

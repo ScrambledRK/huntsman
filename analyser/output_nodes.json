@@ -155,6 +155,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -173,6 +177,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParserSettings",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1123,6 +1131,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.IInputControlSystem",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1225,6 +1237,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.IKeyboardInput",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1349,6 +1365,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.ICollection",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1459,6 +1479,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1477,6 +1501,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1583,6 +1611,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.IDataProvider",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1601,6 +1633,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.ITextProvider",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1773,6 +1809,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -1791,6 +1831,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.IDispatcher",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2003,6 +2047,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2021,6 +2069,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITaskFactory",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2061,6 +2113,28 @@
         "type":"file",
         "children":
         [
+        ],
+        "parents":
+        [
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe",
+            "type":"variation"
+          }
+        ]
+      },
+      {
+        "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/Timer.hx",
+        "type":"file",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.Timer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2189,6 +2263,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraComponent",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2207,6 +2285,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraEntity",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2225,6 +2307,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraFrustum",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2243,6 +2329,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraLens",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2283,6 +2373,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.IDisplayEngine",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2345,6 +2439,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2385,6 +2483,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2403,6 +2505,26 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2465,6 +2587,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IAMaterialBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2505,6 +2635,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2545,6 +2679,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IAMaterial",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2607,6 +2749,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IAMeshBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2793,6 +2943,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -2873,6 +3027,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IAMesh",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3129,6 +3291,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3169,6 +3335,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3209,6 +3379,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3249,6 +3423,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3267,6 +3445,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3329,6 +3511,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.ITexture",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3391,6 +3577,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.IRenderContext",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3453,6 +3643,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.rendering.IRenderer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3471,6 +3665,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.scene.IScene",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3709,6 +3907,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3819,6 +4021,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IBasicDataProcessor",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3837,6 +4047,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataRequest",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3855,6 +4069,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -3965,6 +4183,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.logger.ILogger",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4199,6 +4421,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.geom.ICube",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4217,6 +4443,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.geom.IPlane",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4235,6 +4465,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.geom.IRectangle",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4447,6 +4681,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4465,6 +4703,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4483,6 +4725,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4501,6 +4747,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4519,6 +4769,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4805,6 +5059,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.IBoundings",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4845,6 +5103,14 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.spatial.ISpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.IASpatialEntity",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -4907,6 +5173,10 @@
         "type":"file",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -5679,6 +5949,10 @@
             "type":"file"
           },
           {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/Timer.hx",
+            "type":"file"
+          },
+          {
             "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/ADisplayEngine.hx",
             "type":"file"
           },
@@ -6324,6 +6598,10 @@
             "type":"class"
           },
           {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
+            "type":"class"
+          },
+          {
             "name":"at.dotpoint.huntsman.analyser.script.ScriptReference",
             "type":"class"
           }
@@ -6371,6 +6649,10 @@
           },
           {
             "name":"at.dotpoint.huntsman.analyser.script.ScriptReference",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
             "type":"class"
           }
         ],
@@ -6433,6 +6715,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParserSettings",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -6451,6 +6737,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParserSettings",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -6465,12 +6755,76 @@
         ]
       },
       {
+        "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/analyser/src/main/at/dotpoint/huntsman/analyser/parser/INodeParser.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.configuration.Configuration",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.configuration.ConfigurationFactory",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.ParserFactory",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.FileTask",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"at.dotpoint.huntsman.analyser.parser.INodeParserSettings",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/analyser/src/main/at/dotpoint/huntsman/analyser/parser/INodeParserSettings.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.ANodeParser",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.ANodeParserSettings",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"at.dotpoint.huntsman.analyser.parser.ParserFactory",
         "type":"class",
         "children":
         [
           {
             "name":"at.dotpoint.huntsman.analyser.script.ScriptReference",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
             "type":"class"
           }
         ],
@@ -6746,6 +7100,10 @@
         "children":
         [
           {
+            "name":"at.dotpoint.huntsman.analyser.parser.source.SourceParserSettings",
+            "type":"class"
+          },
+          {
             "name":"at.dotpoint.huntsman.analyser.parser.source.token.TokenProcessor",
             "type":"class"
           },
@@ -6755,10 +7113,6 @@
           },
           {
             "name":"at.dotpoint.huntsman.analyser.script.ScriptReference",
-            "type":"class"
-          },
-          {
-            "name":"at.dotpoint.huntsman.analyser.parser.source.SourceParserSettings",
             "type":"class"
           },
           {
@@ -7062,6 +7416,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.processor.AsyncQueue",
             "type":"class"
           },
@@ -7104,6 +7462,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          },
+          {
             "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
             "type":"class"
           }
@@ -7129,6 +7491,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.parser.INodeParser",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7147,6 +7517,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
           {
             "name":"at.dotpoint.huntsman.analyser.script.ScriptReference",
             "type":"class"
@@ -7173,6 +7547,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7199,6 +7581,22 @@
           {
             "name":"at.dotpoint.huntsman.analyser.processor.ProcessProgress",
             "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.FileTask",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.HScriptTask",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProjectTask",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.VariationTask",
+            "type":"class"
           }
         ]
       },
@@ -7207,6 +7605,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
           {
             "name":"at.dotpoint.huntsman.analyser.project.Project",
             "type":"class"
@@ -7229,6 +7631,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
           {
             "name":"at.dotpoint.huntsman.analyser.project.Variation",
             "type":"class"
@@ -7425,6 +7831,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.AKeyboardInput",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7443,6 +7853,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AFlashLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7453,6 +7871,14 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.BitmapLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.SWFLoader",
+            "type":"class"
           }
         ]
       },
@@ -7461,6 +7887,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7471,6 +7901,18 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.ADisplayLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AURLLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.SoundLoader",
+            "type":"class"
           }
         ]
       },
@@ -7479,6 +7921,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AFlashLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7489,6 +7939,14 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.BinaryLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
           }
         ]
       },
@@ -7497,6 +7955,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AURLLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7515,6 +7977,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.ADisplayLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7533,6 +7999,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AFlashLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7551,6 +8025,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AURLLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7569,6 +8047,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.ADisplayLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7587,6 +8069,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
             "type":"class"
@@ -7614,6 +8104,10 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.vector.Vector3",
             "type":"class"
           }
@@ -7636,6 +8130,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.processor.AsyncQueue",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigRequest",
             "type":"class"
           },
@@ -7645,6 +8143,10 @@
           },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
             "type":"class"
           }
         ],
@@ -7670,6 +8172,14 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.bootstrapper.Bootstrapper",
             "type":"class"
           }
@@ -7683,6 +8193,26 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.bootstrapper.InputControlTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.application.bootstrapper.ApplicationInfoTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.bootstrapper.DisplayEngineTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.bootstrapper.DataLoaderTask",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.network.bootstrapper.SQLTask",
+            "type":"class"
           }
         ]
       },
@@ -7691,6 +8221,22 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITaskFactory",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7709,6 +8255,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITaskFactory",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7732,6 +8286,14 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.IInputControlSystem",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.controls.InputRequest",
             "type":"class"
           }
@@ -7749,10 +8311,44 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.controls.IInputControlSystem",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/controls/IInputControlSystem.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.bootstrapper.InputControlTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.InputControlSystem",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.controls.InputControlSystem",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.IInputControlSystem",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.IKeyboardInput",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.controls.InputRequest",
             "type":"class"
@@ -7801,6 +8397,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.IKeyboardInput",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7811,6 +8411,40 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.controls.keyboard.KeyboardInput",
+            "type":"class"
+          },
+          {
+            "name":"lwjgl.at.dotpoint.controls.keyboard.KeyboardInput",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.controls.keyboard.IKeyboardInput",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/controls/keyboard/IKeyboardInput.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.InputControlSystem",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.AKeyboardInput",
+            "type":"class"
           }
         ]
       },
@@ -7860,6 +8494,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.application.ApplicationInfo",
             "type":"class"
           }
@@ -7895,10 +8533,36 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.core.datastructure.collection.ICollection",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/datastructure/collection/ICollection.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.VectorSet",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.core.datastructure.collection.VectorSet",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.ICollection",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7909,6 +8573,14 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.VectorSetIterator",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
+            "type":"class"
           },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
@@ -7925,6 +8597,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.VectorSet",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -7944,6 +8620,18 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
           }
@@ -7957,6 +8645,26 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.TreeNode",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
           }
         ]
       },
@@ -7965,6 +8673,22 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.collection.VectorSet",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
             "type":"class"
@@ -7983,6 +8707,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
           }
         ]
       },
@@ -7991,6 +8719,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8005,6 +8745,114 @@
           {
             "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
             "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.event.TreeNodeEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.event.SpatialEvent",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/datastructure/entity/IComponent.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/datastructure/entity/IEntity.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.event.TreeNodeDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.TreeNode",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.IASpatialEntity",
+            "type":"class"
           }
         ]
       },
@@ -8013,6 +8861,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
@@ -8040,6 +8900,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
           }
@@ -8065,6 +8929,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8075,6 +8947,18 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
           }
         ]
       },
@@ -8083,6 +8967,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.IDataProvider",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.lazy.LazyComponent",
             "type":"class"
@@ -8097,6 +8985,62 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.TextProvider",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.datastructure.provider.IDataProvider",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/datastructure/provider/IDataProvider.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.DataProvider",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.ITextProvider",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.datastructure.provider.ITextProvider",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.IDataProvider",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/datastructure/provider/ITextProvider.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.TextProvider",
+            "type":"class"
           }
         ]
       },
@@ -8105,6 +9049,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.DataProvider",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.provider.ITextProvider",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8159,6 +9111,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8191,6 +9147,10 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.datastructure.graph.event.TreeNodeDispatcher",
             "type":"class"
           },
@@ -8200,6 +9160,26 @@
           },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.generic.ErrorEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.lazy.event.LazyEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.signal.SignalEventDispatcher",
             "type":"class"
           },
           {
@@ -8219,6 +9199,10 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.display.event.DisplayEvent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.bootstrapper.DataLoaderTask",
             "type":"class"
           },
@@ -8228,6 +9212,14 @@
           },
           {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.event.HTTPStatusEvent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.event.ProgressEvent",
             "type":"class"
           },
           {
@@ -8266,6 +9258,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
           },
@@ -8283,6 +9279,46 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.Processor",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.event.TreeNodeDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.AsyncQueue",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.ARenderContext",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.RenderSettings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.RenderViewport",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ABasicDataProcessor",
+            "type":"class"
           }
         ]
       },
@@ -8291,6 +9327,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8321,6 +9361,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8353,6 +9397,10 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.loader.event.DataLoaderEvent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
             "type":"class"
           },
@@ -8363,10 +9411,134 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.IDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/dispatcher/event/IEventDispatcher.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.event.TreeNodeDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.signal.SignalEventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.solo.SoloEventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.IDisplayEngine",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.IRenderContext",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataQueueLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ABasicDataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IBasicDataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.dispatcher.IDispatcher",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/dispatcher/IDispatcher.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.core.dispatcher.lazy.event.LazyEvent",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8437,6 +9609,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.signal.SignalEventDispatcher",
+            "type":"class"
           }
         ]
       },
@@ -8445,6 +9621,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.signal.SignalDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8473,6 +9661,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.solo.SoloEventDispatcher",
+            "type":"class"
           }
         ]
       },
@@ -8482,7 +9674,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.solo.SoloDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
             "type":"class"
           }
         ],
@@ -8503,6 +9703,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
@@ -8525,6 +9733,10 @@
           {
             "name":"at.dotpoint.huntsman.analyser.processor.Processor",
             "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.Bootstrapper",
+            "type":"class"
           }
         ]
       },
@@ -8535,6 +9747,10 @@
         [
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.ITask",
             "type":"class"
           }
         ],
@@ -8559,6 +9775,82 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.core.processor.ITask",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/processor/ITask.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.ProcessProgress",
+            "type":"class"
+          },
+          {
+            "name":"at.dotpoint.huntsman.analyser.processor.task.ProcessTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.Bootstrapper",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.AsyncQueue",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.processor.event.ProcessEvent",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.core.processor.ITaskFactory",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/processor/ITaskFactory.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigRequest",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.core.StringTool",
         "type":"class",
         "children":
@@ -8577,10 +9869,52 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.core.Timer",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/core/Timer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.ADisplayEngine",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.rendering.IRenderer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.context.IRenderContext",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.scene.IScene",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
             "type":"class"
@@ -8608,6 +9942,14 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.IDisplayEngine",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
             "type":"class"
           }
@@ -8630,11 +9972,35 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraComponent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.vector.Matrix44",
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.display.camera.ICameraFrustum",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraLens",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.IPlane",
             "type":"class"
           },
           {
@@ -8659,6 +10025,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraFrustum",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.IPlane",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8678,7 +10052,19 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.display.camera.ICameraLens",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.lazy.LazyComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.ICameraFrustum",
             "type":"class"
           }
         ],
@@ -8695,10 +10081,114 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.camera.ICameraComponent",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/camera/ICameraComponent.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.camera.ICameraEntity",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/camera/ICameraEntity.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.camera.ICameraFrustum",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/camera/ICameraFrustum.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraFrustum",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraLens",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.camera.ICameraLens",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/camera/ICameraLens.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraLens",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.event.DisplayEvent",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8709,6 +10199,32 @@
           {
             "name":"root",
             "type":"root"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.IDisplayEngine",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/IDisplayEngine.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.bootstrapper.DisplayEngineTask",
+            "type":"class"
           }
         ]
       },
@@ -8731,6 +10247,22 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.AMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.AShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
+            "type":"class"
           }
         ]
       },
@@ -8739,6 +10271,26 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8753,10 +10305,52 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IDisplayObject.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.DisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.scene.IScene",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.input.ARenderInput",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
             "type":"class"
@@ -8779,10 +10373,222 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/input/IRenderInput.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.ARenderInput",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.AShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IRenderable.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.DisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.Renderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.ARenderer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IRenderable.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.IRenderableComponent",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableBuffer",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IRenderable.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.IRenderableData",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IRenderable.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableBuffer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.IRenderableBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableData",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/IRenderable.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableComponent",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.material.AMaterial",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8801,6 +10607,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
             "type":"class"
@@ -8827,10 +10645,94 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IAMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/material/buffer/IMaterialBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.AMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.AMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.material.buffer.IAMaterialBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/material/buffer/IMaterialBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.material.data.AMaterialData",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.MaterialSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.register.type.RegisterType",
             "type":"class"
@@ -8849,10 +10751,72 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.MaterialSignature",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/material/data/IMaterialData.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.DisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.AMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.AMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IAMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.AMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IAMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.material.data.MaterialSignature",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8867,6 +10831,94 @@
           {
             "name":"haxe.at.dotpoint.display.renderable.material.buffer.AMaterialBuffer",
             "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.AMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IAMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/material/IMaterial.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.AMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.Renderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.ARenderer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.material.IAMaterial",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/material/IMaterial.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
           }
         ]
       },
@@ -8875,6 +10927,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -8894,6 +10958,18 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshSignature",
             "type":"class"
           },
@@ -8911,6 +10987,78 @@
           {
             "name":"root",
             "type":"root"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IAMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/mesh/buffer/IMeshBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.AMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.AMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IAMeshBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/mesh/buffer/IMeshBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
           }
         ]
       },
@@ -8945,6 +11093,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.mesh.data.complex.MeshIndexLookup",
             "type":"class"
@@ -9123,12 +11275,82 @@
         ]
       },
       {
-        "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshData",
+        "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
         "type":"class",
         "children":
         [
           {
             "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshSignature",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/mesh/data/IMeshData.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.DisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.AMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.AMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IAMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.complex.ComplexMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IAMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshData",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
             "type":"class"
           },
           {
@@ -9153,6 +11375,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9177,7 +11403,91 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshData",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IAMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/mesh/IMesh.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.AMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.Renderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.ARenderer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.mesh.IAMesh",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/mesh/IMesh.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
             "type":"class"
           }
         ]
@@ -9277,11 +11587,31 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.MaterialSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.MeshSignature",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.display.renderable.register.RegisterHelper",
             "type":"class"
           },
           {
             "name":"haxe.at.dotpoint.display.renderable.shader.buffer.AShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureSignature",
             "type":"class"
           }
         ]
@@ -9361,6 +11691,22 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9379,6 +11725,34 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9389,6 +11763,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.Renderable",
+            "type":"class"
           }
         ]
       },
@@ -9397,6 +11775,30 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.data.IMeshData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.data.IMaterialData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9419,6 +11821,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9437,6 +11851,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
             "type":"class"
@@ -9463,10 +11889,64 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.input.IRenderInput",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/shader/buffer/IShaderBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.AShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.AShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.shader.data.AShaderData",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9481,10 +11961,60 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/shader/data/IShaderData.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.RenderableFactory",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.AShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.AShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.AShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.renderable.shader.data.ShaderSignature",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9503,6 +12033,76 @@
           {
             "name":"haxe.at.dotpoint.display.renderable.shader.buffer.AShaderBuffer",
             "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.AShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.data.IShaderData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.buffer.IShaderBuffer",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/shader/IShader.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.AMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.IAMaterialBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.AMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.buffer.IAMeshBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderable",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.AShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.ATextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.ARenderer",
+            "type":"class"
           }
         ]
       },
@@ -9511,6 +12111,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9525,16 +12137,100 @@
         ]
       },
       {
-        "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
+        "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/texture/buffer/ITextureBuffer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.ATextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.ITexture",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
         "type":"class",
         "children":
         [
           {
             "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureSignature",
             "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/texture/data/ITextureData.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.buffer.ATextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.ITexture",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.ARenderableData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureSignature",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
           },
           {
             "name":"haxe.at.dotpoint.math.geom.Rectangle",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
             "type":"class"
           }
         ],
@@ -9563,6 +12259,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.register.RegisterSignature",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9575,8 +12275,38 @@
             "type":"root"
           },
           {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
             "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.renderable.texture.ITexture",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.ITextureData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.buffer.ITextureBuffer",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/renderable/texture/ITexture.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
           }
         ]
       },
@@ -9585,6 +12315,26 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.display.rendering.IRenderer",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.mesh.IMesh",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.material.IMaterial",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.shader.IShader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IRenderable",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9612,6 +12362,10 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
             "type":"class"
           }
@@ -9629,10 +12383,40 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.rendering.context.IRenderContext",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/rendering/context/IRenderContext.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.display.rendering.context.RenderSettings",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.math.vector.Vector3",
             "type":"class"
@@ -9659,6 +12443,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9677,10 +12465,66 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.display.rendering.IRenderer",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/rendering/IRenderer.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.rendering.ARenderer",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.display.scene.IScene",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.display.renderable.IDisplayObject",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/display/scene/IScene.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.ADisplayEngine",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.loader.bootstrapper.DataLoaderTask",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.loader.DataRequest",
             "type":"class"
@@ -9708,6 +12552,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
             "type":"class"
           }
@@ -9731,6 +12579,10 @@
         [
           {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
             "type":"class"
           },
           {
@@ -9760,6 +12612,22 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
             "type":"class"
           },
@@ -9785,6 +12653,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigRequest",
+            "type":"class"
           },
           {
             "name":"haxe.at.dotpoint.loader.bootstrapper.DataLoaderTask",
@@ -9838,6 +12710,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
             "type":"class"
           }
@@ -9863,6 +12739,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9885,6 +12765,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -9924,7 +12808,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -9937,6 +12829,22 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.BitmapFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.SoundFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.StringFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.SWFFormat",
+            "type":"class"
           }
         ]
       },
@@ -9946,7 +12854,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -9968,7 +12884,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -9985,12 +12909,54 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.loader.format.IDataFormat",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/loader/format/IDataFormat.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataHelper",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.BinaryFormat",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.loader.format.SoundFormat",
         "type":"class",
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -10012,7 +12978,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -10034,7 +13008,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
             "type":"class"
           }
         ],
@@ -10056,6 +13038,14 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.EventDispatcher",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
           },
@@ -10073,6 +13063,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
           }
         ]
       },
@@ -10081,6 +13075,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ABasicDataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent",
             "type":"class"
@@ -10107,6 +13109,238 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AFlashLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.parser.BitmapParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.parser.JSONParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.parser.NullParser",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AHTTPLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AudioLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.ImageLoader",
+            "type":"class"
+          },
+          {
+            "name":"php.at.dotpoint.loader.processor.loader.ACURLLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.AFileLoader",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IBasicDataProcessor",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/loader/processor/IDataProcessor.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.parser.BitmapParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.loader.BootstrapperConfigParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.ABaseDataFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.BinaryFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.BitmapFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.SoundFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.StringFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.format.SWFFormat",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataRequest",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.parser.JSONParser",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.parser.NullParser",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.loader.processor.IBasicDataProcessor",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/loader/processor/IDataProcessor.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.loader.processor.IDataRequest",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/loader/processor/IDataRequest.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.DataRequest",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/loader/processor/loader/IDataLoader.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.ADisplayLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.AURLLoader",
+            "type":"class"
+          },
+          {
+            "name":"flash.at.dotpoint.loader.processor.loader.SoundLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AHTTPLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AudioLoader",
+            "type":"class"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.ImageLoader",
+            "type":"class"
+          },
+          {
+            "name":"php.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.BinaryLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.BitmapLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
           }
         ]
       },
@@ -10115,6 +13349,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10133,6 +13375,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.IDataProcessor",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10201,10 +13451,40 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.logger.ILogger",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/logger/ILogger.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.logger.Log",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.logger.logger.NullLogger",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.logger.Log",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.logger.ILogger",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10237,6 +13517,14 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.logger.logger.NullLogger",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.logger.logger.TraceLogger",
+            "type":"class"
           }
         ]
       },
@@ -10245,6 +13533,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.logger.logger.BaseLogger",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.logger.ILogger",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.logger.LoggerSettings",
             "type":"class"
@@ -10267,6 +13563,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.logger.logger.BaseLogger",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.logger.LoggerSettings",
             "type":"class"
@@ -10385,6 +13685,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.geom.ICube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10411,10 +13719,92 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.math.geom.ICube",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/geom/ICube.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.Cube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.lazy.LazyCube",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.geom.IPlane",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/geom/IPlane.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraFrustum",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.geom.IRectangle",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/geom/IRectangle.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.Rectangle",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.math.geom.Rectangle",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.geom.IRectangle",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10442,11 +13832,19 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.math.geom.ICube",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.geom.Cube",
             "type":"class"
           },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.lazy.LazyComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
             "type":"class"
           }
         ],
@@ -10459,6 +13857,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.AABB",
+            "type":"class"
           }
         ]
       },
@@ -10467,6 +13869,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.math.vector.Quaternion",
             "type":"class"
@@ -10497,6 +13903,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.math.vector.Vector3",
             "type":"class"
@@ -10563,6 +13973,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10582,7 +14000,15 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.vector.Vector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
             "type":"class"
           },
           {
@@ -10607,10 +14033,260 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/vector/IMatrix33.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Matrix33",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Matrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Quaternion",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/vector/IMatrix44.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"flash.at.dotpoint.math.Flash3D",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraComponent",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.camera.CameraLens",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Matrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Vector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.AABB",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.TransformationMatrix",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/vector/IQuaternion.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.lazy.LazyQuaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Quaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.TransformationMatrix",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.vector.IVector2",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/vector/IVector2.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.Rectangle",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.signal.FastFourierTransform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.Trigonometry",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Vector2",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.math.vector.IVector3",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/math/vector/IVector3.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.display.renderable.DisplayObject",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.geom.Cube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.lazy.LazyCube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.lazy.LazyVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.signal.FastFourierTransform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.Trigonometry",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Quaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.Vector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.AABB",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.SpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.TransformationMatrix",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.math.vector.Matrix33",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10629,6 +14305,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10659,6 +14343,18 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix33",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10717,6 +14413,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector2",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10747,6 +14447,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -10934,7 +14642,23 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.math.lazy.LazyCube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.vector.Vector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
             "type":"class"
           }
         ],
@@ -10960,7 +14684,19 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.IBoundings",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.spatial.boundings.AABB",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
             "type":"class"
           },
           {
@@ -10976,7 +14712,19 @@
             "type":"class"
           },
           {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.TreeNode",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.math.geom.Cube",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
             "type":"class"
           }
         ],
@@ -10989,6 +14737,36 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.spatial.boundings.IBoundings",
+        "type":"class",
+        "children":
+        [
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/spatial/boundings/IBoundings.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
           }
         ]
       },
@@ -10997,6 +14775,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.event.EntityEvent",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
@@ -11019,10 +14801,70 @@
         ]
       },
       {
+        "name":"haxe.at.dotpoint.spatial.ISpatialEntity",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.spatial.IASpatialEntity",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/spatial/ISpatialEntity.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.spatial.IASpatialEntity",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IEntity",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/spatial/ISpatialEntity.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ISpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          }
+        ]
+      },
+      {
         "name":"haxe.at.dotpoint.spatial.SpatialEntity",
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11041,6 +14883,42 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.spatial.IASpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Entity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.IBoundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.TreeNode",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.IComponent",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11051,6 +14929,44 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.SpatialEntity",
+            "type":"class"
+          }
+        ]
+      },
+      {
+        "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+        "type":"class",
+        "children":
+        [
+          {
+            "name":"haxe.at.dotpoint.core.dispatcher.event.IEventDispatcher",
+            "type":"class"
+          }
+        ],
+        "parents":
+        [
+          {
+            "name":"D:/Projects/Dotpoint/huntsman/common/lib/dotCore/src/main/haxe/at/dotpoint/spatial/transform/ITransform.hx",
+            "type":"file"
+          },
+          {
+            "name":"root",
+            "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.AABB",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.Transform",
+            "type":"class"
           }
         ]
       },
@@ -11059,6 +14975,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.entity.Component",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.transform.ITransform",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.math.lazy.LazyVector3",
             "type":"class"
@@ -11069,6 +14993,22 @@
           },
           {
             "name":"haxe.at.dotpoint.spatial.transform.TransformationMatrix",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.core.datastructure.graph.TreeNode",
             "type":"class"
           },
           {
@@ -11085,6 +15025,14 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.boundings.Boundings",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.spatial.ASpatialEntity",
+            "type":"class"
           }
         ]
       },
@@ -11095,6 +15043,18 @@
         [
           {
             "name":"haxe.at.dotpoint.math.vector.Matrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IMatrix44",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IQuaternion",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.math.vector.IVector3",
             "type":"class"
           }
         ],
@@ -11142,6 +15102,14 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.event.HTTPStatusEvent",
             "type":"class"
           },
@@ -11159,6 +15127,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
           }
         ]
       },
@@ -11167,6 +15139,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.loader.event.ProgressEvent",
             "type":"class"
@@ -11189,6 +15169,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11207,6 +15195,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"js.at.dotpoint.loader.processor.loader.AHTTPLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11225,6 +15217,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.controls.keyboard.AKeyboardInput",
+            "type":"class"
+          },
           {
             "name":"lwjgl.at.dotpoint.controls.keyboard.KeyboardInputCallback",
             "type":"class"
@@ -11277,6 +15273,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11287,6 +15287,10 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"php.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
           }
         ]
       },
@@ -11295,6 +15299,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"php.at.dotpoint.loader.processor.loader.ACURLLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.core.dispatcher.event.Event",
             "type":"class"
@@ -11318,6 +15330,10 @@
         "children":
         [
           {
+            "name":"haxe.at.dotpoint.loader.processor.ADataProcessor",
+            "type":"class"
+          },
+          {
             "name":"haxe.at.dotpoint.loader.event.ProgressEvent",
             "type":"class"
           }
@@ -11331,6 +15347,18 @@
           {
             "name":"root",
             "type":"root"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.BinaryLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.BitmapLoader",
+            "type":"class"
+          },
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.StringLoader",
+            "type":"class"
           }
         ]
       },
@@ -11339,6 +15367,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.AFileLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11357,6 +15393,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.AFileLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          },
           {
             "name":"haxe.at.dotpoint.display.renderable.texture.data.TextureData",
             "type":"class"
@@ -11379,6 +15423,14 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"sys.at.dotpoint.loader.processor.loader.AFileLoader",
+            "type":"class"
+          },
+          {
+            "name":"haxe.at.dotpoint.loader.processor.loader.IDataLoader",
+            "type":"class"
+          }
         ],
         "parents":
         [
@@ -11397,6 +15449,10 @@
         "type":"class",
         "children":
         [
+          {
+            "name":"haxe.at.dotpoint.bootstrapper.BootstrapperTask",
+            "type":"class"
+          }
         ],
         "parents":
         [

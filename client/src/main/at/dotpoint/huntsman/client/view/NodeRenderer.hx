@@ -117,8 +117,8 @@ class NodeRenderer
 	 */
 	public function addNode( node:Node ):Void
 	{
-		if( this.isEmptyNode(node) )
-			return;
+		//if( this.isEmptyNode(node) )
+		//	return;
 
 		// -------- //
 
@@ -150,6 +150,7 @@ class NodeRenderer
 
 		var view:NodeView = this.getView( index );
 			view.setLabel( node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length ) );
+			view.setColor( node.data.color );
 
 		this.nodeView.addChild( view );
 	}
@@ -225,7 +226,7 @@ class NodeRenderer
 				this.lastIndex = 0;
 				this.isComplete = true;
 
-				//break;
+				break;
 			}
 		}
 		while( (Timer.stamp() - sstamp) < 20 );
@@ -291,9 +292,10 @@ class NodeRenderer
 		for( j in 0...cn.parents.getSize("class") )
 		{
 			var pnode:Node = cn.parents.getNodeByIndex( "class", j );
+			var pv:NodeVertex = this.getVertex( pnode.index );
 
-			if( pnode.type != "root" )
-				this.setAttraction( cv, this.getVertex( pnode.index ) );
+			if( pv != null )
+				this.setAttraction( cv, pv );
 		}
 
 		// ------------------- //
@@ -446,7 +448,7 @@ class NodeRenderer
 	 */
 	private function setRepulsion( cv:NodeVertex, nv:NodeVertex):Void
 	{
-		var scale:Float = 15;
+		var scale:Float = 25;
 
 		var dx:Float = 0;
 		var dy:Float = 0;
@@ -459,7 +461,7 @@ class NodeRenderer
 		var dss:Float = ( dx * dx + dy * dy );
 		var dsq:Float = Math.sqrt(dss);
 
-		if( dsq > 400 )
+		if( dsq > 300 )
 			return;
 
 		// ----------------- //
