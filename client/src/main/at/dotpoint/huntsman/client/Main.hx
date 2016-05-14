@@ -1,5 +1,7 @@
 package at.dotpoint.huntsman.client;
 
+import openfl.ui.Keyboard;
+import openfl.events.KeyboardEvent;
 import openfl.events.Event;
 import at.dotpoint.huntsman.client.view.NodeRenderer;
 import haxe.at.dotpoint.core.dispatcher.event.generic.StatusEvent;
@@ -52,8 +54,6 @@ class Main extends Sprite
 	{
 		this.loader = new NodeRequest( new URLRequest( configURL ) );
 		this.loader.load( this.onRequestComplete );
-
-		this.addEventListener( Event.ENTER_FRAME, this.onEnterFrame );
 	}
 
 	//
@@ -64,6 +64,10 @@ class Main extends Sprite
 
 		//
 		this.renderer = new NodeRenderer( this );
+		this.renderer.reset();
+
+		this.addEventListener( KeyboardEvent.KEY_UP, this.onKeyEvent );
+		this.addEventListener( Event.ENTER_FRAME, this.onEnterFrame );
 
 		// --------------- //
 
@@ -73,6 +77,13 @@ class Main extends Sprite
 		{
 			this.renderer.addNode( node );
 		}
+	}
+
+	//
+	private function onKeyEvent( event:KeyboardEvent ):Void
+	{
+		if( event.keyCode == Keyboard.SPACE )
+			this.renderer.reset();
 	}
 
 	//

@@ -1,6 +1,9 @@
 package at.dotpoint.huntsman.client.view;
 
-import openfl.Lib;
+import Math;
+import haxe.at.dotpoint.core.Timer;
+import haxe.ds.Vector;
+import haxe.at.dotpoint.math.Trigonometry;
 import haxe.at.dotpoint.math.geom.Rectangle;
 import at.dotpoint.huntsman.common.relation.NodeVertex;
 import haxe.at.dotpoint.math.vector.Vector2;
@@ -18,6 +21,9 @@ class NodeRenderer
 	//
 	private var nodes:NodeContainer;
 
+	//
+	private var bounds:Rectangle;
+
 	// ----------- //
 
 	//
@@ -29,7 +35,19 @@ class NodeRenderer
 	// ----------- //
 
 	//
-	private var bounds:Rectangle;
+	private var lastIndex:Int;
+
+	private var isComplete:Bool;
+	private var isMoving:Bool;
+	private var isRelaxing:Bool;
+	private var isDone:Bool;
+
+	// ----------- //
+
+	private var pool_vec2_1:Vector2;
+	private var pool_vec2_2:Vector2;
+
+	private var pool_vecvec2:Vector<Vector2>;
 
 	// ************************************************************************ //
 	// Constructor
@@ -49,10 +67,28 @@ class NodeRenderer
 		this.bounds = new Rectangle();
 		this.bounds.width  = this.mainView.stage.stageWidth;
 		this.bounds.height = this.mainView.stage.stageHeight;
+
+		// --------- //
+
+		this.pool_vec2_1 = new Vector2();
+		this.pool_vec2_2 = new Vector2();
+
+		this.pool_vecvec2 = new Vector<Vector2>( 2 );
+
+		// --------- //
+
+		this.lastIndex = 0;
+
+		this.isMoving = false;
+		this.isRelaxing = false;
+		this.isComplete = false;
+		this.isDone = false;
+
+		this.reset();
 	}
 
 	// ************************************************************************ //
-	// Methods
+	// Initial Methods
 	// ************************************************************************ //
 
 	//
@@ -76,7 +112,9 @@ class NodeRenderer
 	// ------------------------------------------------------------------------ //
 	// ------------------------------------------------------------------------ //
 
-	//
+	/**
+	 *
+	 */
 	public function addNode( node:Node ):Void
 	{
 		if( this.isEmptyNode(node) )
@@ -86,8 +124,8 @@ class NodeRenderer
 
 		var index:Int = this.nodes.addNode( node );
 
-		this.setInitialVertexPosition( index );
-		this.setView( index );
+		this.setInitialView( index );
+		this.setInitialVertex( index );
 	}
 
 	//
@@ -106,7 +144,7 @@ class NodeRenderer
 	}
 
 	//
-	private function setView( index:Int ):Void
+	private function setInitialView( index:Int ):Void
 	{
 		var node:Node = this.getNode( index );
 
@@ -117,7 +155,7 @@ class NodeRenderer
 	}
 
 	//
-	private function setInitialVertexPosition( index:Int ):Void
+	private function setInitialVertex( index:Int ):Void
 	{
 		var node:Node = this.getNode( index );
 
@@ -133,80 +171,169 @@ class NodeRenderer
 			vertex.position.x = x;
 			vertex.position.y = y;
 
-		this.getView( index ).x = x;
-		this.getView( index ).y = y;
+		// -------------- //
+
+		var view:NodeView = this.getView( index );
+
+		vertex.outerBounds.setDimensions( view.width + 12, view.height + 8 );
+		vertex.outerBounds.move( x, y );
+
+		vertex.innerBounds.setDimensions( view.width + 0, view.height + 0 );
+		vertex.innerBounds.move( x, y );
+	}
+
+	// ************************************************************************ //
+	// update Methods
+	// ************************************************************************ //
+
+	//
+	public function reset():Void
+	{
+		trace("reset");
+
+		this.isMoving = true;
+		this.isRelaxing = false;
+		this.isDone = false;
+
+		for( j in 0...this.nodes.size() )
+			this.getVertex(j).relaxation = 0.05;
 	}
 
 	// ------------------------------------------------------------------------ //
 	// ------------------------------------------------------------------------ //
 
-	//
+	/**
+	 *
+	 */
 	public function update():Void
 	{
-		var length:Int = this.nodes.size();
+		var sstamp:Float = Timer.stamp();
 
-		for( i in 0...length )
+		do
 		{
-			var cn:Node = this.getNode( i );
+			if( !this.isDone )
+				this.updateVelocity( this.lastIndex );
 
-			var cv:NodeVertex = this.getVertex( i );
-				cv.force.set( 0, 0 );
+			this.updatePosition( this.lastIndex );
 
-			// ------------------- //
-			// repulsion:
+			// -------------------- //
 
-			for( j in 0...length )
+			this.lastIndex++;
+
+			if( this.lastIndex >= this.nodes.size() )
 			{
-				if( i == j )
-					continue;
+				this.lastIndex = 0;
+				this.isComplete = true;
 
-				this.setRepulsion( cv, this.getVertex(j) );
+				//break;
+			}
+		}
+		while( (Timer.stamp() - sstamp) < 20 );
+
+		// ------------------------ //
+
+		if( this.isComplete )
+		{
+			if( this.isRelaxing )
+			{
+				if( !this.isMoving )
+					this.isRelaxing = false;
+			}
+			else
+			{
+				if( !this.isMoving )
+					this.isRelaxing = true;
 			}
 
-			// ------------------- //
-			// attraction:
-
-			//
-			var children:Array<Node> = cn.children.toArray();
-
-			if( children != null )
+			if( !this.isMoving && !this.isRelaxing )
 			{
-				for( j in 0...children.length )
-					this.setAttraction( cv, this.getVertex(children[j].index) );
+				this.isDone = true;
 			}
 
-			//
-			var parents:Array<Node> = cn.parents.toArray();
-
-			if( parents != null )
-			{
-				for( j in 0...parents.length )
-				{
-					if( parents[j].type != "root" )
-						this.setAttraction( cv, this.getVertex(parents[j].index) );
-				}
-			}
-
-			// ------------------- //
-			// velocity:
-
-			if( isEqual( cv.force.x, 0 ) )
-				cv.force.x = 0;
-
-			if( isEqual( cv.force.y, 0 ) )
-				cv.force.y = 0;
-
-			cv.velocity.x = (cv.velocity.x + cv.force.x) * 0.85;
-			cv.velocity.y = (cv.velocity.y + cv.force.y) * 0.85;
+			this.isMoving = false;
+			this.isComplete = false;
 		}
 
-		// ----------------------- //
-		// positions:
+		// ------------------------ //
 
-		for( i in 0...length )
+		this.updateViews();
+	}
+
+	/**
+	 *
+	 */
+	private function updateVelocity( index:Int):Void
+	{
+		var cn:Node = this.getNode( index );
+
+		var cv:NodeVertex = this.getVertex( index );
+			cv.force.set( 0, 0 );
+
+		// ------------------- //
+		// repulsion:
+
+		for( j in 0...this.nodes.size() )
 		{
-			var cv:NodeVertex = this.getVertex(i);
+			if( index == j )
+				continue;
 
+			this.setRepulsion( cv, this.getVertex(j) );
+		}
+
+		// ------------------- //
+		// attraction:
+
+		//
+		for( j in 0...cn.children.getSize("class") )
+			this.setAttraction( cv, this.getVertex( cn.children.getNodeByIndex( "class", j ).index ) );
+
+		//
+		for( j in 0...cn.parents.getSize("class") )
+		{
+			var pnode:Node = cn.parents.getNodeByIndex( "class", j );
+
+			if( pnode.type != "root" )
+				this.setAttraction( cv, this.getVertex( pnode.index ) );
+		}
+
+		// ------------------- //
+		// velocity:
+
+		if( isEqual( cv.force.x, 0 ) )
+			cv.force.x = 0;
+
+		if( isEqual( cv.force.y, 0 ) )
+			cv.force.y = 0;
+
+		cv.velocity.x = (cv.velocity.x + cv.force.x) * 0.85;
+		cv.velocity.y = (cv.velocity.y + cv.force.y) * 0.85;
+
+	}
+
+	/**
+	 *
+	 */
+	private function updatePosition( index:Int ):Void
+	{
+		var hasMoved:Bool = false;
+
+		var cv:NodeVertex 	= this.getVertex(index);
+		var cw:NodeView 	= this.getView(index);
+
+		if( cw.isDragged )
+		{
+			cv.position.x = this.nodeView.stage.mouseX;
+			cv.position.y = this.nodeView.stage.mouseY;
+
+			cv.velocity.set( 0, 0 );
+			cv.force.set( 0, 0 );
+
+			hasMoved = true;
+
+			this.reset();
+		}
+		else
+		{
 			if( isEqual( cv.velocity.x, 0 ) )
 				cv.velocity.x = 0;
 
@@ -216,39 +343,96 @@ class NodeRenderer
 			cv.position.x += cv.velocity.x;
 			cv.position.y += cv.velocity.y;
 
-			// ---------- //
-
-			var cw:NodeView = this.getView(i);
-				cw.x = cv.position.x;
-				cw.y = cv.position.y;
+			if( cv.velocity.x != 0 || cv.velocity.y != 0 )
+				hasMoved = true;
 		}
 
-		// ----------------------- //
-		// edges:
+		// ---------- //
 
-		this.nodeView.graphics.clear();
-		this.nodeView.graphics.lineStyle( 2, 0x444444 );
+		if( hasMoved ) 	this.isMoving = true;
+		else			return;
 
-		for( i in 0...length )
+		// ---------- //
+
+		var pivot:Vector2 = cv.outerBounds.getPivot( this.pool_vec2_1 );
+		var dmove:Vector2 = Vector2.subtract( cv.position, pivot, this.pool_vec2_2 );
+
+		cv.outerBounds.move( dmove.x, dmove.y );
+		cv.innerBounds.move( dmove.x, dmove.y );
+
+		// ---------- //
+
+		if( !Rectangle.isRectangleIntersect( this.bounds, cv.innerBounds ) )
 		{
-			var cn:Node 	= this.getNode(i);
-			var cw:NodeView = this.getView(i);
+			cw.closeDrag();
 
-			var children:Array<Node> = cn.children.toArray();
+			if( cw.parent != null )
+				this.nodeView.removeChild( cw );
+		}
+		else
+		{
+			if( cw.parent == null )
+				this.nodeView.addChild( cw );
 
-			if( children != null )
-			{
-				for( j in 0...children.length )
-				{
-					var nw:NodeView = this.getView( children[j].index );
-
-					this.nodeView.graphics.moveTo( cw.x, cw.y );
-					this.nodeView.graphics.lineTo( nw.x, nw.y );
-				}
-			}
+			cw.x = cv.position.x;
+			cw.y = cv.position.y;
 		}
 	}
 
+	/**
+	 *
+	 */
+	private function updateViews():Void
+	{
+		var length:Int = this.nodes.size();
+
+		this.nodeView.graphics.clear();
+		this.nodeView.graphics.lineStyle( 1, 0x444444 );
+
+		for( i in 0...length )
+		{
+			var cn:Node = this.getNode(i);
+
+			for( j in 0...cn.children.getSize("class") )
+				this.drawConnection( cn, cn.children.getNodeByIndex( "class", j ) );
+		}
+	}
+
+	// ************************************************************************ //
+	// helper Methods
+	// ************************************************************************ //
+
+	/**
+	 *
+	 */
+	private function drawConnection( cn:Node, nn:Node ):Void
+	{
+		var cv:NodeVertex = this.getVertex( cn.index );
+		var nv:NodeVertex = this.getVertex( nn.index );
+
+		if( !Rectangle.isRectangleIntersect( this.bounds, cv.innerBounds ) )
+			return;
+
+		if( !Rectangle.isRectangleIntersect( this.bounds, nv.innerBounds ) )
+			return;
+
+		// --------------- //
+
+		var vertices:Vector<Vector2> = Trigonometry.calculateClosestRectangleVertices( cv.innerBounds, nv.innerBounds, null, this.pool_vecvec2 );
+
+		if( vertices == null )
+			return;
+
+		var cp:Vector2 = vertices[0];
+		var np:Vector2 = vertices[1];
+
+		this.nodeView.graphics.moveTo( cp.x, cp.y );
+		this.nodeView.graphics.lineTo( np.x, np.y );
+	}
+
+	/**
+	 *
+	 */
 	inline public static function isEqual( a:Float, b:Float ):Bool
 	{
 		if( a > b )
@@ -257,25 +441,80 @@ class NodeRenderer
 			return b - a < 0.1;
 	}
 
-	//
-	private function setRepulsion( cv:NodeVertex, nv:NodeVertex ):Void
+	/**
+	 *
+	 */
+	private function setRepulsion( cv:NodeVertex, nv:NodeVertex):Void
 	{
-		var dx:Float = cv.position.x - nv.position.x;
-		var dy:Float = cv.position.y - nv.position.y;
+		var scale:Float = 15;
 
-		var ds:Float = ( dx * dx + dy * dy );
+		var dx:Float = 0;
+		var dy:Float = 0;
 
-		cv.force.x += 15 * dx / ds;
-		cv.force.y += 15 * dy / ds;
+		// ----------------- //
+
+		dx = cv.position.x - nv.position.x;
+		dy = cv.position.y - nv.position.y;
+
+		var dss:Float = ( dx * dx + dy * dy );
+		var dsq:Float = Math.sqrt(dss);
+
+		if( dsq > 400 )
+			return;
+
+		// ----------------- //
+
+		if( this.isRelaxing )
+		{
+			var vertices:Vector<Vector2> = Trigonometry.calculateClosestRectangleVertices( cv.outerBounds, nv.outerBounds, null, this.pool_vecvec2 );
+
+			if( vertices == null )
+			{
+				cv.relaxation = cv.relaxation * 0.25;
+
+				cv.force.x += scale * dx / dss;
+				cv.force.y += scale * dy / dss;
+			}
+
+			return;
+		}
+
+		// ----------------- //
+
+		cv.force.x += scale * dx / dss;
+		cv.force.y += scale * dy / dss;
 	}
 
-	//
+	/**
+	 *
+	 */
 	private function setAttraction( cv:NodeVertex, nv:NodeVertex ):Void
 	{
-		var dx:Float = nv.position.x - cv.position.x;
-		var dy:Float = nv.position.y - cv.position.y;
+		var scale:Float = cv.relaxation;
 
-		cv.force.x += 0.05 * dx;
-		cv.force.y += 0.05 * dy;
+		var dx:Float = 0;
+		var dy:Float = 0;
+
+		// ----------------- //
+
+		var vertices:Vector<Vector2> = Trigonometry.calculateClosestRectangleVertices( cv.outerBounds, nv.outerBounds, null, this.pool_vecvec2 );
+
+		if( vertices == null )
+		{
+			return;
+
+			dx = nv.position.x - cv.position.x;
+			dy = nv.position.y - cv.position.y;
+		}
+		else
+		{
+			dx = vertices[1].x - vertices[0].x;
+			dy = vertices[1].y - vertices[0].y;
+		}
+
+		// ----------------- //
+
+		cv.force.x += scale * dx;
+		cv.force.y += scale * dy;
 	}
 }

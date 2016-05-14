@@ -1,5 +1,7 @@
 package at.dotpoint.huntsman.client.view;
 
+import openfl.events.Event;
+import openfl.events.MouseEvent;
 import openfl.text.TextFieldAutoSize;
 import openfl.text.TextField;
 import flash.display.Sprite;
@@ -12,7 +14,13 @@ class NodeView extends Sprite
 {
 
 	//
-	public var label:TextField;
+	private var label:TextField;
+
+	//
+	public var isDragged(default,null):Bool;
+
+	//
+	private var isOnStage:Bool;
 
 	// ************************************************************************ //
 	// Constructor
@@ -24,6 +32,13 @@ class NodeView extends Sprite
 
 		if( label != null )
 			this.setLabel( label );
+
+		this.isDragged = false;
+		this.isOnStage = true;
+
+		// ----------- //
+
+		this.addEventListener( MouseEvent.MOUSE_DOWN, 	this.onMouseEvent );
 	}
 
 	// ************************************************************************ //
@@ -37,6 +52,7 @@ class NodeView extends Sprite
 		{
 			this.label = new TextField();
 			this.label.autoSize = TextFieldAutoSize.LEFT;
+			this.label.selectable = false;
 
 			this.addChild( this.label );
 		}
@@ -51,18 +67,84 @@ class NodeView extends Sprite
 
 		// ------------ //
 
-		var padding:Int = 2;
-
 		this.graphics.clear();
-
 		this.graphics.beginFill( 0xFFFFFF );
-		this.graphics.drawRect( -w2 - padding, -h2 - padding,
-								w2 * 2 + 2 * padding, h2 * 2 + 2 * padding );
-
-		this.graphics.endFill();
 
 		this.graphics.lineStyle( 1, 0xCCCCCC );
 		this.graphics.drawRect( -w2, -h2, w2 * 2, h2 * 2 );
+		this.graphics.endFill();
 	}
+
+	// ------------------------------------------------------ //
+	// ------------------------------------------------------ //
+
+	//
+	private function onMouseEvent( event:MouseEvent ):Void
+	{
+		switch( event.type )
+		{
+			case MouseEvent.MOUSE_DOWN:
+				this.openDrag();
+
+			default:
+				throw "unhandled mouse event";
+		}
+	}
+
+	//
+	private function onDragEvent( event:Event ):Void
+	{
+		switch( event.type )
+		{
+			case MouseEvent.MOUSE_UP:
+				this.closeDrag();
+
+			case MouseEvent.MOUSE_OUT:
+				this.isOnStage = false;
+
+			case MouseEvent.MOUSE_OVER:
+				this.isOnStage = true;
+
+			case Event.MOUSE_LEAVE:
+			{
+				if( !this.isOnStage )
+					this.closeDrag();
+			}
+
+			default:
+				throw "unhandled mouse event";
+		}
+	}
+
+	//
+	public function openDrag():Void
+	{
+		if( this.isDragged )
+			return;
+
+		this.isDragged = true;
+		this.isOnStage = true;
+
+		this.stage.addEventListener( Event.MOUSE_LEAVE, 	this.onDragEvent );
+		this.stage.addEventListener( MouseEvent.MOUSE_OUT, 	this.onDragEvent );
+		this.stage.addEventListener( MouseEvent.MOUSE_OVER, this.onDragEvent );
+		this.stage.addEventListener( MouseEvent.MOUSE_UP, 	this.onDragEvent );
+	}
+
+	//
+	public function closeDrag():Void
+	{
+		if( !this.isDragged )
+			return;
+
+		this.isDragged = false;
+		this.isOnStage = true;
+
+		this.stage.removeEventListener( Event.MOUSE_LEAVE, 		this.onDragEvent );
+		this.stage.removeEventListener( MouseEvent.MOUSE_OUT, 	this.onDragEvent );
+		this.stage.removeEventListener( MouseEvent.MOUSE_OVER, 	this.onDragEvent );
+		this.stage.removeEventListener( MouseEvent.MOUSE_UP, 	this.onDragEvent );
+	}
+
 
 }
