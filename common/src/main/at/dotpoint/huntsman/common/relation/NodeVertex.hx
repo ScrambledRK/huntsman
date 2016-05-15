@@ -26,6 +26,7 @@ class NodeVertex
 
 	//
 	public var relaxation:Float;
+	public var connectivity:Float;
 
 	// ************************************************************************ //
 	// Constructor

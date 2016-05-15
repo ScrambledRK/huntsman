@@ -1,5 +1,9 @@
 package at.dotpoint.huntsman.client.loader;
 
+import Std;
+import String;
+import String;
+import String;
 import haxe.at.dotpoint.math.color.transform.ColorTransformFormat;
 import haxe.at.dotpoint.math.vector.Vector3;
 import haxe.at.dotpoint.math.color.transform.ColorTransformRGB;
@@ -72,30 +76,32 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 	{
 		var keys:Array<String> = cast json._keys;
 
+		// create
 		for( key in keys )
 		{
-			if( key != "class" )
-				continue;
+			var table:Array<Dynamic> = cast Reflect.getProperty( json, key );
 
-			// ----------- //
+			for( entry in table )
+				this.getNode( key, entry.name, true );
+		}
 
+		// children
+		for( key in keys )
+		{
 			var table:Array<Dynamic> = cast Reflect.getProperty( json, key );
 
 			for( entry in table )
 			{
-				if( entry.type != "class" )
-					continue;
+				var nnode:Node = this.getNode( key, entry.name, false );
+				var pnode:Node = this.getNode( "platform", nnode.name + getPlatformName(nnode.name), false );
 
-				var node:Node = this.getNode( "class", entry.name );
+				if( pnode == null )
+					pnode = nnode;
+
 				var children:Array<Dynamic> = cast entry.children;
 
 				for( cnode in children )
-				{
-					if( cnode.type != "class" )
-						continue;
-
-					node.addAssociation( this.getNode( cnode.type, cnode.name ) );
-				}
+					pnode.addAssociation( this.getNode( cnode.type, cnode.name ) );
 			}
 		}
 	}
@@ -108,10 +114,41 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 		if( node == null && create )
 		{
 			this.result.addAssociation( node = new Node( type, name ) );
-			this.addPackage( this.getPackageName(name) );
+
+			if( type == "class" )
+			{
+				this.addPackage( this.getPackageName(name) );
+
+//				for( platform in ["flash","haxe","js","sys","php"] )
+//				{
+//					if( StringTools.startsWith( name, platform ) )
+//					{
+//						var pnode:Node = new Node( "platform", name + "." + platform );
+//
+//						this.result.addAssociation( pnode );
+//						node.addAssociation( pnode );
+//
+//						break;
+//					}
+//				}
+			}
+
+			return node;
 		}
 
 		return node;
+	}
+
+	//
+	private function getPlatformName( name:String ):String
+	{
+		for( platform in ["flash","haxe","js","sys","php"] )
+		{
+			if( StringTools.startsWith( name, platform ) )
+				return "." + platform;
+		}
+
+		return "";
 	}
 
 	// ------------------------------------------------------------------------ //
@@ -151,6 +188,9 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 
 		for( node in container )
 		{
+			if( node.type != "class" )
+				continue;
+
 			var pindex:Int = this.packages.indexOf( this.getPackageName(node.name) );
 
 			if( pindex == -1 )
@@ -168,8 +208,10 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 	//
 	private function setRelativeColor( color:Vector3, value:Float ):Void
 	{
-		var a:Vector3 = new Vector3( 0, 1, 1 );
-		var b:Vector3 = new Vector3( 1, 1, 0.25 );
+		value = Std.int(value * 32) / 32;
+
+		var a:Vector3 = new Vector3( 0, 1, 0.75 );
+		var b:Vector3 = new Vector3( 1, 1, 0.75 );
 
 		var c:Vector3 = this.hsv.interpolate( a, b, value );
 
@@ -179,6 +221,10 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 	//
 	private function calculateRelativeColorIndex( pindex:Int ):Float
 	{
+		return pindex / this.packages.length;
+
+		// ------------- //
+
 		var pname:String = this.packages[pindex];
 
 		var rmin:Float = 0;
@@ -188,7 +234,7 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 
 		for( j in 0...level )
 		{
-			var neighbors:Array<String> = this.getPackageNeigbors(j);	// sub packages next to current subpackage
+			var neighbors:Array<String> = this.getPackageNeigbors( pname, j);	// sub packages next to current subpackage
 
 			var subname:String = this.getPackageSubstring( pname, j );	// current subpackage
 			var subindex:Int = neighbors.indexOf( subname );			// index of c subpackage amongst neighbors
@@ -206,12 +252,15 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 	/**
 	 *
 	 */
-	private function getPackageNeigbors( level:Int ):Array<String>
+	private function getPackageNeigbors( fname:String, level:Int ):Array<String>
 	{
 		var result:Array<String> = new Array<String>();
 
 		for( pname in this.packages )
 		{
+			if( !this.isInParentPackage( fname, pname, level ) )
+				continue;
+
 			var psub:String = this.getPackageSubstring( pname, level );
 
 			if( result.indexOf(psub) == -1 )
@@ -219,6 +268,25 @@ class NodeParser extends ADataProcessor implements IDataProcessor<String,Node>
 		}
 
 		return result;
+	}
+
+	//
+	private function isInParentPackage( fname:String, pname:String, level:Int ):Bool
+	{
+		var count:Int = 0;
+
+		while( count < level )
+		{
+			var fsub:String = this.getPackageSubstring( fname, count );
+			var psub:String = this.getPackageSubstring( pname, count );
+
+			if( fsub != psub )
+				return false;
+
+			count++;
+		}
+
+		return true;
 	}
 
 	//

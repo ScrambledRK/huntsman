@@ -1,5 +1,9 @@
 package at.dotpoint.huntsman.client.view;
 
+import haxe.at.dotpoint.math.vector.IVector2;
+import Math;
+import at.dotpoint.huntsman.common.relation.Node;
+import at.dotpoint.huntsman.common.relation.RelationContainer;
 import Math;
 import haxe.at.dotpoint.core.Timer;
 import haxe.ds.Vector;
@@ -149,9 +153,28 @@ class NodeRenderer
 		var node:Node = this.getNode( index );
 
 		var view:NodeView = this.getView( index );
+
+		if( node.type == "class" )
+		{
 			view.setLabel( node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length ) );
 			view.setColor( node.data.color );
 			view.setToolTip( node.name );
+		}
+		else if( node.type == "file" )
+		{
+			view.setLabel( node.name.substring( node.name.lastIndexOf("/") + 1, node.name.length ) );
+			view.setToolTip( node.type );
+		}
+		else if( node.type == "platform" )
+		{
+			view.setLabel( node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length ) );
+			view.setToolTip( node.type );
+		}
+		else
+		{
+			view.setLabel( node.name );
+			view.setToolTip( node.type );
+		}
 
 		this.nodeView.addChild( view );
 	}
@@ -161,10 +184,11 @@ class NodeRenderer
 	{
 		var node:Node = this.getNode( index );
 
-		var weight:Float = 1 - (Math.min( node.getConnectivity( "class" ), 15 ) / 15);
+		var connectivity:Float = Math.min( node.getConnectivity(), 15 ) / 15;
+		var weight:Float = 1 - connectivity;
 
-		var distance_y:Float = 10 + (this.bounds.height * 0.35) * weight;
-		var distance_x:Float = 10 + (this.bounds.width * 0.35)  * weight;
+		var distance_y:Float = 10 + (this.bounds.height * 0.45) * weight;
+		var distance_x:Float = 10 + (this.bounds.width * 0.45)  * weight;
 
 		var x:Float = Math.cos( Math.random() * 2 * Math.PI ) * distance_x + this.bounds.width  * 0.5;
 		var y:Float = Math.sin( Math.random() * 2 * Math.PI ) * distance_y + this.bounds.height * 0.5;
@@ -191,8 +215,6 @@ class NodeRenderer
 	//
 	public function reset():Void
 	{
-		trace("reset");
-
 		this.isMoving = true;
 		this.isRelaxing = false;
 		this.isDone = false;
@@ -227,7 +249,7 @@ class NodeRenderer
 				this.lastIndex = 0;
 				this.isComplete = true;
 
-				break;
+				//break;
 			}
 		}
 		while( (Timer.stamp() - sstamp) < 20 );
@@ -285,19 +307,8 @@ class NodeRenderer
 		// ------------------- //
 		// attraction:
 
-		//
-		for( j in 0...cn.children.getSize("class") )
-			this.setAttraction( cv, this.getVertex( cn.children.getNodeByIndex( "class", j ).index ) );
-
-		//
-		for( j in 0...cn.parents.getSize("class") )
-		{
-			var pnode:Node = cn.parents.getNodeByIndex( "class", j );
-			var pv:NodeVertex = this.getVertex( pnode.index );
-
-			if( pv != null )
-				this.setAttraction( cv, pv );
-		}
+		this.setRelationAttraction( cv, cn.children );
+		this.setRelationAttraction( cv, cn.parents );
 
 		// ------------------- //
 		// velocity:
@@ -311,6 +322,29 @@ class NodeRenderer
 		cv.velocity.x = (cv.velocity.x + cv.force.x) * 0.85;
 		cv.velocity.y = (cv.velocity.y + cv.force.y) * 0.85;
 
+		//if( cv.velocity.length() > 50 )
+		//	cv.velocity.normalize();
+	}
+
+	//
+	private function setRelationAttraction( cv:NodeVertex, container:RelationContainer ):Void
+	{
+		var types:Array<String> = container.getTypes();
+
+		if( types == null )
+			return;
+
+		for( type in types )
+		{
+			for( j in 0...container.getSize( type ) )
+			{
+				var pnode:Node = container.getNodeByIndex( type, j );
+				var pv:NodeVertex = this.getVertex( pnode.index );
+
+				if( pv != null )
+					this.setAttraction( cv, pv );
+			}
+		}
 	}
 
 	/**
@@ -396,8 +430,16 @@ class NodeRenderer
 		{
 			var cn:Node = this.getNode(i);
 
-			for( j in 0...cn.children.getSize("class") )
-				this.drawConnection( cn, cn.children.getNodeByIndex( "class", j ) );
+			var types:Array<String> = cn.children.getTypes();
+
+			if( types == null )
+				continue;
+
+			for( type in types )
+			{
+				for( j in 0...cn.children.getSize( type ) )
+					this.drawConnection( cn, cn.children.getNodeByIndex( type, j ) );
+			}
 		}
 	}
 
@@ -412,6 +454,9 @@ class NodeRenderer
 	{
 		var cv:NodeVertex = this.getVertex( cn.index );
 		var nv:NodeVertex = this.getVertex( nn.index );
+
+		if( cv == null || nv == null )
+			return;
 
 		if( !Rectangle.isRectangleIntersect( this.bounds, cv.innerBounds ) )
 			return;
@@ -429,8 +474,63 @@ class NodeRenderer
 		var cp:Vector2 = vertices[0];
 		var np:Vector2 = vertices[1];
 
-		this.nodeView.graphics.moveTo( cp.x, cp.y );
-		this.nodeView.graphics.lineTo( np.x, np.y );
+		this.drawLine( cp, np, 0, 1, 0.5 );
+	}
+
+	/**
+	 *
+	 * @param	a
+	 * @param	b
+	 * @param	color
+	 * @param	thickness
+	 * @param	alpha
+	 */
+	public function drawLine( a:IVector2, b:IVector2, ?color:Int = 0, ?thickness:Float = 1, ?alpha:Float = 1 ):Void
+	{
+		this.nodeView.graphics.lineStyle( thickness, color, alpha );
+		this.nodeView.graphics.beginFill( color, alpha );
+
+		// ----------------- //
+
+		var ax:Float = Std.int( a.x );
+		var ay:Float = Std.int( a.y );
+		var bx:Float = Std.int( b.x );
+		var by:Float = Std.int( b.y );
+
+		// ----------------- //
+
+		var dx:Float = bx - ax;
+		var dy:Float = by - ay;
+		var dd:Float = Math.sqrt( dx * dx + dy * dy );
+
+		var xm:Float = dd - thickness * 2;
+		var xn:Float = dd - thickness * 2;
+
+		var ym:Float =  thickness * 2;
+		var yn:Float = -thickness * 2;
+
+		var sin:Float = dy / dd;
+		var cos:Float = dx / dd;
+
+		// ----------------- //
+
+		var x0:Float = xm * cos - ym * sin + ax;
+		var y0:Float = xm * sin + ym * cos + ay;
+
+		var x1:Float = xn * cos - yn * sin + ax;
+		var y1:Float = xn * sin + yn * cos + ay;
+
+		// ----------------- //
+
+		this.nodeView.graphics.moveTo( ax, ay );
+		this.nodeView.graphics.lineTo( bx, by );
+
+		this.nodeView.graphics.moveTo( bx, by );
+		this.nodeView.graphics.lineTo( x0, y0 );
+		this.nodeView.graphics.lineTo( x1, y1 );
+		this.nodeView.graphics.lineTo( bx, by );
+
+		this.nodeView.graphics.endFill();
 	}
 
 	/**
@@ -462,7 +562,7 @@ class NodeRenderer
 		var dss:Float = ( dx * dx + dy * dy );
 		var dsq:Float = Math.sqrt(dss);
 
-		if( dsq > 300 )
+		if( dsq > 200 )
 			return;
 
 		// ----------------- //
@@ -493,7 +593,7 @@ class NodeRenderer
 	 */
 	private function setAttraction( cv:NodeVertex, nv:NodeVertex ):Void
 	{
-		var scale:Float = cv.relaxation;
+		var scale:Float = cv.relaxation; // 0.05;
 
 		var dx:Float = 0;
 		var dy:Float = 0;
@@ -503,17 +603,13 @@ class NodeRenderer
 		var vertices:Vector<Vector2> = Trigonometry.calculateClosestRectangleVertices( cv.outerBounds, nv.outerBounds, null, this.pool_vecvec2 );
 
 		if( vertices == null )
-		{
 			return;
 
-			dx = nv.position.x - cv.position.x;
-			dy = nv.position.y - cv.position.y;
-		}
-		else
-		{
-			dx = vertices[1].x - vertices[0].x;
-			dy = vertices[1].y - vertices[0].y;
-		}
+		dx = vertices[1].x - vertices[0].x;
+		dy = vertices[1].y - vertices[0].y;
+
+//		dx = nv.position.x - cv.position.x;
+//		dy = nv.position.y - cv.position.y;
 
 		// ----------------- //
 

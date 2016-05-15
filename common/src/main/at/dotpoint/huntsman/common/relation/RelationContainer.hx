@@ -27,6 +27,22 @@ class RelationContainer
 	/**
 	 *
 	 */
+	public function getTypes():Array<String>
+	{
+		if( this.container == null )
+			return null;
+
+		var result:Array<String> = new Array<String>();
+
+		for( type in this.container.keys() )
+			result.push( type );
+
+		return result;
+	}
+
+	/**
+	 *
+	 */
 	public function hasAssociation( type:String, ID:String ):Bool
 	{
 		return this.getAssociation( type, ID ) != null;

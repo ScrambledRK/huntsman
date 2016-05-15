@@ -75,7 +75,11 @@ class Main extends Sprite
 
 		for( node in container )
 		{
-			this.renderer.addNode( node );
+			if( node.type != "file" && !StringTools.startsWith( node.name, "haxe.at.dotpoint.core.dispatcher.event")
+			&& !StringTools.endsWith( node.name, "Event") )
+			{
+				this.renderer.addNode( node );
+			}
 		}
 	}
 

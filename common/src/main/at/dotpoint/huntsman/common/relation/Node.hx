@@ -85,9 +85,36 @@ class Node
 	// ************************************************************************ //
 
 	//
-	public function getConnectivity( type:String, ?visited:Array<Node> ):Int
+	public function getConnectivity( ?calculateRecursive:Bool = true ):Int
 	{
-		var children:Array<Node> = this.children.getAssociationList( type );
+		var types:Array<String> = this.children.getTypes();
+
+		if( types == null )
+			return 0;
+
+		// ------------------ //
+
+		var weight:Int = 0;
+
+		for( type in types )
+			weight += this.getConnectivityByType( type, calculateRecursive );
+
+		return weight;
+	}
+
+	//
+	public function getConnectivityByType( type:String, ?calculateRecursive:Bool = true ):Int
+	{
+		var cc:Int = this.calculateConnectivity( this.children, type, calculateRecursive );
+		var cp:Int = this.calculateConnectivity( this.parents,  type, calculateRecursive );
+
+		return cc + cp;
+	}
+
+	//
+	private function calculateConnectivity( container:RelationContainer, type:String, ?calculateRecursive:Bool = true, ?visited:Array<Node> )
+	{
+		var children:Array<Node> = container.getAssociationList( type );
 
 		if( children == null )
 			return 0;
@@ -103,12 +130,15 @@ class Node
 
 		var weight:Int = children.length;
 
+		if( !calculateRecursive )
+			return weight;
+
 		for( node in children )
 		{
 			if( visited.indexOf( node ) != -1 )
 				continue;
 
-			weight += node.getConnectivity( type, visited );
+			weight += node.calculateConnectivity( container, type, calculateRecursive, visited );
 		}
 
 		return weight;
