@@ -4,6 +4,7 @@ package at.dotpoint.huntsman.common.relation;
  * 03.05.2016
  * @author RK
  */
+import String;
 class RelationContainer
 {
 
@@ -22,6 +23,22 @@ class RelationContainer
 	// ************************************************************************ //
 	// Methods
 	// ************************************************************************ //
+
+	/**
+	 *
+	 */
+	public function getTypes():Array<String>
+	{
+		if( this.container == null )
+			return null;
+
+		var result:Array<String> = new Array<String>();
+
+		for( type in this.container.keys() )
+			result.push( type );
+
+		return result;
+	}
 
 	/**
 	 *
@@ -51,7 +68,7 @@ class RelationContainer
 
 		for( n in list )
 		{
-			if( n.ID == ID )
+			if( n.name == ID )
 				return n;
 		}
 
@@ -65,7 +82,7 @@ class RelationContainer
 	 */
 	public function addAssociation( node:Node ):Bool
 	{
-		if( this.hasAssociation( node.type, node.ID ) )
+		if( this.hasAssociation( node.type, node.name ) )
 			return false;
 
 		// --------------- //
@@ -88,7 +105,7 @@ class RelationContainer
 	 */
 	public function removeAssociation( node:Node ):Bool
 	{
-		var child:Node = this.getAssociation( node.type, node.ID );
+		var child:Node = this.getAssociation( node.type, node.name );
 
 		if( child == null || child != node )
 			return false;
@@ -106,8 +123,35 @@ class RelationContainer
 		return true;
 	}
 
-	// ------------------------------------------------------------------------ //
-	// ------------------------------------------------------------------------ //
+	// ************************************************************************ //
+	// random access
+	// ************************************************************************ //
+
+	/**
+	 *
+	 */
+	public function getSize( type:String ):Int
+	{
+		if( this.container == null || !this.container.exists(type) )
+			return 0;
+
+		return this.container.get( type ).length;
+	}
+
+	/**
+	 *
+	 */
+	public function getNodeByIndex( type:String, index:Int ):Node
+	{
+		if( this.container == null || !this.container.exists(type) )
+			return null;
+
+		return this.container.get( type )[index];
+	}
+
+	// ************************************************************************ //
+	// toArray
+	// ************************************************************************ //
 
 	/**
 	 *
@@ -137,4 +181,6 @@ class RelationContainer
 
 		return result;
 	}
+
+
 }

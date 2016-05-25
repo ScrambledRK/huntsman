@@ -178,41 +178,13 @@ class Main {
      */
     private function onComplete( event:Event ):Void
     {
-		this.printNodes( this.rootNode );
+		this.rootNode.print();
 
 		this.printGraph();
 		this.saveNodes();
 
         Sys.exit(0);
     }
-
-	/**
-	 *
-	 */
-	private function printNodes( node:Node, ?depth:Int = 0 ):Void
-	{
-		var children:Map<String,Array<Node>> = node.children.container;
-
-		if( children == null || depth++ == 2 )
-		{
-			trace( node );
-			return;
-		}
-
-		// --------- //
-
-		trace(">>", node );
-
-		for( key in children.keys() )
-		{
-			var list:Array<Node> = node.children.getAssociationList( key );
-
-			for( cnode in list )
-				this.printNodes( cnode, depth );
-		}
-
-		trace("<<");
-	}
 
 	/**
 	 *
@@ -227,8 +199,8 @@ class Main {
 
 		for( node in classes )
 		{
-			var cname:String = node.ID.substring( node.ID.lastIndexOf(".") + 1, node.ID.length );
-			var fname:String = node.ID.split(".").join("_");
+			var cname:String = node.name.substring( node.name.lastIndexOf(".") + 1, node.name.length );
+			var fname:String = node.name.split(".").join("_");
 
 			output += fname + ' [label="' + cname + '"];\n';
 
@@ -241,7 +213,7 @@ class Main {
 
 			for( rnode in references )
 			{
-				output += fname + " -> " + rnode.ID.split(".").join("_") + "\n";
+				output += fname + " -> " + rnode.name.split(".").join("_") + "\n";
 			}
 		}
 
@@ -337,7 +309,7 @@ class Main {
 			padding += "  ";
 
 		output += padding + "{\n";
-		output += padding + '  "name":"' + node.ID + '",\n';
+		output += padding + '  "name":"' + node.name + '",\n';
 		output += padding + '  "type":"' + node.type + '"';
 
 		// ------------------------- //
