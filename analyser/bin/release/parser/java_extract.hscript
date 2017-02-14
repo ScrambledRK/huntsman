@@ -1,0 +1,90 @@
+// ------------------------- //
+// package n' import:
+
+var nodes_package = source.findNodes( "package_declaration" )[0].findNodes( "chain_name" );
+var value_package = nodes_package.length == 0 ? "" : nodes_package[0].getContent(true);
+
+var nodes_import = source.findNodes( "import_declaration" );
+var value_imports = [];
+
+for( nimport in nodes_import )
+{
+	value_imports.push( nimport.findNodes("chain_name")[0].getContent(true) );
+}
+
+// ------------------------- //
+// class:
+
+var node_types_to_search = ["class_declaration","interface_declaration"];
+var value_class_declarations = [];
+
+for( ntypets in node_types_to_search )
+{
+	var nodes_class = source.findNodes( ntypets );
+
+	for( nclass in nodes_class )
+	{
+		var class_model = {};
+			class_model.references = [];
+
+		var nodes_tdd = nclass.findNodes( "type_declaration_definition" );
+		var nodes_tdu = nclass.findNodes( "type_declaration_usage" );
+
+		if( nodes_tdd != null && nodes_tdd.length != 0)
+		{
+			class_model.name = nodes_tdd[0].findNodes("name")[0].getContent(false);
+
+			if( value_package.length != 0 )
+				class_model.name = value_package + "." + class_model.name;
+		}
+		else
+		{
+			if( value_class_declarations.length > 0 )
+			{
+				class_model = value_class_declarations.pop();	// HACK, since class-body is not parsed, but
+			}													// type_declaration_usage poses as classes ...
+			else
+			{
+				trace("CLASS HAS NO VALID TYPE DECLARATION");
+				continue;
+			}
+		}
+
+		for( ntdu in nodes_tdu )
+		{
+			for( ntdu_names in ntdu.findNodes("chain_name") )
+			{
+				var ntdu_value = ntdu_names.getContent(true);
+
+				if( class_model.references.indexOf(ntdu_value) == -1 )
+					class_model.references.push( ntdu_value );
+			}
+		}
+
+		value_class_declarations.push( class_model );
+	}
+}
+
+
+// ------------------------- //
+
+trace( "package:    " + value_package );
+trace( "imports:    " + value_imports );
+trace( "classes:    " + value_class_declarations );
+
+// ------------------------- //
+
+for( class_model in value_class_declarations )
+{
+	var node_class_model = self.getNode( "class", class_model.name, true );		// create class model node
+	self.node.addAssociation( node_class_model );								// associate with file
+
+	for( usage in class_model.references )
+	{
+		var task_link = self.queueScriptTask( "java_link" );
+			task_link.setScriptVariable( "reference", usage );
+			task_link.setScriptVariable( "class_name", class_model.name );
+			task_link.setScriptVariable( "imports", value_imports );
+			task_link.setScriptVariable( "package_name", value_package );
+	}
+}
