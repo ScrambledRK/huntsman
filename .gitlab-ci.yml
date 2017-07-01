@@ -1,10 +1,6 @@
-image: haxe:latest
-
-services:
-  - groovy:latest
-
 build:
   stage: build
+  image: haxe:latest
   script:
     - haxelib install hscript
     - haxe ./analyser/build.hxml
