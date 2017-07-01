@@ -1,3 +1,3 @@
-[submodule "common/lib/dotCore"]
-	path = common/lib/dotCore
-	url = git@github.com:ScrambledRK/dotCore.git
+[submodule "lib/dotpoint"]
+	path = lib/dotpoint
+	url = https://github.com/ScrambledRK/dotpoint.git
