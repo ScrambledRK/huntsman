@@ -3,4 +3,5 @@ build:
   image: haxe:latest
   script:
     - haxelib install hscript
-    - haxe ./analyser/build.hxml
+    - cd ./analyser
+    - haxe build.hxml
