@@ -1,0 +1,10 @@
+image: haxe:latest
+
+services:
+  - groovy:latest
+  - graphviz:latest
+
+build:
+  stage: build
+  script:
+    - haxe ./analyser/build.hxml
