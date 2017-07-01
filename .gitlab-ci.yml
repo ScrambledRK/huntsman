@@ -2,7 +2,7 @@ image: haxe:latest
 
 services:
   - groovy:latest
-  - graphviz:latest
+  - andrewshawcare/graphviz:latest
 
 build:
   stage: build
