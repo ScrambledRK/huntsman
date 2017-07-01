@@ -2,9 +2,9 @@ image: haxe:latest
 
 services:
   - groovy:latest
-  - andrewshawcare/graphviz:latest
 
 build:
   stage: build
   script:
+    - haxelib install hscript
     - haxe ./analyser/build.hxml
