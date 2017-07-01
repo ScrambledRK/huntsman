@@ -1,0 +1,6 @@
+build:
+  stage: build
+  image: haxe:latest
+  script:
+    - haxelib install hscript
+    - haxe build.hxml
