@@ -1,10 +1,10 @@
 package at.dotpoint.huntsman.analyser.processor;
 
-import haxe.at.dotpoint.core.dispatcher.event.EventDispatcher;
+import at.dotpoint.dispatcher.event.Event;
+import at.dotpoint.dispatcher.event.EventDispatcher;
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
-import haxe.at.dotpoint.core.dispatcher.event.Event;
-import haxe.at.dotpoint.core.processor.event.ProcessEvent;
-import haxe.at.dotpoint.core.processor.AsyncQueue;
+import at.dotpoint.processor.AsyncQueue;
+import at.dotpoint.processor.event.ProcessEvent;
 
 /**
  * 15.04.2016
@@ -24,14 +24,14 @@ class Processor extends EventDispatcher
 	// ************************************************************************ //
 
 	//
-	public function new()
+	public function new( )
 	{
-		super();
+		super( );
 
 		this.queue = new AsyncQueue();
-		this.queue.addListener( ProcessEvent.TASK_STARTED,  this.onTaskEvent );
+		this.queue.addListener( ProcessEvent.TASK_STARTED, this.onTaskEvent );
 		this.queue.addListener( ProcessEvent.TASK_COMPLETE, this.onTaskEvent );
-		this.queue.addListener( ProcessEvent.PROCESS_STARTED,  this.onProcessEvent );
+		this.queue.addListener( ProcessEvent.PROCESS_STARTED, this.onProcessEvent );
 		this.queue.addListener( ProcessEvent.PROCESS_COMPLETE, this.onProcessEvent );
 
 		this.progress = new ProcessProgress();
@@ -44,12 +44,12 @@ class Processor extends EventDispatcher
 	/**
 	 *
 	 */
-	public function process( tasks:Array<ProcessTask>, onComplete:Event->Void ):Void
+	public function process( tasks:Array<ProcessTask>, onComplete:Event -> Void ):Void
 	{
 		this.addListener( ProcessEvent.PROCESS_COMPLETE, onComplete );
 
 		this.queueTasks( tasks );
-		this.queue.process();
+		this.queue.process( );
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Processor extends EventDispatcher
 				this.progress.printProgress( this.queue.taskList );
 
 			default:
-				trace("unknown case: " + event.type );
+				trace( "unknown case: " + event.type );
 		}
 	}
 
@@ -83,13 +83,13 @@ class Processor extends EventDispatcher
 		switch( event.type )
 		{
 			case ProcessEvent.PROCESS_STARTED:
-				trace("processing started");
+				trace( "processing started" );
 
 			case ProcessEvent.PROCESS_COMPLETE:
-				trace("processing complete");
+				trace( "processing complete" );
 
 			default:
-				trace("unknown case: " + event.type );
+				trace( "unknown case: " + event.type );
 		}
 
 		this.dispatch( value );

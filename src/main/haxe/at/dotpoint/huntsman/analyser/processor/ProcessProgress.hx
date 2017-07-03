@@ -1,7 +1,7 @@
 package at.dotpoint.huntsman.analyser.processor;
 
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
-import haxe.at.dotpoint.core.processor.ITask;
+import at.dotpoint.processor.ITask;
 import haxe.Timer;
 
 /**
@@ -39,11 +39,11 @@ class ProcessProgress
 		//if( Timer.stamp() - this.timestamp < 1 )
 		//	return;
 
-		this.timestamp = Timer.stamp();
+		this.timestamp = Timer.stamp( );
 
 		// ----------------- //
 
-		var tasks:Map<String,Int> = new Map<String,Int>();
+		var tasks:Map<String, Int> = new Map<String, Int>();
 
 		for( value in tasklist )
 		{
@@ -53,14 +53,14 @@ class ProcessProgress
 				continue;
 
 			if( tasks.exists( task.type ) ) tasks.set( task.type, tasks.get( task.type ) + 1 );
-			else							tasks.set( task.type, 1 );
+			else tasks.set( task.type, 1 );
 		}
 
 		// ------------------ //
 
 		trace( "tasks open: " + tasklist.length );
 
-		var types:Iterator<String> = tasks.keys();
+		var types:Iterator<String> = tasks.keys( );
 
 		for( type in types )
 			trace( " - " + type + ": " + tasks.get( type ) );

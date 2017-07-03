@@ -1,11 +1,10 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
-import haxe.at.dotpoint.logger.Log;
-import at.dotpoint.huntsman.analyser.script.ScriptReference;
 import at.dotpoint.huntsman.analyser.parser.INodeParser;
 import at.dotpoint.huntsman.analyser.project.Variation;
-import haxe.io.Path;
 import at.dotpoint.huntsman.common.relation.Node;
+import at.dotpoint.logger.Log;
+import haxe.io.Path;
 
 /**
  * 16.04.2016
@@ -37,14 +36,14 @@ class FileTask extends ProcessTask
 	/**
 	 *
 	 */
-	override public function execute():Void		// TODO: remove weird ass current/parent switch
+	override public function execute( ):Void // TODO: remove weird ass current/parent switch
 	{
-		super.execute();
+		super.execute( );
 
 		// ------------ //
 
 		var parent:Node = this.node;
-		var current:Node = this.getNode( "file", this.file.toString(), true );
+		var current:Node = this.getNode( "file", this.file.toString( ), true );
 
 		this.node.addAssociation( current );
 		this.node = current;
@@ -58,7 +57,7 @@ class FileTask extends ProcessTask
 
 		// ------------ //
 
-		this.clear();
+		this.clear( );
 	}
 
 	/**
@@ -71,13 +70,13 @@ class FileTask extends ProcessTask
 
 		for( parser in parsers )
 		{
-			var isExt:Bool = parser.getSettings().extensions.indexOf( this.file.ext ) != -1;
+			var isExt:Bool = parser.getSettings( ).extensions.indexOf( this.file.ext ) != -1;
 
 			if( parser.name == requested && isExt )
 				return parser;
 		}
 
-		Log.warn( "could not find parser " + requested + " for file: " + this.file.toString() + " with variation: " + parent );
+		Log.warn( "could not find parser " + requested + " for file: " + this.file.toString( ) + " with variation: " + parent );
 
 		return null;
 	}

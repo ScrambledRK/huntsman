@@ -1,9 +1,5 @@
 package at.dotpoint.huntsman.analyser.parser;
 
-import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
-import at.dotpoint.huntsman.common.relation.Node;
-import haxe.at.dotpoint.loader.processor.ADataProcessor;
-
 /**
  * 16.04.2016
  * @author RK
@@ -37,7 +33,7 @@ class ANodeParser<TSettings:INodeParserSettings>
 	// ************************************************************************ //
 
 	//
-	public function getSettings():TSettings
+	public function getSettings( ):TSettings
 	{
 		return this.settings;
 	}
@@ -48,7 +44,7 @@ class ANodeParser<TSettings:INodeParserSettings>
 	/**
 	 *
 	 */
-	public function toString():String
+	public function toString( ):String
 	{
 		return "[Parser:" + this.type + ":" + this.name + "]";
 	}

@@ -1,9 +1,9 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
 import at.dotpoint.huntsman.common.relation.Node;
-import haxe.at.dotpoint.core.dispatcher.event.EventDispatcher;
-import haxe.at.dotpoint.core.processor.event.ProcessEvent;
-import haxe.at.dotpoint.core.processor.ITask;
+import at.dotpoint.dispatcher.event.EventDispatcher;
+import at.dotpoint.processor.event.ProcessEvent;
+import at.dotpoint.processor.ITask;
 
 /**
  * 15.04.2016

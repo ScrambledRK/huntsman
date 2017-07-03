@@ -1,11 +1,10 @@
 package at.dotpoint.huntsman.analyser.processor.task;
 
-import hscript.Expr;
-import sys.io.File;
-import hscript.Parser;
-import hscript.Interp;
-import at.dotpoint.huntsman.common.relation.Node;
 import at.dotpoint.huntsman.analyser.script.ScriptReference;
+import hscript.Expr;
+import hscript.Interp;
+import hscript.Parser;
+import sys.io.File;
 
 /**
  * 03.05.2016
@@ -18,7 +17,7 @@ class HScriptTask extends ProcessTask
 	private var script:ScriptReference;
 
 	//
-	public var interpretor(default,null):Interp;
+	public var interpretor(default, null):Interp;
 
 	//
 	public var parser:Parser;
@@ -48,15 +47,15 @@ class HScriptTask extends ProcessTask
 	/**
 	 *
 	 */
-	override public function execute():Void
+	override public function execute( ):Void
 	{
-		super.execute();
+		super.execute( );
 
 		// ------------ //
 
 		trace( ">>", "hscript: " + this.script.name );
 
-		var program:Expr = this.parseScript();
+		var program:Expr = this.parseScript( );
 
 		try
 		{
@@ -71,19 +70,19 @@ class HScriptTask extends ProcessTask
 
 		// ------------ //
 
-		this.clear();
+		this.clear( );
 	}
 
 	/**
 	 *
 	 */
-	private function parseScript():Expr
+	private function parseScript( ):Expr
 	{
 		var program:Expr = null;
 
 		try
 		{
-			var script:String = File.getContent( this.script.path.toString() );
+			var script:String = File.getContent( this.script.path.toString( ) );
 
 			if( script == null || script.length == 0 )
 				throw "hscript " + this.script.path + " is empty or null";
@@ -109,7 +108,7 @@ class HScriptTask extends ProcessTask
 	 */
 	public function setScriptVariable( name:String, value:Dynamic ):Bool
 	{
-		if( this.interpretor.variables.exists(name) )
+		if( this.interpretor.variables.exists( name ) )
 			return false;
 
 		this.interpretor.variables.set( name, value );
