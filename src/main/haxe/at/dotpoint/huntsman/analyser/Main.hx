@@ -5,7 +5,7 @@ import haxe.at.dotpoint.logger.logger.TraceLogger;
 import haxe.at.dotpoint.logger.Log;
 import haxe.io.Path;
 import at.dotpoint.huntsman.analyser.processor.task.ProjectTask;
-import haxe.at.dotpoint.core.dispatcher.event.Event;
+import at.dotpoint.dispatcher.event.Event;
 import at.dotpoint.huntsman.analyser.processor.task.ProcessTask;
 import at.dotpoint.huntsman.common.relation.Node;
 import at.dotpoint.huntsman.analyser.processor.Processor;
