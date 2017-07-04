@@ -1,8 +1,9 @@
 -cp src/main/haxe
 -cp lib/dotpoint/subprojects/logger/src/main/haxe
+-cp lib/dotpoint/subprojects/datastructure/src/main/haxe
 
 -lib hscript
 -D hscriptPos
 
 -main at.dotpoint.huntsman.analyser.Main
--neko bin/release/huntsman.n
+-neko out/release/huntsman.n
