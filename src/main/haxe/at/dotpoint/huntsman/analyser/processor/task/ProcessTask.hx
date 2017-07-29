@@ -104,6 +104,7 @@ class ProcessTask extends EventDispatcher implements ITask
 
 		this.output.push( task );
 
+		//
 		return task;
 	}
 }
