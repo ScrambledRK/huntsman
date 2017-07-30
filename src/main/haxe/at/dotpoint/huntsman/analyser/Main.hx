@@ -1,6 +1,7 @@
 package at.dotpoint.huntsman.analyser;
 
 
+import at.dotpoint.huntsman.analyser.graph.HuntsmanGraph;
 import at.dotpoint.dispatcher.event.Event;
 import at.dotpoint.logger.logger.TraceLogger;
 import at.dotpoint.logger.Log;
@@ -36,7 +37,7 @@ class Main
 	public var processor(default, null):Processor;
 
 	//
-	public var rootNode:Node;
+	public var container:HuntsmanGraph;
 
 	// ************************************************************************ //
 	// Constructor
