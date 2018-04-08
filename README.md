@@ -8,7 +8,7 @@ runtime:
 * multi-project structure and project dependencies configurable via json file
 * syntax-tree-analysis scriptable using haxe-script hscript files
 * demo client visualizing the output graph
-* custom output format (no support for any graphfile format) 
+* custom output format (no support for any graphfile format, but groovy script for to-csv conversion) 
 * single threaded and unoptimized filesystem access
 
 development-time:
